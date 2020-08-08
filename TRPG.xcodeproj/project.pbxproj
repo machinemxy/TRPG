@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		22E1E3CD24DF08160064317C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E1E3CC24DF08160064317C /* AppDelegate.swift */; };
 		22E1E3CF24DF08160064317C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E1E3CE24DF08160064317C /* SceneDelegate.swift */; };
-		22E1E3D124DF08160064317C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E1E3D024DF08160064317C /* ViewController.swift */; };
+		22E1E3D124DF08160064317C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E1E3D024DF08160064317C /* MapViewController.swift */; };
 		22E1E3D424DF08160064317C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22E1E3D224DF08160064317C /* Main.storyboard */; };
 		22E1E3D624DF08170064317C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22E1E3D524DF08170064317C /* Assets.xcassets */; };
 		22E1E3D924DF08170064317C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22E1E3D724DF08170064317C /* LaunchScreen.storyboard */; };
 		22E1E3E424DF08170064317C /* TRPGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E1E3E324DF08170064317C /* TRPGTests.swift */; };
+		22E1E3F024DF0CE30064317C /* Village.sks in Resources */ = {isa = PBXBuildFile; fileRef = 22E1E3EF24DF0CE30064317C /* Village.sks */; };
+		22E1E3F224DF10F90064317C /* Village.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E1E3F124DF10F90064317C /* Village.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +32,7 @@
 		22E1E3C924DF08160064317C /* TRPG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TRPG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22E1E3CC24DF08160064317C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22E1E3CE24DF08160064317C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		22E1E3D024DF08160064317C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		22E1E3D024DF08160064317C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		22E1E3D324DF08160064317C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		22E1E3D524DF08170064317C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22E1E3D824DF08170064317C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +40,8 @@
 		22E1E3DF24DF08170064317C /* TRPGTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TRPGTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		22E1E3E324DF08170064317C /* TRPGTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRPGTests.swift; sourceTree = "<group>"; };
 		22E1E3E524DF08170064317C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		22E1E3EF24DF0CE30064317C /* Village.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Village.sks; sourceTree = "<group>"; };
+		22E1E3F124DF10F90064317C /* Village.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Village.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,9 +83,10 @@
 		22E1E3CB24DF08160064317C /* TRPG */ = {
 			isa = PBXGroup;
 			children = (
+				22E1E3EE24DF0CB10064317C /* Scenes */,
 				22E1E3CC24DF08160064317C /* AppDelegate.swift */,
 				22E1E3CE24DF08160064317C /* SceneDelegate.swift */,
-				22E1E3D024DF08160064317C /* ViewController.swift */,
+				22E1E3D024DF08160064317C /* MapViewController.swift */,
 				22E1E3D224DF08160064317C /* Main.storyboard */,
 				22E1E3D524DF08170064317C /* Assets.xcassets */,
 				22E1E3D724DF08170064317C /* LaunchScreen.storyboard */,
@@ -97,6 +102,15 @@
 				22E1E3E524DF08170064317C /* Info.plist */,
 			);
 			path = TRPGTests;
+			sourceTree = "<group>";
+		};
+		22E1E3EE24DF0CB10064317C /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				22E1E3EF24DF0CE30064317C /* Village.sks */,
+				22E1E3F124DF10F90064317C /* Village.swift */,
+			);
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +196,7 @@
 			files = (
 				22E1E3D924DF08170064317C /* LaunchScreen.storyboard in Resources */,
 				22E1E3D624DF08170064317C /* Assets.xcassets in Resources */,
+				22E1E3F024DF0CE30064317C /* Village.sks in Resources */,
 				22E1E3D424DF08160064317C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,7 +215,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				22E1E3D124DF08160064317C /* ViewController.swift in Sources */,
+				22E1E3F224DF10F90064317C /* Village.swift in Sources */,
+				22E1E3D124DF08160064317C /* MapViewController.swift in Sources */,
 				22E1E3CD24DF08160064317C /* AppDelegate.swift in Sources */,
 				22E1E3CF24DF08160064317C /* SceneDelegate.swift in Sources */,
 			);
