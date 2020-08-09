@@ -22,4 +22,10 @@ class Party: Codable {
             pc.exp += expEachPerson
         }
     }
+    
+    func rest() {
+        for pc in pcs {
+            pc.hp = pc.mhp
+        }
+    }
 }
