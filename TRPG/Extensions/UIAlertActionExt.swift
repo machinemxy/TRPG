@@ -16,4 +16,16 @@ extension UIAlertAction {
             handler()
         }
     }
+    
+    static func yes(handler: @escaping () -> Void) -> UIAlertAction {
+        return UIAlertAction(title: "Yes", style: .default) { (_) in
+            handler()
+        }
+    }
+    
+    static func no(handler: @escaping () -> Void) -> UIAlertAction {
+        return UIAlertAction(title: "No", style: .default) { (_) in
+            handler()
+        }
+    }
 }
