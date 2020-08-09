@@ -10,8 +10,11 @@ import UIKit
 import SpriteKit
 
 class MapViewController: UIViewController {
+    static var instance: MapViewController?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        Self.instance = self
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
@@ -44,6 +47,10 @@ class MapViewController: UIViewController {
 
     override var prefersStatusBarHidden: Bool {
         return false
+    }
+    
+    static func presentAlert(_ ac: UIAlertController) {
+        instance?.present(ac, animated: true)
     }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2225ED3724DFD4CF006CC6B1 /* UIAlertActionExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2225ED3624DFD4CF006CC6B1 /* UIAlertActionExt.swift */; };
 		22E1E3CD24DF08160064317C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E1E3CC24DF08160064317C /* AppDelegate.swift */; };
 		22E1E3CF24DF08160064317C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E1E3CE24DF08160064317C /* SceneDelegate.swift */; };
 		22E1E3D124DF08160064317C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E1E3D024DF08160064317C /* MapViewController.swift */; };
@@ -29,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2225ED3624DFD4CF006CC6B1 /* UIAlertActionExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertActionExt.swift; sourceTree = "<group>"; };
 		22E1E3C924DF08160064317C /* TRPG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TRPG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		22E1E3CC24DF08160064317C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		22E1E3CE24DF08160064317C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -62,6 +64,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2225ED3524DFD4B2006CC6B1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2225ED3624DFD4CF006CC6B1 /* UIAlertActionExt.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		22E1E3C024DF08160064317C = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +93,7 @@
 		22E1E3CB24DF08160064317C /* TRPG */ = {
 			isa = PBXGroup;
 			children = (
+				2225ED3524DFD4B2006CC6B1 /* Extensions */,
 				22E1E3EE24DF0CB10064317C /* Scenes */,
 				22E1E3CC24DF08160064317C /* AppDelegate.swift */,
 				22E1E3CE24DF08160064317C /* SceneDelegate.swift */,
@@ -216,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22E1E3F224DF10F90064317C /* Village.swift in Sources */,
+				2225ED3724DFD4CF006CC6B1 /* UIAlertActionExt.swift in Sources */,
 				22E1E3D124DF08160064317C /* MapViewController.swift in Sources */,
 				22E1E3CD24DF08160064317C /* AppDelegate.swift in Sources */,
 				22E1E3CF24DF08160064317C /* SceneDelegate.swift in Sources */,
