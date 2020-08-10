@@ -12,7 +12,7 @@ class Party: Codable {
     static var instance = Party()
     
     var pcs = [Pc]()
-    var money = 0
+    var money: Double = 0
     
     func gainExp(_ exp: Int) {
         guard pcs.count > 0 else { return }

@@ -16,12 +16,13 @@ class Pc: Codable {
     var int: Int
     var wis: Int
     var cha: Int
+    var lifeDice: Int
     var mhp: Int
     var hp: Int
     var lv = 1
     var exp = 0
     
-    init(name: String, str: Int, dex:Int, con: Int, int: Int, wis: Int, cha:Int, mhp: Int) {
+    init(name: String, str: Int, dex:Int, con: Int, int: Int, wis: Int, cha:Int, lifeDice: Int) {
         self.name = name
         self.str = str
         self.dex = dex
@@ -29,7 +30,8 @@ class Pc: Codable {
         self.int = int
         self.wis = wis
         self.cha = cha
-        self.mhp = mhp
-        self.hp = mhp
+        self.lifeDice = lifeDice
+        mhp = lifeDice + con.modifier
+        hp = mhp
     }
 }
