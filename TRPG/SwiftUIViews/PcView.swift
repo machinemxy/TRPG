@@ -12,13 +12,31 @@ struct PcView: View {
     var pc: Pc
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-            .navigationBarTitle(pc.name)
+        Form {
+            Section(header: Text("Abilities")) {
+                KeyValueView(key: "HP", value: "\(pc.hp)/\(pc.mhp)")
+                KeyValueView(key: "Strength", value: "\(pc.str)")
+                KeyValueView(key: "Dexterity", value: "\(pc.dex)")
+                KeyValueView(key: "Constitution", value: "\(pc.con)")
+                KeyValueView(key: "Intelligence", value: "\(pc.int)")
+                KeyValueView(key: "Wisdom", value: "\(pc.wis)")
+                KeyValueView(key: "Charisma", value: "\(pc.cha)")
+            }
+            
+            Section(header: Text("Equipment")) {
+                KeyValueView(key: "Weapon", value: "\(pc.weapon.name)")
+                KeyValueView(key: "Shield", value: "\(pc.shield.name)")
+                KeyValueView(key: "Armor", value: "\(pc.armor.name)")
+            }
+        }
+        .navigationBarTitle(pc.name)
     }
 }
 
 struct PcView_Previews: PreviewProvider {
     static var previews: some View {
-        PcView(pc: Pc(name: "Liu Bei", str: 12, dex: 12, con: 10, int: 12, wis: 14, cha: 17, lifeDice: 10))
+        let pc = Pc(name: "Liu Bei", str: 12, dex: 12, con: 10, int: 12, wis: 14, cha: 17, lifeDice: 10)
+        pc.weaponId = Weapon.club
+        return PcView(pc: pc)
     }
 }

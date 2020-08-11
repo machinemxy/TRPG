@@ -21,6 +21,9 @@ class Pc: Codable {
     var hp: Int
     var lv = 1
     var exp = 0
+    var weaponId = Weapon.bareHand
+    var shiedId = Shield.none
+    var armorId = Armor.none
     
     init(name: String, str: Int, dex:Int, con: Int, int: Int, wis: Int, cha:Int, lifeDice: Int) {
         self.name = name
@@ -33,5 +36,17 @@ class Pc: Codable {
         self.lifeDice = lifeDice
         mhp = lifeDice + con.modifier
         hp = mhp
+    }
+    
+    var weapon: Weapon {
+        Weapon(id: weaponId)
+    }
+    
+    var shield: Shield {
+        Shield(id: shiedId)
+    }
+    
+    var armor: Armor {
+        Armor(id: armorId)
     }
 }

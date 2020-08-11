@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		2225ED3724DFD4CF006CC6B1 /* UIAlertActionExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2225ED3624DFD4CF006CC6B1 /* UIAlertActionExt.swift */; };
 		2225ED3924DFDBCD006CC6B1 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2225ED3824DFDBCD006CC6B1 /* UIViewControllerExt.swift */; };
+		22874F7624E2D8CF002A0CBD /* KeyValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22874F7524E2D8CF002A0CBD /* KeyValueView.swift */; };
+		22874F7824E2E5A3002A0CBD /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22874F7724E2E5A3002A0CBD /* Weapon.swift */; };
+		22874F7A24E2EC5D002A0CBD /* Shield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22874F7924E2EC5D002A0CBD /* Shield.swift */; };
+		22874F7C24E2EFC4002A0CBD /* Armor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22874F7B24E2EFC4002A0CBD /* Armor.swift */; };
 		22DBF7FF24E0008000E91940 /* EventTrigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DBF7FE24E0008000E91940 /* EventTrigger.swift */; };
 		22DBF80124E002F000E91940 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DBF80024E002F000E91940 /* Key.swift */; };
 		22DBF80324E017FE00E91940 /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DBF80224E017FE00E91940 /* Party.swift */; };
@@ -41,6 +45,10 @@
 /* Begin PBXFileReference section */
 		2225ED3624DFD4CF006CC6B1 /* UIAlertActionExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertActionExt.swift; sourceTree = "<group>"; };
 		2225ED3824DFDBCD006CC6B1 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
+		22874F7524E2D8CF002A0CBD /* KeyValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueView.swift; sourceTree = "<group>"; };
+		22874F7724E2E5A3002A0CBD /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
+		22874F7924E2EC5D002A0CBD /* Shield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shield.swift; sourceTree = "<group>"; };
+		22874F7B24E2EFC4002A0CBD /* Armor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Armor.swift; sourceTree = "<group>"; };
 		22DBF7FE24E0008000E91940 /* EventTrigger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTrigger.swift; sourceTree = "<group>"; };
 		22DBF80024E002F000E91940 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		22DBF80224E017FE00E91940 /* Party.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
@@ -115,6 +123,9 @@
 			isa = PBXGroup;
 			children = (
 				22DBF80024E002F000E91940 /* Key.swift */,
+				22874F7724E2E5A3002A0CBD /* Weapon.swift */,
+				22874F7924E2EC5D002A0CBD /* Shield.swift */,
+				22874F7B24E2EFC4002A0CBD /* Armor.swift */,
 			);
 			path = GameCore;
 			sourceTree = "<group>";
@@ -123,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				22DBF81624E1777700E91940 /* PcView.swift */,
+				22874F7524E2D8CF002A0CBD /* KeyValueView.swift */,
 			);
 			path = SwiftUIViews;
 			sourceTree = "<group>";
@@ -285,14 +297,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22874F7A24E2EC5D002A0CBD /* Shield.swift in Sources */,
 				22E1E3F224DF10F90064317C /* Village.swift in Sources */,
 				22DBF80C24E104E400E91940 /* PartyTableViewController.swift in Sources */,
 				22DBF80324E017FE00E91940 /* Party.swift in Sources */,
 				2225ED3724DFD4CF006CC6B1 /* UIAlertActionExt.swift in Sources */,
 				2225ED3924DFDBCD006CC6B1 /* UIViewControllerExt.swift in Sources */,
+				22874F7824E2E5A3002A0CBD /* Weapon.swift in Sources */,
 				22E1E3D124DF08160064317C /* MapViewController.swift in Sources */,
+				22874F7624E2D8CF002A0CBD /* KeyValueView.swift in Sources */,
 				22E1E3CD24DF08160064317C /* AppDelegate.swift in Sources */,
 				22DBF80124E002F000E91940 /* Key.swift in Sources */,
+				22874F7C24E2EFC4002A0CBD /* Armor.swift in Sources */,
 				22DBF80524E018B100E91940 /* Pc.swift in Sources */,
 				22DBF7FF24E0008000E91940 /* EventTrigger.swift in Sources */,
 				22DBF81724E1777700E91940 /* PcView.swift in Sources */,
