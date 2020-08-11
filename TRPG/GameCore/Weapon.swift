@@ -21,7 +21,7 @@ class Weapon {
     init(id: Int) {
         switch id {
         case Self.club:
-            name = "bare hand"
+            name = "club"
             minDamage = 1
             maxDamage = 2
             needTwoHand = false

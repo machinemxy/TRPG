@@ -30,6 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Party.instance = party
         } else {
             let liubei = Pc(name: "Liu Bei", str: 12, dex: 12, con: 10, int: 12, wis: 14, cha: 17, lifeDice: 10)
+            liubei.weaponId = Weapon.club
             Party.instance.pcs.append(liubei)
         }
         
