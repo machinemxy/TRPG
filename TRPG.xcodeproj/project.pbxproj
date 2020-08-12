@@ -13,6 +13,8 @@
 		22874F7824E2E5A3002A0CBD /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22874F7724E2E5A3002A0CBD /* Weapon.swift */; };
 		22874F7A24E2EC5D002A0CBD /* Shield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22874F7924E2EC5D002A0CBD /* Shield.swift */; };
 		22874F7C24E2EFC4002A0CBD /* Armor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22874F7B24E2EFC4002A0CBD /* Armor.swift */; };
+		22874F7E24E3B1AC002A0CBD /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22874F7D24E3B1AC002A0CBD /* Item.swift */; };
+		22874F8024E3B4E8002A0CBD /* PcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22874F7F24E3B4E8002A0CBD /* PcTests.swift */; };
 		22DBF7FF24E0008000E91940 /* EventTrigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DBF7FE24E0008000E91940 /* EventTrigger.swift */; };
 		22DBF80124E002F000E91940 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DBF80024E002F000E91940 /* Key.swift */; };
 		22DBF80324E017FE00E91940 /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DBF80224E017FE00E91940 /* Party.swift */; };
@@ -49,6 +51,8 @@
 		22874F7724E2E5A3002A0CBD /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
 		22874F7924E2EC5D002A0CBD /* Shield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shield.swift; sourceTree = "<group>"; };
 		22874F7B24E2EFC4002A0CBD /* Armor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Armor.swift; sourceTree = "<group>"; };
+		22874F7D24E3B1AC002A0CBD /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		22874F7F24E3B4E8002A0CBD /* PcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PcTests.swift; sourceTree = "<group>"; };
 		22DBF7FE24E0008000E91940 /* EventTrigger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTrigger.swift; sourceTree = "<group>"; };
 		22DBF80024E002F000E91940 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		22DBF80224E017FE00E91940 /* Party.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
@@ -123,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				22DBF80024E002F000E91940 /* Key.swift */,
+				22874F7D24E3B1AC002A0CBD /* Item.swift */,
 				22874F7724E2E5A3002A0CBD /* Weapon.swift */,
 				22874F7924E2EC5D002A0CBD /* Shield.swift */,
 				22874F7B24E2EFC4002A0CBD /* Armor.swift */,
@@ -182,6 +187,7 @@
 				22E1E3E324DF08170064317C /* TRPGTests.swift */,
 				22E1E3E524DF08170064317C /* Info.plist */,
 				22DBF80924E042C700E91940 /* PartyTests.swift */,
+				22874F7F24E3B4E8002A0CBD /* PcTests.swift */,
 			);
 			path = TRPGTests;
 			sourceTree = "<group>";
@@ -307,6 +313,7 @@
 				22E1E3D124DF08160064317C /* MapViewController.swift in Sources */,
 				22874F7624E2D8CF002A0CBD /* KeyValueView.swift in Sources */,
 				22E1E3CD24DF08160064317C /* AppDelegate.swift in Sources */,
+				22874F7E24E3B1AC002A0CBD /* Item.swift in Sources */,
 				22DBF80124E002F000E91940 /* Key.swift in Sources */,
 				22874F7C24E2EFC4002A0CBD /* Armor.swift in Sources */,
 				22DBF80524E018B100E91940 /* Pc.swift in Sources */,
@@ -323,6 +330,7 @@
 			files = (
 				22DBF80A24E042C700E91940 /* PartyTests.swift in Sources */,
 				22E1E3E424DF08170064317C /* TRPGTests.swift in Sources */,
+				22874F8024E3B4E8002A0CBD /* PcTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

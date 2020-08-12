@@ -13,7 +13,16 @@ struct PcView: View {
     
     var body: some View {
         Form {
-            Section(header: Text("Abilities")) {
+            Section(header: Text("Basic")) {
+                HStack {
+                    Text("Lv")
+                    Spacer()
+                    Text("\(pc.lv)")
+                    Button("Level up") {
+                        print("level up!")
+                    }.disabled(pc.exp < pc.requiredExp)
+                }
+                KeyValueView(key: "Exp", value: "\(pc.exp)/\(pc.requiredExp)")
                 KeyValueView(key: "HP", value: "\(pc.hp)/\(pc.mhp)")
                 KeyValueView(key: "Strength", value: "\(pc.str)")
                 KeyValueView(key: "Dexterity", value: "\(pc.dex)")
@@ -27,6 +36,12 @@ struct PcView: View {
                 KeyValueView(key: "Weapon", value: "\(pc.weapon.name)")
                 KeyValueView(key: "Shield", value: "\(pc.shield.name)")
                 KeyValueView(key: "Armor", value: "\(pc.armor.name)")
+            }
+            
+            Section(header: Text("Combat")) {
+                KeyValueView(key: "Hit bonus", value: "\(pc.hitBonus)")
+                KeyValueView(key: "Damage", value: "\(pc.minDamage) ~ \(pc.maxDamage)")
+                KeyValueView(key: "Armor class", value: "\(pc.ac)")
             }
         }
         .navigationBarTitle(pc.name)
