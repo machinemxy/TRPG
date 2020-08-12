@@ -92,7 +92,7 @@ class Village: SKScene {
     }
     
     private func youngManDialog() {
-        let ac = UIAlertController(title: "young man:", message: "In the town mayor is recruting military volunteers to fight against Yellow Turbans. I'm goint to apply for it. It's a chance to change my fate.", preferredStyle: .alert)
+        let ac = UIAlertController(title: "young man:", message: "My friends joined Yellow Turbans. I understand what they thinking. If there's no war, the only futher is being a farmer. But if the war began, they have chance to become a general.", preferredStyle: .alert)
         ac.addAction(UIAlertAction.ok)
         MapViewController.presentAlert(ac)
     }
