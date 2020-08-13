@@ -43,9 +43,9 @@ class Village: SKScene {
     }
     
     private func motherDialog() {
-        let ac = UIAlertController(title: "Liu Bei:", message: "Mother, I'm going to town to sell grass shoes.", preferredStyle: .alert)
+        let ac = UIAlertController(title: "Liu Bei:", message: "mother_1".localized(), preferredStyle: .alert)
         ac.addAction(UIAlertAction.next {
-            let ac2 = UIAlertController(title: "mother:", message: "Take care of yourself, my son. Now the Yellow Turbans are everywhere.", preferredStyle: .alert)
+            let ac2 = UIAlertController(title: "mother:", message: "mother_2".localized(), preferredStyle: .alert)
             ac2.addAction(UIAlertAction.ok)
             MapViewController.presentAlert(ac2)
         })
@@ -54,9 +54,9 @@ class Village: SKScene {
     
     private func neighborDialog() {
         if EventTrigger.array[EventTrigger.idNeighborJoinYellowTurbans] == 0 {
-            let ac = UIAlertController(title: "neighbor:", message: "I feel the Han Dynasty is reaching the end. Do you think it's advisable for me to join Yellow Turbans?", preferredStyle: .alert)
+            let ac = UIAlertController(title: "neighbor:", message: "neighbor_1".localized(), preferredStyle: .alert)
             ac.addAction(UIAlertAction.yes {
-                let ac2 = UIAlertController(title: "neighbor:", message: "Really? I'll take your advice and join Yellow Turbans right now.", preferredStyle: .alert)
+                let ac2 = UIAlertController(title: "neighbor:", message: "neighbor_2".localized(), preferredStyle: .alert)
                 ac2.addAction(UIAlertAction(title: "OK", style: .default, handler: { [unowned self] (_) in
                     EventTrigger.array[EventTrigger.idNeighborJoinYellowTurbans] = 1
                     self.neighbor.isHidden = true
@@ -64,7 +64,7 @@ class Village: SKScene {
                 MapViewController.presentAlert(ac2)
             })
             ac.addAction(UIAlertAction.no {
-                let ac2 = UIAlertController(title: "neighbor:", message: "You are right. Yellow Turbans are not as justice as they declared.\n(You gain 100 exp)", preferredStyle: .alert)
+                let ac2 = UIAlertController(title: "neighbor:", message: "neighbor_3".localized(), preferredStyle: .alert)
                 ac2.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
                     EventTrigger.array[EventTrigger.idNeighborJoinYellowTurbans] = 2
                     Party.instance.gainExp(100)
@@ -73,26 +73,26 @@ class Village: SKScene {
             })
             MapViewController.presentAlert(ac)
         } else {
-            let ac = UIAlertController(title: "neighbor:", message: "You are right. Yellow Turbans are not as justice as they declared.", preferredStyle: .alert)
+            let ac = UIAlertController(title: "neighbor:", message: "neighbor_4".localized(), preferredStyle: .alert)
             ac.addAction(UIAlertAction.ok)
             MapViewController.presentAlert(ac)
         }
     }
     
     private func oldManDialog() {
-        let ac = UIAlertController(title: "old man:", message: "The leader of Yellow Turbans is Zhang Jiao. Rumor said that he received magic power from a god.", preferredStyle: .alert)
+        let ac = UIAlertController(title: "old man:", message: "oldMan_1".localized(), preferredStyle: .alert)
         ac.addAction(UIAlertAction.ok)
         MapViewController.presentAlert(ac)
     }
     
     private func midAgedManDialog() {
-        let ac = UIAlertController(title: "mid-aged man:", message: "To protect the kingdom from Yellow Turbans, young emperor asked Dong Zhuo's army for help. But in my opinion, Dong Zhuo is more dangerous than Yellow Turbans.", preferredStyle: .alert)
+        let ac = UIAlertController(title: "mid-aged man:", message: "midAgedMan_1".localized(), preferredStyle: .alert)
         ac.addAction(UIAlertAction.ok)
         MapViewController.presentAlert(ac)
     }
     
     private func youngManDialog() {
-        let ac = UIAlertController(title: "young man:", message: "My friends joined Yellow Turbans. I understand what they thinking. If there's no war, the only futher is being a farmer. But if the war began, they have chance to become a general.", preferredStyle: .alert)
+        let ac = UIAlertController(title: "young man:", message: "youngMan_1".localized(), preferredStyle: .alert)
         ac.addAction(UIAlertAction.ok)
         MapViewController.presentAlert(ac)
     }

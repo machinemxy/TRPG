@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  TRPG
+
+  Created by Ma Xueyuan on 2020/08/14.
+  Copyright © 2020 Ma Xueyuan. All rights reserved.
+*/
+"mother_1" = "Mother, I'm going to town to sell grass shoes.";
+"mother_2" = "Take care of yourself, my son. Now the Yellow Turbans are everywhere.";
+"neighbor_1" = "I feel the Han Dynasty is reaching the end. Do you think it's advisable for me to join Yellow Turbans?";
+"neighbor_2" = "Really? I'll take your advice and join Yellow Turbans right now.";
+"neighbor_3" = "You are right. Yellow Turbans are not as justice as they declared.\n(You gain 100 exp)";
+"neighbor_4" = "You are right. Yellow Turbans are not as justice as they declared.";
+"oldMan_1" = "The leader of Yellow Turbans is Zhang Jiao. Rumor said that he received magic power from a god.";
+"midAgedMan_1" = "To protect the kingdom from Yellow Turbans, young emperor asked Dong Zhuo's army for help. But in my opinion, Dong Zhuo is more dangerous than Yellow Turbans.";
+"youngMan_1" = "My friends joined Yellow Turbans. I understand what they thinking. If there's no war, the only futher is being a farmer. But if the war began, they have chance to become a general.";
