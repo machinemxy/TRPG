@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Weapon: Item {
+struct Weapon: Item {
     static let bareHand = 0
     static let club = 1
     

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Shield: Item {
+struct Shield: Item {
     static let none = 100
     static let shield = 101
     

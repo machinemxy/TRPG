@@ -55,22 +55,31 @@ class Village: SKScene {
     private func neighborDialog() {
         if EventTrigger.array[EventTrigger.idNeighborJoinYellowTurbans] == 0 {
             let ac = UIAlertController(title: "neighbor:", message: "neighbor_1".localized(), preferredStyle: .alert)
-            ac.addAction(UIAlertAction.yes {
+            ac.addAction(UIAlertAction(title: "Let him go", style: .default, handler: { (_) in
                 let ac2 = UIAlertController(title: "neighbor:", message: "neighbor_2".localized(), preferredStyle: .alert)
                 ac2.addAction(UIAlertAction(title: "OK", style: .default, handler: { [unowned self] (_) in
                     EventTrigger.array[EventTrigger.idNeighborJoinYellowTurbans] = 1
                     self.neighbor.isHidden = true
                 }))
                 MapViewController.presentAlert(ac2)
-            })
-            ac.addAction(UIAlertAction.no {
-                let ac2 = UIAlertController(title: "neighbor:", message: "neighbor_3".localized(), preferredStyle: .alert)
-                ac2.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
-                    EventTrigger.array[EventTrigger.idNeighborJoinYellowTurbans] = 2
-                    Party.instance.gainExp(100)
-                }))
-                MapViewController.presentAlert(ac2)
-            })
+            }))
+            ac.addAction(UIAlertAction(title: "Persuade him not go [difficulty 10]", style: .default, handler: { [unowned self] (_) in
+                if self.persuade(target: 10) {
+                    let ac2 = UIAlertController(title: "neighbor:", message: "neighbor_3".localized(), preferredStyle: .alert)
+                    ac2.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+                        EventTrigger.array[EventTrigger.idNeighborJoinYellowTurbans] = 2
+                        Party.instance.gainExp(100)
+                    }))
+                    MapViewController.presentAlert(ac2)
+                } else {
+                    let ac2 = UIAlertController(title: "neighbor:", message: "neighbor_5".localized(), preferredStyle: .alert)
+                    ac2.addAction(UIAlertAction(title: "OK", style: .default, handler: { [unowned self] (_) in
+                        EventTrigger.array[EventTrigger.idNeighborJoinYellowTurbans] = 1
+                        self.neighbor.isHidden = true
+                    }))
+                    MapViewController.presentAlert(ac2)
+                }
+            }))
             MapViewController.presentAlert(ac)
         } else {
             let ac = UIAlertController(title: "neighbor:", message: "neighbor_4".localized(), preferredStyle: .alert)
@@ -102,5 +111,11 @@ class Village: SKScene {
         let ac = UIAlertController(title: "Your characters are fully recovered.", message: nil, preferredStyle: .alert)
         ac.addAction(UIAlertAction.ok)
         MapViewController.presentAlert(ac)
+    }
+    
+    private func persuade(target: Int) -> Bool {
+        let liubei = Party.instance.pcs[0]
+        let bonus = liubei.cha.modifier + liubei.proficiency
+        return Int.random(in: 1...20) + bonus >= target
     }
 }

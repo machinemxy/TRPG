@@ -24,6 +24,7 @@ class Pc: Codable {
         pc.mhp = pc.lifeDice + pc.con.modifier
         pc.hp = pc.mhp
         pc.weaponId = Weapon.club
+        pc.skills.append(0)
         return pc
     }
     
@@ -42,6 +43,7 @@ class Pc: Codable {
     var weaponId = Weapon.bareHand
     var shiedId = Shield.none
     var armorId = Armor.none
+    var skills = [Int]()
     
     var weapon: Weapon {
         Weapon(id: weaponId)

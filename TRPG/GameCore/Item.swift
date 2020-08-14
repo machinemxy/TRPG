@@ -9,7 +9,7 @@
 import Foundation
 
 protocol Item {
-    var id: Int { get set }
-    var name: String { get set }
+    var id: Int { get }
+    var name: String { get }
 }
 

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Armor: Item {
+struct Armor: Item {
     static let none = 200
     static let letherArmor = 201
     

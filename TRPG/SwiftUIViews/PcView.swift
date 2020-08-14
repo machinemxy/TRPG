@@ -43,6 +43,15 @@ struct PcView: View {
                 KeyValueView(key: "Damage", value: "\(pc.minDamage) ~ \(pc.maxDamage)")
                 KeyValueView(key: "Armor class", value: "\(pc.ac)")
             }
+            
+            Section(header: Text("Skills")) {
+                ForEach(pc.skills, id: \.self) { skillId in
+                    VStack(alignment: .leading) {
+                        Text("\(Skill(id: skillId).name)")
+                        Text("\(Skill(id: skillId).description)").font(.footnote)
+                    }
+                }
+            }
         }
         .navigationBarTitle(pc.name)
     }
