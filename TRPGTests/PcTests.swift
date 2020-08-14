@@ -20,7 +20,7 @@ class PcTests: XCTestCase {
     }
 
     func testRequiredExp() throws {
-        let liubei = Pc(name: "Liu Bei", str: 12, dex: 12, con: 10, int: 12, wis: 14, cha: 17, lifeDice: 10)
+        let liubei = Pc.initLiuBei()
         XCTAssert(liubei.requiredExp == 300)
         liubei.lv = 20
         XCTAssert(liubei.requiredExp == Int.max)

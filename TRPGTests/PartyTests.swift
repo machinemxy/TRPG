@@ -21,12 +21,10 @@ class PartyTests: XCTestCase {
 
     func testGainExp() throws {
         let party = Party()
-        let liubei = Pc(name: "Liu Bei", str: 12, dex: 12, con: 10, int: 12, wis: 14, cha: 17, lifeDice: 10)
-        let guanyu = Pc(name: "Guan Yu", str: 12, dex: 12, con: 10, int: 12, wis: 14, cha: 17, lifeDice: 8)
+        let liubei = Pc.initLiuBei()
         party.pcs.append(liubei)
-        party.pcs.append(guanyu)
         party.gainExp(100)
         let liubeiExp = party.pcs[0].exp
-        XCTAssert(liubeiExp == 50)
+        XCTAssert(liubeiExp == 100)
     }
 }

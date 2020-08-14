@@ -9,34 +9,39 @@
 import Foundation
 
 class Pc: Codable {
-    var name: String
-    var str: Int
-    var dex: Int
-    var con: Int
-    var int: Int
-    var wis: Int
-    var cha: Int
-    var lifeDice: Int
-    var mhp: Int
-    var hp: Int
+    static let liuBei = "Liu Bei"
+    
+    static func initLiuBei() -> Pc {
+        let pc = Pc()
+        pc.name = Self.liuBei
+        pc.str = 12
+        pc.dex = 12
+        pc.con = 10
+        pc.int = 12
+        pc.wis = 14
+        pc.cha = 17
+        pc.lifeDice = 10
+        pc.mhp = pc.lifeDice + pc.con.modifier
+        pc.hp = pc.mhp
+        pc.weaponId = Weapon.club
+        return pc
+    }
+    
+    var name = ""
+    var str = 1
+    var dex = 1
+    var con = 1
+    var int = 1
+    var wis = 1
+    var cha = 1
+    var lifeDice = 4
+    var mhp = 4
+    var hp = 4
     var lv = 1
     var exp = 0
     var weaponId = Weapon.bareHand
     var shiedId = Shield.none
     var armorId = Armor.none
-    
-    init(name: String, str: Int, dex:Int, con: Int, int: Int, wis: Int, cha:Int, lifeDice: Int) {
-        self.name = name
-        self.str = str
-        self.dex = dex
-        self.con = con
-        self.int = int
-        self.wis = wis
-        self.cha = cha
-        self.lifeDice = lifeDice
-        mhp = lifeDice + con.modifier
-        hp = mhp
-    }
     
     var weapon: Weapon {
         Weapon(id: weaponId)

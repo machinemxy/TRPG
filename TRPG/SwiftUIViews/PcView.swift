@@ -50,8 +50,7 @@ struct PcView: View {
 
 struct PcView_Previews: PreviewProvider {
     static var previews: some View {
-        let pc = Pc(name: "Liu Bei", str: 12, dex: 12, con: 10, int: 12, wis: 14, cha: 17, lifeDice: 10)
-        pc.weaponId = Weapon.club
+        let pc = Pc.initLiuBei()
         return PcView(pc: pc)
     }
 }
