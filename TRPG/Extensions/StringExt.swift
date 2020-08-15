@@ -12,4 +12,8 @@ extension String {
     func localized() -> String {
         return NSLocalizedString(self, comment: "")
     }
+    
+    init(numerator: Int, denominator: Int) {
+        self.init("\(numerator)/\(denominator)")
+    }
 }

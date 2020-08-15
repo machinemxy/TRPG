@@ -18,6 +18,13 @@
 		22874F8924E59276002A0CBD /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22874F8824E59276002A0CBD /* StringExt.swift */; };
 		22874F8C24E59396002A0CBD /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 22874F8E24E59396002A0CBD /* Localizable.strings */; };
 		22874F9024E6EEBA002A0CBD /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22874F8F24E6EEBA002A0CBD /* Skill.swift */; };
+		22874F9324E7B338002A0CBD /* BattlerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22874F9224E7B338002A0CBD /* BattlerView.xib */; };
+		22874F9524E7B7DE002A0CBD /* BattlerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22874F9424E7B7DE002A0CBD /* BattlerView.swift */; };
+		22874F9724E7B9B1002A0CBD /* SideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22874F9624E7B9B1002A0CBD /* SideView.xib */; };
+		22874F9924E7DC6D002A0CBD /* SideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22874F9824E7DC6D002A0CBD /* SideView.swift */; };
+		22874F9B24E7EE09002A0CBD /* Battler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22874F9A24E7EE09002A0CBD /* Battler.swift */; };
+		22874F9D24E7F2D2002A0CBD /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22874F9C24E7F2D2002A0CBD /* Enemy.swift */; };
+		22874F9F24E7FAE1002A0CBD /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22874F9E24E7FAE1002A0CBD /* BattleViewController.swift */; };
 		22DBF7FF24E0008000E91940 /* EventTrigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DBF7FE24E0008000E91940 /* EventTrigger.swift */; };
 		22DBF80124E002F000E91940 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DBF80024E002F000E91940 /* Key.swift */; };
 		22DBF80324E017FE00E91940 /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DBF80224E017FE00E91940 /* Party.swift */; };
@@ -32,7 +39,6 @@
 		22E1E3D424DF08160064317C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22E1E3D224DF08160064317C /* Main.storyboard */; };
 		22E1E3D624DF08170064317C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22E1E3D524DF08170064317C /* Assets.xcassets */; };
 		22E1E3D924DF08170064317C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22E1E3D724DF08170064317C /* LaunchScreen.storyboard */; };
-		22E1E3E424DF08170064317C /* TRPGTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E1E3E324DF08170064317C /* TRPGTests.swift */; };
 		22E1E3F024DF0CE30064317C /* Village.sks in Resources */ = {isa = PBXBuildFile; fileRef = 22E1E3EF24DF0CE30064317C /* Village.sks */; };
 		22E1E3F224DF10F90064317C /* Village.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E1E3F124DF10F90064317C /* Village.swift */; };
 /* End PBXBuildFile section */
@@ -59,6 +65,13 @@
 		22874F8824E59276002A0CBD /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
 		22874F8D24E59396002A0CBD /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		22874F8F24E6EEBA002A0CBD /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
+		22874F9224E7B338002A0CBD /* BattlerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BattlerView.xib; sourceTree = "<group>"; };
+		22874F9424E7B7DE002A0CBD /* BattlerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattlerView.swift; sourceTree = "<group>"; };
+		22874F9624E7B9B1002A0CBD /* SideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SideView.xib; sourceTree = "<group>"; };
+		22874F9824E7DC6D002A0CBD /* SideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideView.swift; sourceTree = "<group>"; };
+		22874F9A24E7EE09002A0CBD /* Battler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battler.swift; sourceTree = "<group>"; };
+		22874F9C24E7F2D2002A0CBD /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
+		22874F9E24E7FAE1002A0CBD /* BattleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
 		22DBF7FE24E0008000E91940 /* EventTrigger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTrigger.swift; sourceTree = "<group>"; };
 		22DBF80024E002F000E91940 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		22DBF80224E017FE00E91940 /* Party.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
@@ -76,7 +89,6 @@
 		22E1E3D824DF08170064317C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22E1E3DA24DF08170064317C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22E1E3DF24DF08170064317C /* TRPGTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TRPGTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		22E1E3E324DF08170064317C /* TRPGTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TRPGTests.swift; sourceTree = "<group>"; };
 		22E1E3E524DF08170064317C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		22E1E3EF24DF0CE30064317C /* Village.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Village.sks; sourceTree = "<group>"; };
 		22E1E3F124DF10F90064317C /* Village.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Village.swift; sourceTree = "<group>"; };
@@ -116,8 +128,20 @@
 			children = (
 				22E1E3D024DF08160064317C /* MapViewController.swift */,
 				22DBF80B24E104E400E91940 /* PartyTableViewController.swift */,
+				22874F9E24E7FAE1002A0CBD /* BattleViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		22874F9124E7B317002A0CBD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				22874F9224E7B338002A0CBD /* BattlerView.xib */,
+				22874F9424E7B7DE002A0CBD /* BattlerView.swift */,
+				22874F9624E7B9B1002A0CBD /* SideView.xib */,
+				22874F9824E7DC6D002A0CBD /* SideView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		22DBF7FD24E0000000E91940 /* GameData */ = {
@@ -139,6 +163,8 @@
 				22874F7924E2EC5D002A0CBD /* Shield.swift */,
 				22874F7B24E2EFC4002A0CBD /* Armor.swift */,
 				22874F8F24E6EEBA002A0CBD /* Skill.swift */,
+				22874F9A24E7EE09002A0CBD /* Battler.swift */,
+				22874F9C24E7F2D2002A0CBD /* Enemy.swift */,
 			);
 			path = GameCore;
 			sourceTree = "<group>";
@@ -176,6 +202,7 @@
 				22DBF80624E03DC200E91940 /* GameCore */,
 				22DBF7FD24E0000000E91940 /* GameData */,
 				2225ED3A24DFF221006CC6B1 /* ViewControllers */,
+				22874F9124E7B317002A0CBD /* View */,
 				22DBF81324E1774800E91940 /* SwiftUIViews */,
 				2225ED3524DFD4B2006CC6B1 /* Extensions */,
 				22E1E3EE24DF0CB10064317C /* Scenes */,
@@ -193,7 +220,6 @@
 		22E1E3E224DF08170064317C /* TRPGTests */ = {
 			isa = PBXGroup;
 			children = (
-				22E1E3E324DF08170064317C /* TRPGTests.swift */,
 				22E1E3E524DF08170064317C /* Info.plist */,
 				22DBF80924E042C700E91940 /* PartyTests.swift */,
 				22874F7F24E3B4E8002A0CBD /* PcTests.swift */,
@@ -292,6 +318,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				22874F8C24E59396002A0CBD /* Localizable.strings in Resources */,
+				22874F9324E7B338002A0CBD /* BattlerView.xib in Resources */,
+				22874F9724E7B9B1002A0CBD /* SideView.xib in Resources */,
 				22E1E3D924DF08170064317C /* LaunchScreen.storyboard in Resources */,
 				22E1E3D624DF08170064317C /* Assets.xcassets in Resources */,
 				22E1E3F024DF0CE30064317C /* Village.sks in Resources */,
@@ -313,23 +341,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22874F9524E7B7DE002A0CBD /* BattlerView.swift in Sources */,
 				22874F7A24E2EC5D002A0CBD /* Shield.swift in Sources */,
 				22874F8924E59276002A0CBD /* StringExt.swift in Sources */,
 				22E1E3F224DF10F90064317C /* Village.swift in Sources */,
+				22874F9B24E7EE09002A0CBD /* Battler.swift in Sources */,
 				22DBF80C24E104E400E91940 /* PartyTableViewController.swift in Sources */,
 				22DBF80324E017FE00E91940 /* Party.swift in Sources */,
 				2225ED3724DFD4CF006CC6B1 /* UIAlertActionExt.swift in Sources */,
+				22874F9924E7DC6D002A0CBD /* SideView.swift in Sources */,
 				2225ED3924DFDBCD006CC6B1 /* UIViewControllerExt.swift in Sources */,
 				22874F7824E2E5A3002A0CBD /* Weapon.swift in Sources */,
 				22E1E3D124DF08160064317C /* MapViewController.swift in Sources */,
 				22874F7624E2D8CF002A0CBD /* KeyValueView.swift in Sources */,
 				22E1E3CD24DF08160064317C /* AppDelegate.swift in Sources */,
+				22874F9F24E7FAE1002A0CBD /* BattleViewController.swift in Sources */,
 				22874F7E24E3B1AC002A0CBD /* Item.swift in Sources */,
 				22DBF80124E002F000E91940 /* Key.swift in Sources */,
 				22874F7C24E2EFC4002A0CBD /* Armor.swift in Sources */,
 				22DBF80524E018B100E91940 /* Pc.swift in Sources */,
 				22DBF7FF24E0008000E91940 /* EventTrigger.swift in Sources */,
 				22DBF81724E1777700E91940 /* PcView.swift in Sources */,
+				22874F9D24E7F2D2002A0CBD /* Enemy.swift in Sources */,
 				22874F9024E6EEBA002A0CBD /* Skill.swift in Sources */,
 				22E1E3CF24DF08160064317C /* SceneDelegate.swift in Sources */,
 				22DBF80E24E10DE100E91940 /* IntExt.swift in Sources */,
@@ -341,7 +374,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				22DBF80A24E042C700E91940 /* PartyTests.swift in Sources */,
-				22E1E3E424DF08170064317C /* TRPGTests.swift in Sources */,
 				22874F8024E3B4E8002A0CBD /* PcTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

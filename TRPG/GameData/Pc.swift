@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Pc: Codable {
+class Pc: Codable, Battler {
     static let liuBei = "Liu Bei"
     
     static func initLiuBei() -> Pc {

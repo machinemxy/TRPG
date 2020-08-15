@@ -12,13 +12,10 @@ struct Shield: Item {
     static let none = 100
     static let shield = 101
     
-    var id: Int
     var name: String
     var ac: Int
     
     init(id: Int) {
-        self.id = id
-        
         switch id {
         case Self.shield:
             name = "shield"

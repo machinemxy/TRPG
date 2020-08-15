@@ -38,6 +38,8 @@ class Village: SKScene {
                 youngManDialog()
             } else if node.name == "rest" {
                 rest()
+            } else if node.name == "rat" {
+                ratBattle()
             }
         }
     }
@@ -104,6 +106,13 @@ class Village: SKScene {
         let ac = UIAlertController(title: "young man:", message: "youngMan_1".localized(), preferredStyle: .alert)
         ac.addAction(UIAlertAction.ok)
         MapViewController.presentAlert(ac)
+    }
+    
+    private func ratBattle() {
+        MapViewController.instance?.presentWithFullScreen(storyboardId: "battleNC") { (nc: UINavigationController) in
+            let battleVC = nc.topViewController as! BattleViewController
+            battleVC.enemies = [Enemy(id: Enemy.rat)]
+        }
     }
     
     private func rest() {

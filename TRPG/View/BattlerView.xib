@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BattlerView" customModule="TRPG" customModuleProvider="target">
+            <connections>
+                <outlet property="barHp" destination="zAX-dc-JNz" id="Uz9-Re-ohK"/>
+                <outlet property="btnAction" destination="lok-Ee-a7e" id="p0m-St-KEB"/>
+                <outlet property="lblHp" destination="Onw-py-hg1" id="G12-bg-OX6"/>
+                <outlet property="lblName" destination="bex-7B-jww" id="ZNe-12-r92"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xkV-au-n3z">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bex-7B-jww" userLabel="Name">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="298.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Iq-zF-8RL">
+                            <rect key="frame" x="0.0" y="298.5" width="414" height="299"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Onw-py-hg1">
+                                    <rect key="frame" x="197" y="139.5" width="20.5" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="zAX-dc-JNz">
+                                    <rect key="frame" x="8" y="0.0" width="398" height="2"/>
+                                </progressView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstItem="zAX-dc-JNz" firstAttribute="leading" secondItem="3Iq-zF-8RL" secondAttribute="leading" constant="8" id="MFB-hT-ELU"/>
+                                <constraint firstItem="Onw-py-hg1" firstAttribute="centerX" secondItem="3Iq-zF-8RL" secondAttribute="centerX" id="Vw4-No-d25"/>
+                                <constraint firstItem="zAX-dc-JNz" firstAttribute="top" secondItem="3Iq-zF-8RL" secondAttribute="top" id="Xde-JX-WQ6"/>
+                                <constraint firstItem="Onw-py-hg1" firstAttribute="centerY" secondItem="3Iq-zF-8RL" secondAttribute="centerY" id="hyO-gB-bpS"/>
+                                <constraint firstAttribute="trailing" secondItem="zAX-dc-JNz" secondAttribute="trailing" constant="8" id="toQ-lp-Jdq"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lok-Ee-a7e">
+                            <rect key="frame" x="0.0" y="597.5" width="414" height="298.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <state key="normal" title="Attack"/>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="xkV-au-n3z" secondAttribute="bottom" id="aNd-pk-ZLz"/>
+                <constraint firstItem="xkV-au-n3z" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="iVE-aP-wxg"/>
+                <constraint firstItem="xkV-au-n3z" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="yE7-nR-5vJ"/>
+                <constraint firstAttribute="trailing" secondItem="xkV-au-n3z" secondAttribute="trailing" id="yQq-B6-VA6"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="131.8840579710145" y="144.64285714285714"/>
+        </view>
+    </objects>
+</document>

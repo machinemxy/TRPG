@@ -22,8 +22,8 @@ struct PcView: View {
                         print("level up!")
                     }.disabled(pc.exp < pc.requiredExp)
                 }
-                KeyValueView(key: "Exp", value: "\(pc.exp)/\(pc.requiredExp)")
-                KeyValueView(key: "HP", value: "\(pc.hp)/\(pc.mhp)")
+                KeyValueView(key: "Exp", value: String(numerator: pc.exp, denominator: pc.requiredExp))
+                KeyValueView(key: "HP", value: String(numerator: pc.hp, denominator: pc.mhp))
                 KeyValueView(key: "Strength", value: "\(pc.str)")
                 KeyValueView(key: "Dexterity", value: "\(pc.dex)")
                 KeyValueView(key: "Constitution", value: "\(pc.con)")

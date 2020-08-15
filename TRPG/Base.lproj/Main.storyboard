@@ -97,6 +97,66 @@
             </objects>
             <point key="canvasLocation" x="1617" y="-21"/>
         </scene>
+        <!--Battle-->
+        <scene sceneID="TJ8-ue-3Bg">
+            <objects>
+                <viewController id="7FQ-FR-wha" customClass="BattleViewController" customModule="TRPG" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="emf-eR-sD4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lN5-Mm-Ehq">
+                                <rect key="frame" x="125.66666666666669" y="391" width="124" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Perform Actions"/>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dyg-4v-XBL">
+                                <rect key="frame" x="0.0" y="88" width="375" height="295"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Yy-Je-phP" customClass="SideView" customModule="TRPG" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="295"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RvJ-QT-Qnd" customClass="SideView" customModule="TRPG" customModuleProvider="target">
+                                        <rect key="frame" x="187.66666666666663" y="0.0" width="187.33333333333337" height="295"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80I-Sh-4cn">
+                                <rect key="frame" x="16" y="429" width="343" height="349"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="dyg-4v-XBL" firstAttribute="leading" secondItem="NM0-Mb-1p4" secondAttribute="leading" id="9A1-oL-WpH"/>
+                            <constraint firstItem="dyg-4v-XBL" firstAttribute="top" secondItem="NM0-Mb-1p4" secondAttribute="top" id="DBb-Ww-tsz"/>
+                            <constraint firstItem="80I-Sh-4cn" firstAttribute="top" secondItem="lN5-Mm-Ehq" secondAttribute="bottom" constant="8" id="NQZ-Pf-RTz"/>
+                            <constraint firstItem="dyg-4v-XBL" firstAttribute="trailing" secondItem="NM0-Mb-1p4" secondAttribute="trailing" id="PnR-DR-cTH"/>
+                            <constraint firstItem="lN5-Mm-Ehq" firstAttribute="top" secondItem="dyg-4v-XBL" secondAttribute="bottom" constant="8" id="cME-Rd-Cya"/>
+                            <constraint firstItem="80I-Sh-4cn" firstAttribute="bottom" secondItem="NM0-Mb-1p4" secondAttribute="bottom" id="mYS-NA-KrT"/>
+                            <constraint firstItem="80I-Sh-4cn" firstAttribute="leading" secondItem="NM0-Mb-1p4" secondAttribute="leading" constant="16" id="pRT-w7-9lG"/>
+                            <constraint firstItem="lN5-Mm-Ehq" firstAttribute="centerY" secondItem="emf-eR-sD4" secondAttribute="centerY" id="vUU-PE-JzQ"/>
+                            <constraint firstItem="lN5-Mm-Ehq" firstAttribute="centerX" secondItem="emf-eR-sD4" secondAttribute="centerX" id="yji-bY-x9G"/>
+                            <constraint firstItem="NM0-Mb-1p4" firstAttribute="trailing" secondItem="80I-Sh-4cn" secondAttribute="trailing" constant="16" id="zgq-kW-f2k"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NM0-Mb-1p4"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Battle" id="nE3-NJ-hkg"/>
+                    <connections>
+                        <outlet property="txtLog" destination="80I-Sh-4cn" id="wm4-hE-Vdm"/>
+                        <outletCollection property="sideViews" destination="6Yy-Je-phP" collectionClass="NSMutableArray" id="LIq-K0-rGi"/>
+                        <outletCollection property="sideViews" destination="RvJ-QT-Qnd" collectionClass="NSMutableArray" id="2Ti-Rb-QSb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CRd-qy-dUO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1616.8" y="705.66502463054189"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Chn-8s-bg2">
             <objects>
@@ -115,6 +175,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3dk-q6-9HS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="798" y="-21"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="KGO-e3-q23">
+            <objects>
+                <navigationController storyboardIdentifier="battleNC" automaticallyAdjustsScrollViewInsets="NO" id="g1b-Ks-LoY" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xsO-S5-TuA">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7FQ-FR-wha" kind="relationship" relationship="rootViewController" id="8CH-8h-edx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zqW-yB-qDq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="798" y="706"/>
         </scene>
     </scenes>
 </document>
