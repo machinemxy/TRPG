@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		2225ED3724DFD4CF006CC6B1 /* UIAlertActionExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2225ED3624DFD4CF006CC6B1 /* UIAlertActionExt.swift */; };
 		2225ED3924DFDBCD006CC6B1 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2225ED3824DFDBCD006CC6B1 /* UIViewControllerExt.swift */; };
+		22561E1724F16CE600A0751D /* BattleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22561E1624F16CE600A0751D /* BattleTests.swift */; };
 		22874F7624E2D8CF002A0CBD /* KeyValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22874F7524E2D8CF002A0CBD /* KeyValueView.swift */; };
 		22874F7824E2E5A3002A0CBD /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22874F7724E2E5A3002A0CBD /* Weapon.swift */; };
 		22874F7A24E2EC5D002A0CBD /* Shield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22874F7924E2EC5D002A0CBD /* Shield.swift */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		2225ED3624DFD4CF006CC6B1 /* UIAlertActionExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertActionExt.swift; sourceTree = "<group>"; };
 		2225ED3824DFDBCD006CC6B1 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
+		22561E1624F16CE600A0751D /* BattleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleTests.swift; sourceTree = "<group>"; };
 		22874F7524E2D8CF002A0CBD /* KeyValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueView.swift; sourceTree = "<group>"; };
 		22874F7724E2E5A3002A0CBD /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
 		22874F7924E2EC5D002A0CBD /* Shield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shield.swift; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				22E1E3E524DF08170064317C /* Info.plist */,
 				22DBF80924E042C700E91940 /* PartyTests.swift */,
 				22874F7F24E3B4E8002A0CBD /* PcTests.swift */,
+				22561E1624F16CE600A0751D /* BattleTests.swift */,
 			);
 			path = TRPGTests;
 			sourceTree = "<group>";
@@ -375,6 +378,7 @@
 			files = (
 				22DBF80A24E042C700E91940 /* PartyTests.swift in Sources */,
 				22874F8024E3B4E8002A0CBD /* PcTests.swift in Sources */,
+				22561E1724F16CE600A0751D /* BattleTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

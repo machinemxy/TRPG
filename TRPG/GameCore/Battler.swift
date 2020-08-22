@@ -10,6 +10,12 @@ import Foundation
 
 protocol Battler {
     var name: String { get }
+    var str: Int { get }
+    var dex: Int { get }
+    var con: Int { get }
+    var int: Int { get }
+    var wis: Int { get }
+    var cha: Int { get }
     var mhp: Int { get }
     var hp: Int { get }
     var hitBonus: Int { get }

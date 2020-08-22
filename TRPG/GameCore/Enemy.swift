@@ -12,6 +12,12 @@ class Enemy: Battler {
     static let rat = 0
     
     var name: String
+    var str: Int
+    var dex: Int
+    var con: Int
+    var int: Int
+    var wis: Int
+    var cha: Int
     var mhp: Int
     var hp: Int
     var hitBonus: Int
@@ -25,6 +31,12 @@ class Enemy: Battler {
         switch id {
         case Self.rat:
             name = "rat"
+            str = 2
+            dex = 11
+            con = 9
+            int = 2
+            wis = 10
+            cha = 4
             mhp = 1
             hp = 1
             hitBonus = 0
@@ -36,6 +48,12 @@ class Enemy: Battler {
         default:
             // dummy
             name = "dummy"
+            str = 1
+            dex = 1
+            con = 1
+            int = 1
+            wis = 1
+            cha = 1
             mhp = 1
             hp = 1
             hitBonus = 0

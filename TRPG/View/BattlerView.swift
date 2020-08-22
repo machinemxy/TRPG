@@ -41,7 +41,7 @@ class BattlerView: UIView {
         return nib.instantiate(withOwner: self, options: nil).first as? UIView
     }
     
-    func setBattler(_ battler: Battler?) {
+    func setBattler(_ battler: Battler?, isPc: Bool) {
         if let battler = battler {
             lblName.text = battler.name
             barHp.setProgress(Float(battler.hp) / Float(battler.mhp), animated: false)
@@ -50,6 +50,9 @@ class BattlerView: UIView {
             lblName.text = ""
             barHp.setProgress(0, animated: false)
             lblHp.text = ""
+        }
+        
+        if !isPc {
             btnAction.setTitle("-", for: .normal)
             btnAction.isEnabled = false
         }

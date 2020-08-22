@@ -13,23 +13,24 @@ class BattleViewController: UIViewController {
     @IBOutlet weak var txtLog: UITextView!
     
     var enemies: [Enemy]!
+    var isPcMoveFirst: Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        sideViews[0].setBattlers(Party.instance.pcs)
-        sideViews[1].setBattlers(enemies)
+        // set initial ui
+        sideViews[0].setBattlers(Party.instance.pcs, isPc: true)
+        sideViews[1].setBattlers(enemies, isPc: false)
+        
+        decideMoveOrder()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func performActions(_ sender: Any) {
     }
-    */
-
+    
+    private func decideMoveOrder() {
+        let pcDexBonus = Party.instance.pcs.reduce(0) { $0 + $1.dex.modifier }
+        let enemyDexBonus = enemies.reduce(0) { $0 + $1.dex.modifier }
+        isPcMoveFirst = pcDexBonus + Int.random(in: 1...20) >= enemyDexBonus + Int.random(in: 1...20)
+    }
 }
