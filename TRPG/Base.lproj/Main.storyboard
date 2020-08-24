@@ -16,7 +16,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pti-DD-yQe">
-                                <rect key="frame" x="8" y="740" width="37" height="30"/>
+                                <rect key="frame" x="8" y="737" width="41" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Party"/>
                                 <connections>
                                     <segue destination="8gg-1e-xgO" kind="show" id="0UV-R1-NoR"/>
@@ -151,12 +152,15 @@
                     </view>
                     <navigationItem key="navigationItem" title="Battle" id="nE3-NJ-hkg"/>
                     <connections>
+                        <outlet property="btnPerformActions" destination="lN5-Mm-Ehq" id="uEJ-oa-bBH"/>
                         <outlet property="txtLog" destination="80I-Sh-4cn" id="wm4-hE-Vdm"/>
                         <outletCollection property="sideViews" destination="6Yy-Je-phP" collectionClass="NSMutableArray" id="LIq-K0-rGi"/>
                         <outletCollection property="sideViews" destination="RvJ-QT-Qnd" collectionClass="NSMutableArray" id="2Ti-Rb-QSb"/>
+                        <segue destination="H3L-GV-jh4" kind="unwind" identifier="unwindToMap" unwindAction="unwindToMapWithSegue:" id="mye-iC-62G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CRd-qy-dUO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="H3L-GV-jh4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1616.8" y="705.66502463054189"/>
         </scene>

@@ -14,7 +14,9 @@ class BattlerView: UIView {
     @IBOutlet weak var lblHp: UILabel!
     @IBOutlet weak var btnAction: UIButton!
     
-    var battler: Battler!
+    var battler: Battler?
+    var target: Battler?
+    var action = "attack"
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -41,8 +43,9 @@ class BattlerView: UIView {
         return nib.instantiate(withOwner: self, options: nil).first as? UIView
     }
     
-    func setBattler(_ battler: Battler?, isPc: Bool) {
+    func setBattler(_ battler: Battler?, isPc: Bool, target: Battler? = nil) {
         if let battler = battler {
+            self.battler = battler
             lblName.text = battler.name
             barHp.setProgress(Float(battler.hp) / Float(battler.mhp), animated: false)
             lblHp.text = String(numerator: battler.hp, denominator: battler.mhp)
@@ -53,8 +56,21 @@ class BattlerView: UIView {
         }
         
         if !isPc {
+            lblName.textColor = .systemRed
             btnAction.setTitle("-", for: .normal)
             btnAction.isEnabled = false
+        } else {
+            if let wrappedTarget = target {
+                self.target = wrappedTarget
+                btnAction.setTitle(action + " " + wrappedTarget.name, for: .normal)
+            }
+        }
+    }
+    
+    func updateHP() {
+        if let battler = battler {
+            barHp.setProgress(Float(battler.hp) / Float(battler.mhp), animated: true)
+            lblHp.text = String(numerator: battler.hp, denominator: battler.mhp)
         }
     }
 }

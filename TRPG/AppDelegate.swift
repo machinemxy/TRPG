@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let party = try? decoder.decode(Party.self, from: partyData) {
             Party.instance = party
         } else {
-            let liubei = Pc.initLiuBei()
+            let liubei = Pc(id: Pc.liuBei)
             Party.instance.pcs.append(liubei)
         }
         

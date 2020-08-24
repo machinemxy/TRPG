@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Battler {
+protocol Battler: class {
     var name: String { get }
     var str: Int { get }
     var dex: Int { get }
@@ -17,7 +17,7 @@ protocol Battler {
     var wis: Int { get }
     var cha: Int { get }
     var mhp: Int { get }
-    var hp: Int { get }
+    var hp: Int { get set }
     var hitBonus: Int { get }
     var minDamage: Int { get }
     var maxDamage: Int { get }

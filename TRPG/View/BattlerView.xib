@@ -54,7 +54,7 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lok-Ee-a7e">
                             <rect key="frame" x="0.0" y="597.5" width="414" height="298.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <state key="normal" title="Attack"/>
+                            <state key="normal" title="action"/>
                         </button>
                     </subviews>
                 </stackView>

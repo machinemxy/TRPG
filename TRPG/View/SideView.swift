@@ -35,12 +35,13 @@ class SideView: UIView {
         return nib.instantiate(withOwner: self, options: nil).first as? UIView
     }
     
-    func setBattlers(_ battlers: [Battler], isPc: Bool) {
+    func setBattlers(_ battlers: [Battler], isPc: Bool, target: Battler? = nil) {
+        self.battlers = battlers
         for i in 0...2 {
             if i >= battlers.count {
                 battlerViews[i].setBattler(nil, isPc: false)
             } else {
-                battlerViews[i].setBattler(battlers[i], isPc: isPc)
+                battlerViews[i].setBattler(battlers[i], isPc: isPc, target: target)
             }
         }
     }

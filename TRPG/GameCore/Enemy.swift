@@ -27,10 +27,11 @@ class Enemy: Battler {
     var challenge: Int
     var dropItems: [Int]
     
-    init(id: Int) {
+    init(_ name: String, id: Int) {
+        self.name = name
+        
         switch id {
         case Self.rat:
-            name = "rat"
             str = 2
             dex = 11
             con = 9
@@ -47,7 +48,6 @@ class Enemy: Battler {
             dropItems = []
         default:
             // dummy
-            name = "dummy"
             str = 1
             dex = 1
             con = 1

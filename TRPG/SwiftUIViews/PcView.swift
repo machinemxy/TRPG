@@ -59,7 +59,7 @@ struct PcView: View {
 
 struct PcView_Previews: PreviewProvider {
     static var previews: some View {
-        let pc = Pc.initLiuBei()
+        let pc = Pc(id: Pc.liuBei)
         return PcView(pc: pc)
     }
 }
