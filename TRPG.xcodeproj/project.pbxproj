@@ -10,6 +10,7 @@
 		2225ED3724DFD4CF006CC6B1 /* UIAlertActionExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2225ED3624DFD4CF006CC6B1 /* UIAlertActionExt.swift */; };
 		2225ED3924DFDBCD006CC6B1 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2225ED3824DFDBCD006CC6B1 /* UIViewControllerExt.swift */; };
 		22561E1724F16CE600A0751D /* BattleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22561E1624F16CE600A0751D /* BattleTests.swift */; };
+		22561E1924F5334000A0751D /* LiuBei.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22561E1824F5333F00A0751D /* LiuBei.swift */; };
 		22874F7624E2D8CF002A0CBD /* KeyValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22874F7524E2D8CF002A0CBD /* KeyValueView.swift */; };
 		22874F7824E2E5A3002A0CBD /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22874F7724E2E5A3002A0CBD /* Weapon.swift */; };
 		22874F7A24E2EC5D002A0CBD /* Shield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22874F7924E2EC5D002A0CBD /* Shield.swift */; };
@@ -58,6 +59,7 @@
 		2225ED3624DFD4CF006CC6B1 /* UIAlertActionExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertActionExt.swift; sourceTree = "<group>"; };
 		2225ED3824DFDBCD006CC6B1 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		22561E1624F16CE600A0751D /* BattleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleTests.swift; sourceTree = "<group>"; };
+		22561E1824F5333F00A0751D /* LiuBei.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuBei.swift; sourceTree = "<group>"; };
 		22874F7524E2D8CF002A0CBD /* KeyValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueView.swift; sourceTree = "<group>"; };
 		22874F7724E2E5A3002A0CBD /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
 		22874F7924E2EC5D002A0CBD /* Shield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shield.swift; sourceTree = "<group>"; };
@@ -151,7 +153,6 @@
 			children = (
 				22DBF7FE24E0008000E91940 /* EventTrigger.swift */,
 				22DBF80224E017FE00E91940 /* Party.swift */,
-				22DBF80424E018B100E91940 /* Pc.swift */,
 			);
 			path = GameData;
 			sourceTree = "<group>";
@@ -167,6 +168,8 @@
 				22874F8F24E6EEBA002A0CBD /* Skill.swift */,
 				22874F9A24E7EE09002A0CBD /* Battler.swift */,
 				22874F9C24E7F2D2002A0CBD /* Enemy.swift */,
+				22DBF80424E018B100E91940 /* Pc.swift */,
+				22561E1824F5333F00A0751D /* LiuBei.swift */,
 			);
 			path = GameCore;
 			sourceTree = "<group>";
@@ -369,6 +372,7 @@
 				22874F9024E6EEBA002A0CBD /* Skill.swift in Sources */,
 				22E1E3CF24DF08160064317C /* SceneDelegate.swift in Sources */,
 				22DBF80E24E10DE100E91940 /* IntExt.swift in Sources */,
+				22561E1924F5334000A0751D /* LiuBei.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,7 +21,7 @@ class PartyTests: XCTestCase {
 
     func testGainExp() throws {
         let party = Party()
-        let liubei = Pc(id: Pc.liuBei)
+        let liubei = LiuBei.create()
         party.pcs.append(liubei)
         party.gainExp(100)
         let liubeiExp = party.pcs[0].exp

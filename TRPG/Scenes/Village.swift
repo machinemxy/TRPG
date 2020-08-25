@@ -111,7 +111,7 @@ class Village: SKScene {
     private func ratBattle() {
         MapViewController.instance?.presentWithFullScreen(storyboardId: "battleNC") { (nc: UINavigationController) in
             let battleVC = nc.topViewController as! BattleViewController
-            battleVC.enemies = [Enemy("rat", id: Enemy.rat)]
+            battleVC.enemies = [Enemy("rat", type: .rat)]
         }
     }
     

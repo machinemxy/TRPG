@@ -9,52 +9,24 @@
 import Foundation
 
 class Pc: Codable, Battler {
-    static let liuBei = 0
+    static let liuBei = "Liu Bei"
     
-    init(id: Int) {
-        switch id {
-        case Self.liuBei:
-            name = "Liu Bei"
-            str = 12
-            dex = 12
-            con = 10
-            int = 12
-            wis = 14
-            cha = 17
-            lifeDice = 10
-            weaponId = Weapon.club
-            skills.append(Skill.persuasion)
-        default:
-            name = "dummy"
-            str = 1
-            dex = 1
-            con = 1
-            int = 1
-            wis = 1
-            cha = 1
-            lifeDice = 10
-        }
-        
-        mhp = lifeDice + con.modifier
-        hp = mhp
-    }
-    
-    var name: String
-    var str: Int
-    var dex: Int
-    var con: Int
-    var int: Int
-    var wis: Int
-    var cha: Int
-    var lifeDice: Int
-    var mhp: Int
-    var hp: Int
+    var name = ""
+    var str = 1
+    var dex = 1
+    var con = 1
+    var int = 1
+    var wis = 1
+    var cha = 1
+    var lifeDice = 1
+    var mhp = 1
+    var hp = 1
     var lv = 1
     var exp = 0
-    var weaponId = Weapon.bareHand
-    var shiedId = Shield.none
-    var armorId = Armor.none
-    var skills = [Int]()
+    var weaponId: Int? = nil
+    var shiedId: Int? = nil
+    var armorId: Int? = nil
+    var skills = [SkillType]()
     
     var weapon: Weapon {
         Weapon(id: weaponId)

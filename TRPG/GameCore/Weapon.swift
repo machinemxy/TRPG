@@ -9,8 +9,7 @@
 import Foundation
 
 struct Weapon: Item {
-    static let bareHand = 0
-    static let club = 1
+    static let club = 0
     
     var name: String
     var minDamage: Int
@@ -18,7 +17,7 @@ struct Weapon: Item {
     var needTwoHand: Bool
     var isSimple: Bool
     
-    init(id: Int) {
+    init(id: Int?) {
         switch id {
         case Self.club:
             name = "club"

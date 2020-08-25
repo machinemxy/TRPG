@@ -45,10 +45,10 @@ struct PcView: View {
             }
             
             Section(header: Text("Skills")) {
-                ForEach(pc.skills, id: \.self) { skillId in
+                ForEach(pc.skills, id: \.self) { skillType in
                     VStack(alignment: .leading) {
-                        Text("\(Skill(id: skillId).name)")
-                        Text("\(Skill(id: skillId).description)").font(.footnote)
+                        Text(Skill(type: skillType).name)
+                        Text(Skill(type: skillType).description).font(.footnote)
                     }
                 }
             }
@@ -59,7 +59,7 @@ struct PcView: View {
 
 struct PcView_Previews: PreviewProvider {
     static var previews: some View {
-        let pc = Pc(id: Pc.liuBei)
+        let pc = LiuBei.create()
         return PcView(pc: pc)
     }
 }

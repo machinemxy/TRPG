@@ -20,9 +20,17 @@ class PcTests: XCTestCase {
     }
 
     func testRequiredExp() throws {
-        let liubei = Pc(id: Pc.liuBei)
+        let liubei = LiuBei.create()
         XCTAssert(liubei.requiredExp == 300)
         liubei.lv = 20
         XCTAssert(liubei.requiredExp == Int.max)
+    }
+    
+    func testEncode() {
+        let liubei = LiuBei.create()
+        let encoder = JSONEncoder()
+        let data = try? encoder.encode(liubei)
+        let str = String(data: data!, encoding: .utf8)!
+        print(str)
     }
 }

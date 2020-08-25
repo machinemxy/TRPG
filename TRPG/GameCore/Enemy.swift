@@ -8,9 +8,11 @@
 
 import Foundation
 
+enum EnemyType {
+    case rat
+}
+
 class Enemy: Battler {
-    static let rat = 0
-    
     var name: String
     var str: Int
     var dex: Int
@@ -27,11 +29,11 @@ class Enemy: Battler {
     var challenge: Int
     var dropItems: [Int]
     
-    init(_ name: String, id: Int) {
+    init(_ name: String, type: EnemyType) {
         self.name = name
         
-        switch id {
-        case Self.rat:
+        switch type {
+        case .rat:
             str = 2
             dex = 11
             con = 9
@@ -39,23 +41,6 @@ class Enemy: Battler {
             wis = 10
             cha = 4
             mhp = 1
-            hp = 1
-            hitBonus = 0
-            minDamage = 1
-            maxDamage = 1
-            ac = 10
-            challenge = 0
-            dropItems = []
-        default:
-            // dummy
-            str = 1
-            dex = 1
-            con = 1
-            int = 1
-            wis = 1
-            cha = 1
-            mhp = 1
-            hp = 1
             hitBonus = 0
             minDamage = 1
             maxDamage = 1
@@ -63,5 +48,7 @@ class Enemy: Battler {
             challenge = 0
             dropItems = []
         }
+        
+        hp = mhp
     }
 }

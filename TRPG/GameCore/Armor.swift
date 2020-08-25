@@ -9,15 +9,14 @@
 import Foundation
 
 struct Armor: Item {
-    static let none = 200
-    static let letherArmor = 201
+    static let letherArmor = 200
     
     var name: String
     var ac: Int
     var standard: Int
     var requiredStr: Int
     
-    init(id: Int) {
+    init(id: Int?) {
         switch id {
         case Self.letherArmor:
             name = "lether armor"

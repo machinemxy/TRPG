@@ -9,13 +9,12 @@
 import Foundation
 
 struct Shield: Item {
-    static let none = 100
-    static let shield = 101
+    static let shield = 100
     
     var name: String
     var ac: Int
     
-    init(id: Int) {
+    init(id: Int?) {
         switch id {
         case Self.shield:
             name = "shield"

@@ -8,21 +8,19 @@
 
 import Foundation
 
-struct Skill {
-    static let persuasion = 0
-    static let dummy = 999
-    
+enum SkillType: String, Codable {
+    case persuasion
+}
+
+struct Skill: Codable {
     var name: String
     var description: String
     
-    init(id: Int) {
-        switch id {
-        case 0:
+    init(type: SkillType) {
+        switch type {
+        case .persuasion:
             name = "Persuasion"
             description = "Persuade someone to change his mind. Your charisma will affect the success rate."
-        default:
-            name = "dummy"
-            description = "dummy"
         }
     }
 }
