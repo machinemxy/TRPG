@@ -18,7 +18,7 @@ class MapViewController: UIViewController {
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: "Village") {
+            if let scene = SKScene(fileNamed: Party.instance.location) {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFit
                 
@@ -52,6 +52,25 @@ class MapViewController: UIViewController {
     @IBAction func unwindToMap(segue: UIStoryboardSegue) {
         
     }
+    
+    @IBAction func dataPressed(_ sender: UIButton) {
+        let ac = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        ac.addAction(UIAlertAction(title: "Save", style: .default, handler: { [unowned self] (_) in
+            let success = DataManager.saveData()
+            if success {
+                self.alert(title: "Save finished", message: nil)
+            } else {
+                self.alert(title: "Save failed", message: "You can try again or clear this game without saving.")
+            }
+        }))
+        ac.addAction(UIAlertAction(title: "Load", style: .default, handler: nil))
+        ac.addAction(UIAlertAction(title: "Restart From Beginning", style: .destructive, handler: nil))
+        ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        ac.popoverPresentationController?.sourceView = sender
+        ac.popoverPresentationController?.sourceRect = sender.bounds
+        present(ac, animated: true)
+    }
+    
     
     static func presentAlert(_ ac: UIAlertController) {
         instance?.present(ac, animated: true)

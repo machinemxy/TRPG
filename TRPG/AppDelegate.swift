@@ -14,24 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        let decoder = JSONDecoder()
-        
-        // load event trigger, or create it
-        if let eventTriggerData = UserDefaults.standard.data(forKey: Key.eventTrigger),
-            let array = try? decoder.decode([Int].self, from: eventTriggerData) {
-            EventTrigger.array = array
-        } else {
-            EventTrigger.array = Array(repeating: 0, count: 100)
-        }
-        
-        // load party, or create it
-        if let partyData = UserDefaults.standard.data(forKey: Key.party),
-            let party = try? decoder.decode(Party.self, from: partyData) {
-            Party.instance = party
-        } else {
-            let liubei = LiuBei.create()
-            Party.instance.pcs.append(liubei)
-        }
+        DataManager.loadData()
         
         return true
     }

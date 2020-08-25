@@ -23,11 +23,21 @@
                                     <segue destination="8gg-1e-xgO" kind="show" id="0UV-R1-NoR"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NXb-LV-zXP">
+                                <rect key="frame" x="57" y="737" width="36" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Data"/>
+                                <connections>
+                                    <action selector="dataPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sTJ-sz-pqO"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="pti-DD-yQe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="Bjs-oU-ze9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pti-DD-yQe" secondAttribute="bottom" constant="8" id="RzS-rv-isk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NXb-LV-zXP" secondAttribute="bottom" constant="8" id="cTU-QS-pzs"/>
+                            <constraint firstItem="NXb-LV-zXP" firstAttribute="leading" secondItem="pti-DD-yQe" secondAttribute="trailing" constant="8" id="gRK-QA-hh2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

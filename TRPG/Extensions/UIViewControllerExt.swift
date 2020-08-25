@@ -18,4 +18,10 @@ extension UIViewController {
         vc.modalTransitionStyle = .coverVertical
         self.present(vc, animated: true)
     }
+    
+    func alert(title: String?, message: String?) {
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        ac.addAction(UIAlertAction.ok)
+        present(ac, animated: true)
+    }
 }
