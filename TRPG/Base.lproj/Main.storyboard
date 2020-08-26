@@ -41,6 +41,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="btnData" destination="NXb-LV-zXP" id="ZAO-T3-nSJ"/>
+                        <outlet property="btnParty" destination="pti-DD-yQe" id="vbh-zE-x1r"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -117,28 +121,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lN5-Mm-Ehq">
-                                <rect key="frame" x="125.66666666666669" y="391" width="124" height="30"/>
+                                <rect key="frame" x="125.66666666666669" y="386" width="124" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="hTD-q3-ATJ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Perform Actions"/>
                                 <connections>
-                                    <action selector="performActions:" destination="7FQ-FR-wha" eventType="touchUpInside" id="JpZ-8j-CbB"/>
+                                    <action selector="btnMainClicked:" destination="7FQ-FR-wha" eventType="touchUpInside" id="JpZ-8j-CbB"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dyg-4v-XBL">
-                                <rect key="frame" x="0.0" y="88" width="375" height="295"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="290"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Yy-Je-phP" customClass="SideView" customModule="TRPG" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="295"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="187.66666666666666" height="290"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RvJ-QT-Qnd" customClass="SideView" customModule="TRPG" customModuleProvider="target">
-                                        <rect key="frame" x="187.66666666666663" y="0.0" width="187.33333333333337" height="295"/>
+                                        <rect key="frame" x="187.66666666666663" y="0.0" width="187.33333333333337" height="290"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </view>
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80I-Sh-4cn">
-                                <rect key="frame" x="16" y="429" width="343" height="349"/>
+                                <rect key="frame" x="16" y="434" width="343" height="344"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -162,11 +169,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Battle" id="nE3-NJ-hkg"/>
                     <connections>
-                        <outlet property="btnPerformActions" destination="lN5-Mm-Ehq" id="uEJ-oa-bBH"/>
+                        <outlet property="btnMain" destination="lN5-Mm-Ehq" id="uEJ-oa-bBH"/>
                         <outlet property="txtLog" destination="80I-Sh-4cn" id="wm4-hE-Vdm"/>
                         <outletCollection property="sideViews" destination="6Yy-Je-phP" collectionClass="NSMutableArray" id="LIq-K0-rGi"/>
                         <outletCollection property="sideViews" destination="RvJ-QT-Qnd" collectionClass="NSMutableArray" id="2Ti-Rb-QSb"/>
-                        <segue destination="H3L-GV-jh4" kind="unwind" identifier="unwindToMap" unwindAction="unwindToMapWithSegue:" id="mye-iC-62G"/>
+                        <segue destination="H3L-GV-jh4" kind="unwind" identifier="gameOverSegue" unwindAction="gameOverWithSegue:" id="Ztw-m4-mGU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CRd-qy-dUO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

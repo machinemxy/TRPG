@@ -8,10 +8,16 @@
 
 import UIKit
 
+enum BattleSituation {
+    case inBattle
+    case win
+    case lose
+}
+
 class BattleViewController: UIViewController {
     @IBOutlet var sideViews: [SideView]!
     @IBOutlet weak var txtLog: UITextView!
-    @IBOutlet weak var btnPerformActions: UIButton!
+    @IBOutlet weak var btnMain: UIButton!
     
     var enemies: [Enemy]!
     var isPcMoveFirst: Bool!
@@ -20,9 +26,15 @@ class BattleViewController: UIViewController {
     var stillSomePcsAlive: Bool { !allPcsDead }
     var stillSomeEnemiesAlive: Bool { !allEnemiesDead }
     var log = ""
+    var battleSituation = BattleSituation.inBattle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // add layer to btnMain
+        btnMain.layer.borderWidth = 1
+        btnMain.layer.borderColor = UIColor.link.cgColor
+        btnMain.backgroundColor = .secondarySystemBackground
 
         // set initial ui
         sideViews[0].setBattlers(Party.instance.pcs, isPc: true, target: enemies[0])
@@ -31,7 +43,25 @@ class BattleViewController: UIViewController {
         decideMoveOrder()
     }
     
-    @IBAction func performActions(_ sender: Any) {
+    @IBAction func btnMainClicked(_ sender: Any) {
+        switch battleSituation {
+        case .inBattle:
+            performActions()
+        case .win:
+            break
+        case .lose:
+            DataManager.loadData()
+            performSegue(withIdentifier: Key.gameOverSegue, sender: nil)
+        }
+    }
+    
+    private func decideMoveOrder() {
+        let pcDexBonus = Party.instance.pcs.reduce(0) { $0 + $1.dex.modifier }
+        let enemyDexBonus = enemies.reduce(0) { $0 + $1.dex.modifier }
+        isPcMoveFirst = pcDexBonus + Int.random(in: 1...20) >= enemyDexBonus + Int.random(in: 1...20)
+    }
+    
+    private func performActions() {
         log = ""
         
         if isPcMoveFirst {
@@ -49,21 +79,13 @@ class BattleViewController: UIViewController {
         updateUI()
         
         if allPcsDead {
-            btnPerformActions.isEnabled = false
-            performSegue(withIdentifier: "unwindToMap", sender: nil)
+            changeBattleSituation(.lose)
             return
         }
         
         if allEnemiesDead {
-            btnPerformActions.isEnabled = false
-            performSegue(withIdentifier: "unwindToMap", sender: nil)
+            changeBattleSituation(.win)
         }
-    }
-    
-    private func decideMoveOrder() {
-        let pcDexBonus = Party.instance.pcs.reduce(0) { $0 + $1.dex.modifier }
-        let enemyDexBonus = enemies.reduce(0) { $0 + $1.dex.modifier }
-        isPcMoveFirst = pcDexBonus + Int.random(in: 1...20) >= enemyDexBonus + Int.random(in: 1...20)
     }
     
     private func performPcActions() {
@@ -144,6 +166,23 @@ class BattleViewController: UIViewController {
                 
                 battlerView.updateHP()
             }
+        }
+    }
+    
+    private func changeBattleSituation(_ situation: BattleSituation) {
+        battleSituation = situation
+        
+        switch situation {
+        case .inBattle:
+            break // it won't happen
+        case .win:
+            btnMain.setTitleColor(.systemGreen, for: .normal)
+            btnMain.layer.borderColor = UIColor.systemGreen.cgColor
+            btnMain.setTitle("View reward", for: .normal)
+        case .lose:
+            btnMain.setTitleColor(.systemRed, for: .normal)
+            btnMain.layer.borderColor = UIColor.systemRed.cgColor
+            btnMain.setTitle("Restart from save point", for: .normal)
         }
     }
 }

@@ -45,4 +45,9 @@ class DataManager {
             Party.instance = Party()
         }
     }
+    
+    static func initData() {
+        EventTrigger.array = Array(repeating: 0, count: 100)
+        Party.instance = Party()
+    }
 }

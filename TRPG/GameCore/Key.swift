@@ -9,6 +9,10 @@
 import Foundation
 
 enum Key {
+    // UserDefault key
     static let eventTrigger = "eventTrigger"
     static let party = "party"
+    
+    // segue
+    static let gameOverSegue = "gameOverSegue"
 }
