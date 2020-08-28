@@ -72,6 +72,12 @@ class MapViewController: UIViewController {
         }
     }
     
+    @IBAction func battleEnded(segue: UIStoryboardSegue, sender: Any?) {
+        if let processAfterBattle = sender as? () -> Void {
+            processAfterBattle()
+        }
+    }
+    
     @IBAction func dataPressed(_ sender: UIButton) {
         let ac = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         

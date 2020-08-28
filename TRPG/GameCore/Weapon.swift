@@ -12,8 +12,9 @@ struct Weapon: Item {
     static let club = 0
     
     var name: String
-    var minDamage: Int
-    var maxDamage: Int
+    var description: String
+    var damageA: Int
+    var damageB: Int
     var needTwoHand: Bool
     var isSimple: Bool
     
@@ -21,15 +22,17 @@ struct Weapon: Item {
         switch id {
         case Self.club:
             name = "club"
-            minDamage = 1
-            maxDamage = 4
+            description = "damage 1D4"
+            damageA = 1
+            damageB = 4
             needTwoHand = false
             isSimple = true
         default:
             // bare hand
             name = "bare hand"
-            minDamage = 1
-            maxDamage = 2
+            description = "damage 1D2"
+            damageA = 1
+            damageB = 2
             needTwoHand = false
             isSimple = true
         }

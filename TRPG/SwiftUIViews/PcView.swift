@@ -40,7 +40,7 @@ struct PcView: View {
             
             Section(header: Text("Combat")) {
                 KeyValueView(key: "Hit bonus", value: "\(pc.hitBonus)")
-                KeyValueView(key: "Damage", value: "\(pc.minDamage) ~ \(pc.maxDamage)")
+                KeyValueView(key: "Damage", value: "\(pc.damageA)D\(pc.damageB) + \(pc.damageC)")
                 KeyValueView(key: "Armor class", value: "\(pc.ac)")
             }
             

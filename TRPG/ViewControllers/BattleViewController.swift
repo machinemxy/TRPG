@@ -19,7 +19,11 @@ class BattleViewController: UIViewController {
     @IBOutlet weak var txtLog: UITextView!
     @IBOutlet weak var btnMain: UIButton!
     
+    // attributes should be set before load
     var enemies: [Enemy]!
+    var processAfterBattle: (() -> Void)?
+    
+    
     var isPcMoveFirst: Bool!
     var allPcsDead = false
     var allEnemiesDead = false
@@ -48,7 +52,7 @@ class BattleViewController: UIViewController {
         case .inBattle:
             performActions()
         case .win:
-            break
+            afterBattle()
         case .lose:
             DataManager.loadData()
             performSegue(withIdentifier: Key.gameOverSegue, sender: nil)
@@ -86,6 +90,15 @@ class BattleViewController: UIViewController {
         if allEnemiesDead {
             changeBattleSituation(.win)
         }
+    }
+    
+    private func afterBattle() {
+        let totalExp = enemies.reduce(0) { $0 + $1.exp }
+        let totalItems = enemies.reduce(into: [Int]()) { $0.append(contentsOf: $1.dropItems) }
+        Party.instance.gainExp(totalExp)
+        Party.instance.gainItems(totalItems)
+        
+        // todo
     }
     
     private func performPcActions() {
@@ -126,16 +139,30 @@ class BattleViewController: UIViewController {
     
     private func performAttack(attacker: Battler, target: Battler) {
         log.append("\(attacker.name) attacked \(target.name), ")
-        if attacker.hitBonus + Int.random(in: 1...20) >= target.ac {
-            let damage = Int.random(in: attacker.minDamage...attacker.maxDamage)
-            log.append("caused \(damage) damage.")
-            target.hp -= damage
-            if target.hp <= 0 {
-                target.hp = 0
-                log.append("\(target.name) was down.")
-            }
-        } else {
-            log.append("but failed to cause damage.")
+        
+        let hitDice = Int.random(in: 1...20)
+        
+        if hitDice == 1 || (hitDice != 20 && attacker.hitBonus + hitDice < target.ac) {
+            log.append("but failed to cause damage.\n")
+            return
+        }
+        
+        var damageAMultiplier = 1
+        if hitDice == 20 {
+            damageAMultiplier = 2
+            log.append("critical hit, ")
+        }
+        
+        var damage = attacker.damageC
+        for _ in 1...(damageAMultiplier * attacker.damageA) {
+            damage += Int.random(in: 1...attacker.damageB)
+        }
+        
+        log.append("caused \(damage) damage.")
+        target.hp -= damage
+        if target.hp <= 0 {
+            target.hp = 0
+            log.append("\(target.name) was down.")
         }
         log.append("\n")
     }

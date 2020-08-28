@@ -19,7 +19,8 @@ protocol Battler: class {
     var mhp: Int { get }
     var hp: Int { get set }
     var hitBonus: Int { get }
-    var minDamage: Int { get }
-    var maxDamage: Int { get }
+    var damageA: Int { get }
+    var damageB: Int { get }
+    var damageC: Int { get }
     var ac: Int { get }
 }

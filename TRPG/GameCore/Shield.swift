@@ -12,16 +12,19 @@ struct Shield: Item {
     static let shield = 100
     
     var name: String
+    var description: String
     var ac: Int
     
     init(id: Int?) {
         switch id {
         case Self.shield:
             name = "shield"
+            description = "armor class + 2"
             ac = 2
         default:
             // none
             name = "none"
+            description = ""
             ac = 0
         }
     }

@@ -12,6 +12,7 @@
 		22561E1724F16CE600A0751D /* BattleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22561E1624F16CE600A0751D /* BattleTests.swift */; };
 		22561E1924F5334000A0751D /* LiuBei.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22561E1824F5333F00A0751D /* LiuBei.swift */; };
 		22561E1B24F5504D00A0751D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22561E1A24F5504D00A0751D /* DataManager.swift */; };
+		22561E1F24F7EA0200A0751D /* KeyItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22561E1E24F7EA0200A0751D /* KeyItem.swift */; };
 		22874F7624E2D8CF002A0CBD /* KeyValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22874F7524E2D8CF002A0CBD /* KeyValueView.swift */; };
 		22874F7824E2E5A3002A0CBD /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22874F7724E2E5A3002A0CBD /* Weapon.swift */; };
 		22874F7A24E2EC5D002A0CBD /* Shield.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22874F7924E2EC5D002A0CBD /* Shield.swift */; };
@@ -62,6 +63,7 @@
 		22561E1624F16CE600A0751D /* BattleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleTests.swift; sourceTree = "<group>"; };
 		22561E1824F5333F00A0751D /* LiuBei.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuBei.swift; sourceTree = "<group>"; };
 		22561E1A24F5504D00A0751D /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		22561E1E24F7EA0200A0751D /* KeyItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyItem.swift; sourceTree = "<group>"; };
 		22874F7524E2D8CF002A0CBD /* KeyValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueView.swift; sourceTree = "<group>"; };
 		22874F7724E2E5A3002A0CBD /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
 		22874F7924E2EC5D002A0CBD /* Shield.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shield.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				22874F7724E2E5A3002A0CBD /* Weapon.swift */,
 				22874F7924E2EC5D002A0CBD /* Shield.swift */,
 				22874F7B24E2EFC4002A0CBD /* Armor.swift */,
+				22561E1E24F7EA0200A0751D /* KeyItem.swift */,
 				22874F8F24E6EEBA002A0CBD /* Skill.swift */,
 				22874F9A24E7EE09002A0CBD /* Battler.swift */,
 				22874F9C24E7F2D2002A0CBD /* Enemy.swift */,
@@ -352,6 +355,7 @@
 			files = (
 				22874F9524E7B7DE002A0CBD /* BattlerView.swift in Sources */,
 				22874F7A24E2EC5D002A0CBD /* Shield.swift in Sources */,
+				22561E1F24F7EA0200A0751D /* KeyItem.swift in Sources */,
 				22874F8924E59276002A0CBD /* StringExt.swift in Sources */,
 				22E1E3F224DF10F90064317C /* Village.swift in Sources */,
 				22874F9B24E7EE09002A0CBD /* Battler.swift in Sources */,

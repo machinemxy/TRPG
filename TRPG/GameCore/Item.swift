@@ -10,5 +10,6 @@ import Foundation
 
 protocol Item {
     var name: String { get }
+    var description: String { get }
 }
 

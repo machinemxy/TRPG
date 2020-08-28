@@ -93,12 +93,16 @@ class Pc: Codable, Battler {
         return str.modifier + proficiency
     }
     
-    var minDamage: Int {
-        return str.modifier + weapon.minDamage
+    var damageA: Int {
+        return weapon.damageA
     }
     
-    var maxDamage: Int {
-        return str.modifier + weapon.maxDamage
+    var damageB: Int {
+        return weapon.damageB
+    }
+    
+    var damageC: Int {
+        return str.modifier
     }
     
     var ac: Int {

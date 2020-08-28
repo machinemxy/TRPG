@@ -13,6 +13,7 @@ class Party: Codable {
     
     var pcs = [LiuBei.create()]
     var money: Double = 0
+    var inventories = [300: 10]
     var location = "Village"
     
     func gainExp(_ exp: Int) {
@@ -21,6 +22,13 @@ class Party: Codable {
         let expEachPerson = exp / pcs.count
         for pc in pcs {
             pc.exp += expEachPerson
+        }
+    }
+    
+    func gainItems(_ items: [Int]) {
+        for item in items {
+            let quantity = inventories[item] ?? 0
+            inventories.updateValue(quantity + 1, forKey: item)
         }
     }
     
