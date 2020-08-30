@@ -12,10 +12,12 @@ import UIKit
 class Village: SKScene {
     var neighbor: SKNode!
     var rat: SKNode!
+    var potion: SKNode!
     
     override func didMove(to view: SKView) {
         neighbor = childNode(withName: "neighbor")
         rat = childNode(withName: "rat")
+        potion = childNode(withName: "potion")
         
         if EventTrigger.array[EventTrigger.neighborJoinYellowTurbans] == 1 {
             neighbor.isHidden = true
@@ -23,6 +25,10 @@ class Village: SKScene {
         
         if EventTrigger.array[EventTrigger.killedRat] > 0 {
             rat.isHidden = true
+        }
+        
+        if EventTrigger.array[EventTrigger.killedRat] != 1 {
+            potion.isHidden = true
         }
     }
     
@@ -44,6 +50,8 @@ class Village: SKScene {
                 rest()
             } else if node.name == "rat" {
                 ratBattle()
+            } else if node.name == "potion" {
+                pickupPotion()
             }
         }
     }
@@ -121,6 +129,15 @@ class Village: SKScene {
                 self.rat.isHidden = true
             }
         }
+    }
+    
+    private func pickupPotion() {
+        Party.instance.gainItems([UsableItem.potionOfHealing])
+        EventTrigger.array[EventTrigger.killedRat]  = 2
+        potion.isHidden = true
+        let ac = UIAlertController(title: "You picked up a potion.", message: nil, preferredStyle: .alert)
+        ac.addAction(UIAlertAction.ok)
+        MapViewController.presentAlert(ac)
     }
     
     private func rest() {

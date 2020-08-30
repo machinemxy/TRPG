@@ -29,6 +29,9 @@
 		22874F9B24E7EE09002A0CBD /* Battler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22874F9A24E7EE09002A0CBD /* Battler.swift */; };
 		22874F9D24E7F2D2002A0CBD /* Enemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22874F9C24E7F2D2002A0CBD /* Enemy.swift */; };
 		22874F9F24E7FAE1002A0CBD /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22874F9E24E7FAE1002A0CBD /* BattleViewController.swift */; };
+		22D3AE5D24FB7F4900353770 /* UsableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D3AE5C24FB7F4900353770 /* UsableItem.swift */; };
+		22D3AE5F24FBC35700353770 /* Path.sks in Resources */ = {isa = PBXBuildFile; fileRef = 22D3AE5E24FBC35700353770 /* Path.sks */; };
+		22D3AE6124FBC38A00353770 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D3AE6024FBC38A00353770 /* Path.swift */; };
 		22DBF7FF24E0008000E91940 /* EventTrigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DBF7FE24E0008000E91940 /* EventTrigger.swift */; };
 		22DBF80124E002F000E91940 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DBF80024E002F000E91940 /* Key.swift */; };
 		22DBF80324E017FE00E91940 /* Party.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22DBF80224E017FE00E91940 /* Party.swift */; };
@@ -80,6 +83,9 @@
 		22874F9A24E7EE09002A0CBD /* Battler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Battler.swift; sourceTree = "<group>"; };
 		22874F9C24E7F2D2002A0CBD /* Enemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enemy.swift; sourceTree = "<group>"; };
 		22874F9E24E7FAE1002A0CBD /* BattleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
+		22D3AE5C24FB7F4900353770 /* UsableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsableItem.swift; sourceTree = "<group>"; };
+		22D3AE5E24FBC35700353770 /* Path.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Path.sks; sourceTree = "<group>"; };
+		22D3AE6024FBC38A00353770 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
 		22DBF7FE24E0008000E91940 /* EventTrigger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTrigger.swift; sourceTree = "<group>"; };
 		22DBF80024E002F000E91940 /* Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
 		22DBF80224E017FE00E91940 /* Party.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Party.swift; sourceTree = "<group>"; };
@@ -170,6 +176,7 @@
 				22874F7924E2EC5D002A0CBD /* Shield.swift */,
 				22874F7B24E2EFC4002A0CBD /* Armor.swift */,
 				22561E1E24F7EA0200A0751D /* KeyItem.swift */,
+				22D3AE5C24FB7F4900353770 /* UsableItem.swift */,
 				22874F8F24E6EEBA002A0CBD /* Skill.swift */,
 				22874F9A24E7EE09002A0CBD /* Battler.swift */,
 				22874F9C24E7F2D2002A0CBD /* Enemy.swift */,
@@ -244,6 +251,8 @@
 			children = (
 				22E1E3EF24DF0CE30064317C /* Village.sks */,
 				22E1E3F124DF10F90064317C /* Village.swift */,
+				22D3AE5E24FBC35700353770 /* Path.sks */,
+				22D3AE6024FBC38A00353770 /* Path.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -333,6 +342,7 @@
 				22874F9324E7B338002A0CBD /* BattlerView.xib in Resources */,
 				22874F9724E7B9B1002A0CBD /* SideView.xib in Resources */,
 				22E1E3D924DF08170064317C /* LaunchScreen.storyboard in Resources */,
+				22D3AE5F24FBC35700353770 /* Path.sks in Resources */,
 				22E1E3D624DF08170064317C /* Assets.xcassets in Resources */,
 				22E1E3F024DF0CE30064317C /* Village.sks in Resources */,
 				22E1E3D424DF08160064317C /* Main.storyboard in Resources */,
@@ -353,6 +363,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22D3AE5D24FB7F4900353770 /* UsableItem.swift in Sources */,
 				22874F9524E7B7DE002A0CBD /* BattlerView.swift in Sources */,
 				22874F7A24E2EC5D002A0CBD /* Shield.swift in Sources */,
 				22561E1F24F7EA0200A0751D /* KeyItem.swift in Sources */,
@@ -380,6 +391,7 @@
 				22874F9024E6EEBA002A0CBD /* Skill.swift in Sources */,
 				22E1E3CF24DF08160064317C /* SceneDelegate.swift in Sources */,
 				22DBF80E24E10DE100E91940 /* IntExt.swift in Sources */,
+				22D3AE6124FBC38A00353770 /* Path.swift in Sources */,
 				22561E1924F5334000A0751D /* LiuBei.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
