@@ -174,6 +174,7 @@
                         <outletCollection property="sideViews" destination="6Yy-Je-phP" collectionClass="NSMutableArray" id="LIq-K0-rGi"/>
                         <outletCollection property="sideViews" destination="RvJ-QT-Qnd" collectionClass="NSMutableArray" id="2Ti-Rb-QSb"/>
                         <segue destination="H3L-GV-jh4" kind="unwind" identifier="gameOverSegue" unwindAction="gameOverWithSegue:" id="Ztw-m4-mGU"/>
+                        <segue destination="H3L-GV-jh4" kind="unwind" identifier="unwindToMapSegue" unwindAction="unwindToMapWithSegue:" id="lrb-KA-cBy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CRd-qy-dUO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

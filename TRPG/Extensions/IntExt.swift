@@ -12,4 +12,16 @@ extension Int {
     var modifier: Int {
         return self / 2 - 5
     }
+    
+    func toItem() -> Item {
+        if self < 100 {
+            return Weapon(id: self)
+        } else if self < 200 {
+            return Shield(id: self)
+        } else if self < 300 {
+            return Armor(id: self)
+        } else {
+            return KeyItem(id: self)
+        }
+    }
 }

@@ -17,8 +17,12 @@ class Village: SKScene {
         neighbor = childNode(withName: "neighbor")
         rat = childNode(withName: "rat")
         
-        if EventTrigger.array[EventTrigger.idNeighborJoinYellowTurbans] == 1 {
+        if EventTrigger.array[EventTrigger.neighborJoinYellowTurbans] == 1 {
             neighbor.isHidden = true
+        }
+        
+        if EventTrigger.array[EventTrigger.killedRat] > 0 {
+            rat.isHidden = true
         }
     }
     
@@ -30,12 +34,12 @@ class Village: SKScene {
                 motherDialog()
             } else if node.name == "neighbor" {
                 neighborDialog()
-            } else if node.name == "old man" {
-                oldManDialog()
-            } else if node.name == "mid-aged man" {
-                midAgedManDialog()
-            } else if node.name == "young man" {
-                youngManDialog()
+            } else if node.name == "villager1" {
+                villager1Dialog()
+            } else if node.name == "villager2" {
+                villager2Dialog()
+            } else if node.name == "villager" {
+                villager3Dialog()
             } else if node.name == "rest" {
                 rest()
             } else if node.name == "rat" {
@@ -55,12 +59,12 @@ class Village: SKScene {
     }
     
     private func neighborDialog() {
-        if EventTrigger.array[EventTrigger.idNeighborJoinYellowTurbans] == 0 {
+        if EventTrigger.array[EventTrigger.neighborJoinYellowTurbans] == 0 {
             let ac = UIAlertController(title: "neighbor:", message: "neighbor_1".localized(), preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "Let him go", style: .default, handler: { (_) in
                 let ac2 = UIAlertController(title: "neighbor:", message: "neighbor_2".localized(), preferredStyle: .alert)
                 ac2.addAction(UIAlertAction(title: "OK", style: .default, handler: { [unowned self] (_) in
-                    EventTrigger.array[EventTrigger.idNeighborJoinYellowTurbans] = 1
+                    EventTrigger.array[EventTrigger.neighborJoinYellowTurbans] = 1
                     self.neighbor.isHidden = true
                 }))
                 MapViewController.presentAlert(ac2)
@@ -69,14 +73,14 @@ class Village: SKScene {
                 if self.persuade(target: 10) {
                     let ac2 = UIAlertController(title: "neighbor:", message: "neighbor_3".localized(), preferredStyle: .alert)
                     ac2.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
-                        EventTrigger.array[EventTrigger.idNeighborJoinYellowTurbans] = 2
+                        EventTrigger.array[EventTrigger.neighborJoinYellowTurbans] = 2
                         Party.instance.gainExp(100)
                     }))
                     MapViewController.presentAlert(ac2)
                 } else {
                     let ac2 = UIAlertController(title: "neighbor:", message: "neighbor_5".localized(), preferredStyle: .alert)
                     ac2.addAction(UIAlertAction(title: "OK", style: .default, handler: { [unowned self] (_) in
-                        EventTrigger.array[EventTrigger.idNeighborJoinYellowTurbans] = 1
+                        EventTrigger.array[EventTrigger.neighborJoinYellowTurbans] = 1
                         self.neighbor.isHidden = true
                     }))
                     MapViewController.presentAlert(ac2)
@@ -90,20 +94,20 @@ class Village: SKScene {
         }
     }
     
-    private func oldManDialog() {
-        let ac = UIAlertController(title: "old man:", message: "oldMan_1".localized(), preferredStyle: .alert)
+    private func villager1Dialog() {
+        let ac = UIAlertController(title: "villager:", message: "villager1_1".localized(), preferredStyle: .alert)
         ac.addAction(UIAlertAction.ok)
         MapViewController.presentAlert(ac)
     }
     
-    private func midAgedManDialog() {
-        let ac = UIAlertController(title: "mid-aged man:", message: "midAgedMan_1".localized(), preferredStyle: .alert)
+    private func villager2Dialog() {
+        let ac = UIAlertController(title: "villager:", message: "villager2_1".localized(), preferredStyle: .alert)
         ac.addAction(UIAlertAction.ok)
         MapViewController.presentAlert(ac)
     }
     
-    private func youngManDialog() {
-        let ac = UIAlertController(title: "young man:", message: "youngMan_1".localized(), preferredStyle: .alert)
+    private func villager3Dialog() {
+        let ac = UIAlertController(title: "villager:", message: "villager3_1".localized(), preferredStyle: .alert)
         ac.addAction(UIAlertAction.ok)
         MapViewController.presentAlert(ac)
     }
@@ -112,6 +116,10 @@ class Village: SKScene {
         MapViewController.instance?.presentWithFullScreen(storyboardId: "battleNC") { (nc: UINavigationController) in
             let battleVC = nc.topViewController as! BattleViewController
             battleVC.enemies = [Enemy("rat", type: .rat)]
+            battleVC.processAfterBattle = { [unowned self] in
+                EventTrigger.array[EventTrigger.killedRat] = 1
+                self.rat.isHidden = true
+            }
         }
     }
     

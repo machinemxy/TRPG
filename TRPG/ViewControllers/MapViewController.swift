@@ -60,7 +60,7 @@ class MapViewController: UIViewController {
     }
     
     @IBAction func unwindToMap(segue: UIStoryboardSegue) {
-        // used by PartyTableView
+        // used by PartyTableView, and when pcs win the battle
     }
     
     @IBAction func gameOver(segue: UIStoryboardSegue) {
@@ -69,12 +69,6 @@ class MapViewController: UIViewController {
                 scene.scaleMode = .aspectFit
                 view.presentScene(scene, transition: .flipVertical(withDuration: 0.5))
             }
-        }
-    }
-    
-    @IBAction func battleEnded(segue: UIStoryboardSegue, sender: Any?) {
-        if let processAfterBattle = sender as? () -> Void {
-            processAfterBattle()
         }
     }
     

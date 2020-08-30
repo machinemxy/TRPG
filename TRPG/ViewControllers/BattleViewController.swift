@@ -98,7 +98,20 @@ class BattleViewController: UIViewController {
         Party.instance.gainExp(totalExp)
         Party.instance.gainItems(totalItems)
         
-        // todo
+        var message = "Exp gained: \(totalExp)"
+        if totalItems.count > 0 {
+            let items = totalItems.map { $0.toItem().name }.joined(separator: ", ")
+            message.append("\nItem gained: \(items)")
+        }
+        
+        let ac = UIAlertController(title: "Reward", message: message, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: { [unowned self] (_) in
+            if let processAfterBattle = self.processAfterBattle {
+                processAfterBattle()
+            }
+            self.performSegue(withIdentifier: Key.unwindToMapSegue, sender: nil)
+        }))
+        present(ac, animated: true)
     }
     
     private func performPcActions() {

@@ -15,4 +15,5 @@ enum Key {
     
     // segue
     static let gameOverSegue = "gameOverSegue"
+    static let unwindToMapSegue = "unwindToMapSegue"
 }

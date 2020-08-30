@@ -11,5 +11,6 @@ import Foundation
 class EventTrigger {
     static var array = [Int]()
     
-    static let idNeighborJoinYellowTurbans = 0
+    static let neighborJoinYellowTurbans = 0
+    static let killedRat = 1
 }
