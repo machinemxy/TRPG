@@ -13,23 +13,14 @@ class Village: SKScene {
     var neighbor: SKNode!
     var rat: SKNode!
     var potion: SKNode!
+    var leave: SKNode!
     
     override func didMove(to view: SKView) {
         neighbor = childNode(withName: "neighbor")
         rat = childNode(withName: "rat")
         potion = childNode(withName: "potion")
         
-        if EventTrigger.array[EventTrigger.neighborJoinYellowTurbans] == 1 {
-            neighbor.isHidden = true
-        }
-        
-        if EventTrigger.array[EventTrigger.killedRat] > 0 {
-            rat.isHidden = true
-        }
-        
-        if EventTrigger.array[EventTrigger.killedRat] != 1 {
-            potion.isHidden = true
-        }
+        setVisible()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -52,6 +43,8 @@ class Village: SKScene {
                 ratBattle()
             } else if node.name == "potion" {
                 pickupPotion()
+            } else if node.name == "leave" {
+                performLeave()
             }
         }
     }
@@ -126,7 +119,7 @@ class Village: SKScene {
             battleVC.enemies = [Enemy("rat", type: .rat)]
             battleVC.processAfterBattle = { [unowned self] in
                 EventTrigger.array[EventTrigger.killedRat] = 1
-                self.rat.isHidden = true
+                self.setVisible()
             }
         }
     }
@@ -140,6 +133,10 @@ class Village: SKScene {
         MapViewController.presentAlert(ac)
     }
     
+    private func performLeave() {
+        switchScene(fileNamed: "Path")
+    }
+    
     private func rest() {
         Party.instance.rest()
         let ac = UIAlertController(title: "Your characters are fully recovered.", message: nil, preferredStyle: .alert)
@@ -151,5 +148,25 @@ class Village: SKScene {
         let liubei = Party.instance.pcs[0]
         let bonus = liubei.cha.modifier + liubei.proficiency
         return Int.random(in: 1...20) + bonus >= target
+    }
+    
+    private func setVisible() {
+        if EventTrigger.array[EventTrigger.neighborJoinYellowTurbans] == 1 {
+            neighbor.isHidden = true
+        } else {
+            neighbor.isHidden = false
+        }
+        
+        if EventTrigger.array[EventTrigger.killedRat] > 0 {
+            rat.isHidden = true
+        } else {
+            rat.isHidden = false
+        }
+        
+        if EventTrigger.array[EventTrigger.killedRat] != 1 {
+            potion.isHidden = true
+        } else {
+            potion.isHidden = false
+        }
     }
 }
