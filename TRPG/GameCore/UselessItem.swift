@@ -1,5 +1,5 @@
 //
-//  KeyItem.swift
+//  UselessItem.swift
 //  TRPG
 //
 //  Created by Ma Xueyuan on 2020/08/27.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct KeyItem: Item {
+struct UselessItem: Item {
     static let grassShoes = 300
     
     var name: String
@@ -16,7 +16,7 @@ struct KeyItem: Item {
     
     init(id: Int) {
         switch id {
-        case KeyItem.grassShoes:
+        case UselessItem.grassShoes:
             name = "grass shoes"
             description = "made by Liu Bei"
         default:

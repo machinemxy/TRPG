@@ -44,7 +44,7 @@ class Village: SKScene {
             } else if node.name == "potion" {
                 pickupPotion()
             } else if node.name == "leave" {
-                performLeave()
+                switchScene(fileNamed: "Path")
             }
         }
     }
@@ -131,10 +131,6 @@ class Village: SKScene {
         let ac = UIAlertController(title: "You picked up a potion.", message: nil, preferredStyle: .alert)
         ac.addAction(UIAlertAction.ok)
         MapViewController.presentAlert(ac)
-    }
-    
-    private func performLeave() {
-        switchScene(fileNamed: "Path")
     }
     
     private func rest() {

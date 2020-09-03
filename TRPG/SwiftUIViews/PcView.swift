@@ -54,6 +54,11 @@ struct PcView: View {
             }
         }
         .navigationBarTitle(pc.name)
+        .navigationBarItems(trailing:
+            NavigationLink(destination: ItemListView(), label: {
+                Text("Item")
+            })
+        )
     }
 }
 

@@ -20,8 +20,10 @@ extension Int {
             return Shield(id: self)
         } else if self < 300 {
             return Armor(id: self)
+        } else if self < 400 {
+            return UselessItem(id: self)
         } else {
-            return KeyItem(id: self)
+            return UsableItem(id: self)
         }
     }
 }

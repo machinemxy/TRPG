@@ -14,4 +14,5 @@ class EventTrigger {
     static let neighborJoinYellowTurbans = 0 // 1:joined; 2:not joined
     static let killedRat = 1 // 1:killed; 2:picked up potion
     static let fromVillageToTown = 2 // 0: from village to town; 2: from town to village
+    static let pathProgress = 3
 }
