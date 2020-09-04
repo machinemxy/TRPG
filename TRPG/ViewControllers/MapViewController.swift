@@ -119,10 +119,5 @@ class MapViewController: UIViewController {
         ac.popoverPresentationController?.sourceRect = sender.bounds
         present(ac, animated: true)
     }
-    
-    
-    static func presentAlert(_ ac: UIAlertController) {
-        instance?.present(ac, animated: true)
-    }
 }
 

@@ -54,9 +54,9 @@ class Village: SKScene {
         ac.addAction(UIAlertAction.next {
             let ac2 = UIAlertController(title: "mother:", message: "mother_2".localized(), preferredStyle: .alert)
             ac2.addAction(UIAlertAction.ok)
-            MapViewController.presentAlert(ac2)
+            self.presentAlert(ac2)
         })
-        MapViewController.presentAlert(ac)
+        presentAlert(ac)
     }
     
     private func neighborDialog() {
@@ -68,7 +68,7 @@ class Village: SKScene {
                     EventTrigger.array[EventTrigger.neighborJoinYellowTurbans] = 1
                     self.neighbor.isHidden = true
                 }))
-                MapViewController.presentAlert(ac2)
+                self.presentAlert(ac2)
             }))
             ac.addAction(UIAlertAction(title: "Persuade him not go [difficulty 10]", style: .default, handler: { [unowned self] (_) in
                 if self.persuade(target: 10) {
@@ -77,50 +77,46 @@ class Village: SKScene {
                         EventTrigger.array[EventTrigger.neighborJoinYellowTurbans] = 2
                         Party.instance.gainExp(100)
                     }))
-                    MapViewController.presentAlert(ac2)
+                    self.presentAlert(ac2)
                 } else {
                     let ac2 = UIAlertController(title: "neighbor:", message: "neighbor_5".localized(), preferredStyle: .alert)
                     ac2.addAction(UIAlertAction(title: "OK", style: .default, handler: { [unowned self] (_) in
                         EventTrigger.array[EventTrigger.neighborJoinYellowTurbans] = 1
                         self.neighbor.isHidden = true
                     }))
-                    MapViewController.presentAlert(ac2)
+                    self.presentAlert(ac2)
                 }
             }))
-            MapViewController.presentAlert(ac)
+            presentAlert(ac)
         } else {
             let ac = UIAlertController(title: "neighbor:", message: "neighbor_4".localized(), preferredStyle: .alert)
             ac.addAction(UIAlertAction.ok)
-            MapViewController.presentAlert(ac)
+            presentAlert(ac)
         }
     }
     
     private func villager1Dialog() {
         let ac = UIAlertController(title: "villager:", message: "villager1_1".localized(), preferredStyle: .alert)
         ac.addAction(UIAlertAction.ok)
-        MapViewController.presentAlert(ac)
+        presentAlert(ac)
     }
     
     private func villager2Dialog() {
         let ac = UIAlertController(title: "villager:", message: "villager2_1".localized(), preferredStyle: .alert)
         ac.addAction(UIAlertAction.ok)
-        MapViewController.presentAlert(ac)
+        presentAlert(ac)
     }
     
     private func villager3Dialog() {
         let ac = UIAlertController(title: "villager:", message: "villager3_1".localized(), preferredStyle: .alert)
         ac.addAction(UIAlertAction.ok)
-        MapViewController.presentAlert(ac)
+        presentAlert(ac)
     }
     
     private func ratBattle() {
-        MapViewController.instance?.presentWithFullScreen(storyboardId: "battleNC") { (nc: UINavigationController) in
-            let battleVC = nc.topViewController as! BattleViewController
-            battleVC.enemies = [Enemy("rat", type: .rat)]
-            battleVC.processAfterBattle = { [unowned self] in
-                EventTrigger.array[EventTrigger.killedRat] = 1
-                self.setVisible()
-            }
+        startBattle(enemies: [Enemy("rat", type: .rat)]) { [unowned self] in
+            EventTrigger.array[EventTrigger.killedRat] = 1
+            self.setVisible()
         }
     }
     
@@ -130,14 +126,14 @@ class Village: SKScene {
         potion.isHidden = true
         let ac = UIAlertController(title: "You picked up a potion.", message: nil, preferredStyle: .alert)
         ac.addAction(UIAlertAction.ok)
-        MapViewController.presentAlert(ac)
+        presentAlert(ac)
     }
     
     private func rest() {
         Party.instance.rest()
         let ac = UIAlertController(title: "Your characters are fully recovered.", message: nil, preferredStyle: .alert)
         ac.addAction(UIAlertAction.ok)
-        MapViewController.presentAlert(ac)
+        presentAlert(ac)
     }
     
     private func persuade(target: Int) -> Bool {

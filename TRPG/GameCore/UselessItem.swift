@@ -10,6 +10,7 @@ import Foundation
 
 struct UselessItem: Item {
     static let grassShoes = 300
+    static let yellowTurban = 301
     
     var name: String
     var description: String
@@ -19,6 +20,9 @@ struct UselessItem: Item {
         case UselessItem.grassShoes:
             name = "grass shoes"
             description = "made by Liu Bei"
+        case UselessItem.yellowTurban:
+            name = "yellow turban"
+            description = "the symbol of Yellow Turban Army"
         default:
             name = "dummy"
             description = ""

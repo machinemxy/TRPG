@@ -16,4 +16,16 @@ extension SKScene {
             view?.presentScene(scene, transition: .flipVertical(withDuration: 0.5))
         }
     }
+    
+    func startBattle(enemies: [Enemy], completed: (() -> Void)?) {
+        MapViewController.instance?.presentWithFullScreen(storyboardId: "battleNC") { (nc: UINavigationController) in
+            let battleVC = nc.topViewController as! BattleViewController
+            battleVC.enemies = enemies
+            battleVC.processAfterBattle = completed
+        }
+    }
+    
+    func presentAlert(_ ac: UIAlertController) {
+        MapViewController.instance?.present(ac, animated: true)
+    }
 }

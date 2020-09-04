@@ -50,6 +50,7 @@
 		22E1E3F224DF10F90064317C /* Village.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E1E3F124DF10F90064317C /* Village.swift */; };
 		22F19DF324FFE80100F73204 /* SKSceneExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F19DF224FFE80100F73204 /* SKSceneExt.swift */; };
 		22F19DF525011E8100F73204 /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F19DF425011E8100F73204 /* ItemListView.swift */; };
+		22F19DF725029F5D00F73204 /* ChallengeRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F19DF625029F5D00F73204 /* ChallengeRating.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		22E1E3F124DF10F90064317C /* Village.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Village.swift; sourceTree = "<group>"; };
 		22F19DF224FFE80100F73204 /* SKSceneExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKSceneExt.swift; sourceTree = "<group>"; };
 		22F19DF425011E8100F73204 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
+		22F19DF625029F5D00F73204 /* ChallengeRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeRating.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +190,7 @@
 				22DBF80424E018B100E91940 /* Pc.swift */,
 				22561E1824F5333F00A0751D /* LiuBei.swift */,
 				22561E1A24F5504D00A0751D /* DataManager.swift */,
+				22F19DF625029F5D00F73204 /* ChallengeRating.swift */,
 			);
 			path = GameCore;
 			sourceTree = "<group>";
@@ -383,6 +386,7 @@
 				2225ED3924DFDBCD006CC6B1 /* UIViewControllerExt.swift in Sources */,
 				22874F7824E2E5A3002A0CBD /* Weapon.swift in Sources */,
 				22E1E3D124DF08160064317C /* MapViewController.swift in Sources */,
+				22F19DF725029F5D00F73204 /* ChallengeRating.swift in Sources */,
 				22874F7624E2D8CF002A0CBD /* KeyValueView.swift in Sources */,
 				22E1E3CD24DF08160064317C /* AppDelegate.swift in Sources */,
 				22874F9F24E7FAE1002A0CBD /* BattleViewController.swift in Sources */,
