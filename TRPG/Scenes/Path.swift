@@ -40,23 +40,25 @@ class Path: SKScene {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         guard let touch = touches.first else { return }
         let touchPoint = touch.location(in: self)
-        for node in nodes(at: touchPoint) {
-            let n = node.name
-            guard n == "villageEntrance" || n == "castleEntrance" || n == "move1" || n == "move2" ||
-                n == "move3" || n == "move4" || n == "moveShortCut" else { continue }
-            
+        let eventNodes = nodes(at: touchPoint).filter {
+            let n = $0.name
+            return n == "villageEntrance" || n == "castleEntrance" || n == "move1" || n == "move2" ||
+            n == "move3" || n == "move4" || n == "moveShortCut"
+        }
+        
+        if let node = eventNodes.first {
             isUserInteractionEnabled = false
             pcLocation.run(SKAction.move(to: node.position, duration: 0.5)) { [unowned self] in
                 self.isUserInteractionEnabled = true
-                if n == "villageEntrance" {
+                if node.name == "villageEntrance" {
                     self.switchScene(fileNamed: "Village")
-                } else if n == "move1" {
+                } else if node.name == "move1" {
                     self.move1Action()
-                } else if n == "move2" {
+                } else if node.name == "move2" {
                     self.move2Action()
-                } else if n == "move3" {
+                } else if node.name == "move3" {
                     self.move3Action()
-                } else if n == "move4" {
+                } else if node.name == "move4" {
                     self.move4Action()
                 }
             }

@@ -29,22 +29,31 @@ class Village: SKScene {
         for node in nodes(at: touchPoint) {
             if node.name == "mother" {
                 motherDialog()
+                break
             } else if node.name == "neighbor" {
                 neighborDialog()
+                break
             } else if node.name == "villager1" {
                 villager1Dialog()
+                break
             } else if node.name == "villager2" {
                 villager2Dialog()
-            } else if node.name == "villager" {
+                break
+            } else if node.name == "villager3" {
                 villager3Dialog()
+                break
             } else if node.name == "rest" {
                 rest()
+                break
             } else if node.name == "rat" {
                 ratBattle()
+                break
             } else if node.name == "potion" {
                 pickupPotion()
+                break
             } else if node.name == "leave" {
                 switchScene(fileNamed: "Path")
+                break
             }
         }
     }
