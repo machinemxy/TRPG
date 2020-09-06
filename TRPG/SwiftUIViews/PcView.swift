@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct PcView: View {
-    var pc: Pc
+    @ObservedObject var pc: Pc
     
     var body: some View {
         Form {
@@ -55,7 +55,7 @@ struct PcView: View {
         }
         .navigationBarTitle(pc.name)
         .navigationBarItems(trailing:
-            NavigationLink(destination: ItemListView(), label: {
+            NavigationLink(destination: ItemListView(pc: pc, party: Party.instance), label: {
                 Text("Item")
             })
         )

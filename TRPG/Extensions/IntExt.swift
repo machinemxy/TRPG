@@ -26,4 +26,13 @@ extension Int {
             return UsableItem(id: self)
         }
     }
+    
+    /// Calculate the result of aDb + c
+    static func abcCalc(a: Int, b: Int, c: Int) -> Int {
+        var result = c
+        for _ in 1...a {
+            result += Int.random(in: 1...b)
+        }
+        return result
+    }
 }

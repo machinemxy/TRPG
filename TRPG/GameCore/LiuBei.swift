@@ -19,11 +19,10 @@ class LiuBei {
         pc.int = 12
         pc.wis = 14
         pc.cha = 17
-        pc.lifeDice = 10
+        pc.mhp = 10
         pc.weaponId = Weapon.club
         pc.skills.append(.persuasion)
         
-        pc.mhp = pc.lifeDice + pc.con.modifier
         pc.hp = pc.mhp
         
         return pc

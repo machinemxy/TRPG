@@ -9,6 +9,9 @@
 import SwiftUI
 
 struct ItemListView: View {
+    var pc: Pc
+    @ObservedObject var party: Party
+    
     var body: some View {
         List(Party.instance.inventories.keys.sorted(), id: \.self) { inventoryKey in
             HStack {
@@ -27,6 +30,6 @@ struct ItemListView: View {
 
 struct ItemListView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemListView()
+        ItemListView(pc: LiuBei.create(), party: Party())
     }
 }

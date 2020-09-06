@@ -166,10 +166,8 @@ class BattleViewController: UIViewController {
             log.append("critical hit, ")
         }
         
-        var damage = attacker.damageC
-        for _ in 1...(damageAMultiplier * attacker.damageA) {
-            damage += Int.random(in: 1...attacker.damageB)
-        }
+        let damage = Int.abcCalc(a: damageAMultiplier * attacker.damageA, b: attacker.damageB, c: attacker.damageC)
+        
         
         log.append("caused \(damage) damage.")
         target.hp -= damage

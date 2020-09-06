@@ -8,13 +8,37 @@
 
 import Foundation
 
-class Party: Codable {
+class Party: Codable, ObservableObject {
     static var instance = Party()
+    
+    enum CodingKeys: CodingKey {
+        case pcs, money, inventories, location
+    }
     
     var pcs = [LiuBei.create()]
     var money: Double = 0
-    var inventories = [300: 10]
+    @Published var inventories = [300: 10]
     var location = "Village"
+    
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.container(keyedBy: CodingKeys.self)
+
+        try container.encode(pcs, forKey: .pcs)
+        try container.encode(money, forKey: .money)
+        try container.encode(inventories, forKey: .inventories)
+        try container.encode(location, forKey: .location)
+    }
+    
+    init() {}
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        pcs = try container.decode([Pc].self, forKey: .pcs)
+        money = try container.decode(Double.self, forKey: .money)
+        inventories = try container.decode([Int: Int].self, forKey: .inventories)
+        location = try container.decode(String.self, forKey: .location)
+    }
     
     func gainExp(_ exp: Int) {
         guard pcs.count > 0 else { return }
