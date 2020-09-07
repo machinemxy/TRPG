@@ -17,7 +17,7 @@ struct UselessItem: Item {
     
     init(id: Int) {
         switch id {
-        case UselessItem.grassShoes:
+        case Self.grassShoes:
             name = "grass shoes"
             description = "made by Liu Bei"
         case UselessItem.yellowTurban:

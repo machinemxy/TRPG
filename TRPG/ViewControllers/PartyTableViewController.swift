@@ -12,6 +12,7 @@ import SwiftUI
 class PartyTableViewController: UITableViewController {
     @IBOutlet weak var lblMoney: UILabel!
     
+    #warning("HP won't be updated by using potion")
     override func viewDidLoad() {
         super.viewDidLoad()
 

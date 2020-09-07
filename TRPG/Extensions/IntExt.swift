@@ -27,6 +27,10 @@ extension Int {
         }
     }
     
+    func toUsableItem() -> UsableItem {
+        return UsableItem(id: self)
+    }
+    
     /// Calculate the result of aDb + c
     static func abcCalc(a: Int, b: Int, c: Int) -> Int {
         var result = c

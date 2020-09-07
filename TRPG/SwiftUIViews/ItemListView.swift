@@ -12,18 +12,32 @@ struct ItemListView: View {
     var pc: Pc
     @ObservedObject var party: Party
     
+    @State private var showUseItemAlert = false
+    @State private var selectedItemId = 0
+    @State private var showCommonAlert = false
+    @State private var commonAlertTitle = ""
+    
     var body: some View {
-        List(Party.instance.inventories.keys.sorted(), id: \.self) { inventoryKey in
-            HStack {
-                VStack(alignment: .leading) {
-                    Text(inventoryKey.toItem().name)
-                    Text(inventoryKey.toItem().description).font(.footnote)
+        List {
+            Section(header: Text("Usable item")) {
+                ForEach(party.usableItems, id: \.self) { itemId in
+                    Button(action: {
+                        self.selectedItemId = itemId
+                        self.showUseItemAlert = true
+                    }) {
+                        ItemView(item: itemId.toItem(), count: self.party.inventories[itemId]!)
+                    }
                 }
-                
-                Spacer()
-                
-                Text(String(Party.instance.inventories[inventoryKey]!))
+            }.alert(isPresented: $showUseItemAlert) {
+                Alert(title: Text("Action"), primaryButton: .default(Text("Use"), action: {
+                    let usableItem = self.selectedItemId.toUsableItem()
+                    self.commonAlertTitle = usableItem.used(by: self.pc)
+                    self.party.loseItem(self.selectedItemId)
+                    self.showCommonAlert = true
+                }), secondaryButton: .cancel())
             }
+        }.alert(isPresented: $showCommonAlert) { () -> Alert in
+            Alert(title: Text(commonAlertTitle))
         }
     }
 }

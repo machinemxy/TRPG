@@ -8,8 +8,16 @@
 
 import Foundation
 
-class Pc: Codable, ObservableObject, Battler {
+class Pc: Codable, ObservableObject, Battler, Hashable {
     static let liuBei = "Liu Bei"
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
+    }
+    
+    static func == (lhs: Pc, rhs: Pc) -> Bool {
+        lhs.name == rhs.name
+    }
     
     enum CodingKeys: CodingKey {
         case name, str, dex, con, int, wis, cha, mhp, hp, lv, exp, weaponId, shieldId, armorId, skills
@@ -51,9 +59,9 @@ class Pc: Codable, ObservableObject, Battler {
         hp = try container.decode(Int.self, forKey: .hp)
         lv = try container.decode(Int.self, forKey: .lv)
         exp = try container.decode(Int.self, forKey: .exp)
-        weaponId = try container.decode(Int.self, forKey: .weaponId)
-        shieldId = try container.decode(Int.self, forKey: .shieldId)
-        armorId = try container.decode(Int.self, forKey: .armorId)
+        weaponId = try container.decode(Int?.self, forKey: .weaponId)
+        shieldId = try container.decode(Int?.self, forKey: .shieldId)
+        armorId = try container.decode(Int?.self, forKey: .armorId)
         skills = try container.decode([SkillType].self, forKey: .skills)
     }
     

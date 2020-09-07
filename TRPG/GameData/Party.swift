@@ -40,6 +40,10 @@ class Party: Codable, ObservableObject {
         location = try container.decode(String.self, forKey: .location)
     }
     
+    var usableItems: [Int] {
+        return inventories.keys.filter { $0 >= 400 }
+    }
+    
     func gainExp(_ exp: Int) {
         guard pcs.count > 0 else { return }
         
@@ -53,6 +57,14 @@ class Party: Codable, ObservableObject {
         for item in items {
             let quantity = inventories[item] ?? 0
             inventories.updateValue(quantity + 1, forKey: item)
+        }
+    }
+    
+    func loseItem(_ itemId: Int) {
+        if let itemCount = inventories[itemId], itemCount > 1 {
+            inventories.updateValue(itemCount - 1, forKey: itemId)
+        } else {
+            inventories.removeValue(forKey: itemId)
         }
     }
     
