@@ -33,6 +33,7 @@ struct ItemListView: View {
                     let usableItem = self.selectedItemId.toUsableItem()
                     self.commonAlertTitle = usableItem.used(by: self.pc)
                     self.party.loseItem(self.selectedItemId)
+                    NotificationCenter.default.post(name: .HPUpdated, object: nil)
                     self.showCommonAlert = true
                 }), secondaryButton: .cancel())
             }

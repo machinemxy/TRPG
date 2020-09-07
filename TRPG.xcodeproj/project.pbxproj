@@ -52,6 +52,7 @@
 		22F19DF525011E8100F73204 /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F19DF425011E8100F73204 /* ItemListView.swift */; };
 		22F19DF725029F5D00F73204 /* ChallengeRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F19DF625029F5D00F73204 /* ChallengeRating.swift */; };
 		22F19DF925052B3A00F73204 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F19DF825052B3A00F73204 /* ItemView.swift */; };
+		22F19DFB25069CA900F73204 /* NotificationNameExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F19DFA25069CA900F73204 /* NotificationNameExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		22F19DF425011E8100F73204 /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
 		22F19DF625029F5D00F73204 /* ChallengeRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeRating.swift; sourceTree = "<group>"; };
 		22F19DF825052B3A00F73204 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		22F19DFA25069CA900F73204 /* NotificationNameExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				22DBF80D24E10DE100E91940 /* IntExt.swift */,
 				22874F8824E59276002A0CBD /* StringExt.swift */,
 				22F19DF224FFE80100F73204 /* SKSceneExt.swift */,
+				22F19DFA25069CA900F73204 /* NotificationNameExt.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -399,6 +402,7 @@
 				22F19DF525011E8100F73204 /* ItemListView.swift in Sources */,
 				22DBF80124E002F000E91940 /* Key.swift in Sources */,
 				22874F7C24E2EFC4002A0CBD /* Armor.swift in Sources */,
+				22F19DFB25069CA900F73204 /* NotificationNameExt.swift in Sources */,
 				22DBF80524E018B100E91940 /* Pc.swift in Sources */,
 				22DBF7FF24E0008000E91940 /* EventTrigger.swift in Sources */,
 				22DBF81724E1777700E91940 /* PcView.swift in Sources */,

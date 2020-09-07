@@ -12,11 +12,12 @@ import SwiftUI
 class PartyTableViewController: UITableViewController {
     @IBOutlet weak var lblMoney: UILabel!
     
-    #warning("HP won't be updated by using potion")
     override func viewDidLoad() {
         super.viewDidLoad()
 
         lblMoney.text = "Money: \(Party.instance.money)"
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reload), name: .HPUpdated, object: nil)
     }
 
     // MARK: - Table view data source
@@ -45,5 +46,9 @@ class PartyTableViewController: UITableViewController {
         let selectedPc = Party.instance.pcs[indexPath.row]
         let pcHostingController = UIHostingController(rootView: PcView(pc: selectedPc))
         navigationController?.pushViewController(pcHostingController, animated: true)
+    }
+    
+    @objc func reload() {
+        tableView.reloadData()
     }
 }

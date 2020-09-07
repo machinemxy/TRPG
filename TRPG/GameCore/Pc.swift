@@ -8,16 +8,8 @@
 
 import Foundation
 
-class Pc: Codable, ObservableObject, Battler, Hashable {
+class Pc: Battler, Codable, ObservableObject {
     static let liuBei = "Liu Bei"
-    
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(name)
-    }
-    
-    static func == (lhs: Pc, rhs: Pc) -> Bool {
-        lhs.name == rhs.name
-    }
     
     enum CodingKeys: CodingKey {
         case name, str, dex, con, int, wis, cha, mhp, hp, lv, exp, weaponId, shieldId, armorId, skills
