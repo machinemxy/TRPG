@@ -14,7 +14,7 @@ class BattlerView: UIView {
     @IBOutlet weak var lblHp: UILabel!
     @IBOutlet weak var btnAction: UIButton!
     
-    weak var alertDelegate: AlertDelegate?
+    weak var mapVCDelegate: MapVCDelegate?
     var battler: Battler?
     var target: Battler?
     var action = Action.noAction
@@ -83,13 +83,13 @@ class BattlerView: UIView {
         ac.addAction(UIAlertAction(title: "Attack", style: .default, handler: { [unowned self] (_) in
             let ac2 = UIAlertController(title: "Select Target", message: nil, preferredStyle: .actionSheet)
             
-            ac2.addAction(UIAlertAction(title: "random", style: .default, handler: { [unowned self] (_) in
+            ac2.addAction(UIAlertAction(title: "Random", style: .destructive, handler: { [unowned self] (_) in
                 self.action = .attack
                 self.target = nil
                 self.updateBtnActionTitle()
             }))
             
-            if let enemies = self.alertDelegate?.enemies {
+            if let enemies = self.mapVCDelegate?.enemies {
                 for enemy in enemies.filter({ $0.isAlive }) {
                     ac2.addAction(UIAlertAction(title: enemy.name, style: .default, handler: { [unowned self] (_) in
                         self.action = .attack
@@ -102,7 +102,7 @@ class BattlerView: UIView {
             ac2.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             ac2.popoverPresentationController?.sourceView = sender
             ac2.popoverPresentationController?.sourceRect = sender.bounds
-            self.alertDelegate?.alert(ac: ac2)
+            self.mapVCDelegate?.alert(ac: ac2)
         }))
         
         ac.addAction(UIAlertAction(title: "Item", style: .default, handler: { [unowned self](_) in
@@ -110,7 +110,8 @@ class BattlerView: UIView {
             
             for itemId in Party.instance.usableItems {
                 let item = itemId.toUsableItem()
-                ac2.addAction(UIAlertAction(title: item.name, style: .default, handler: { [unowned self] (_) in
+                let count = Party.instance.inventories[itemId]!
+                ac2.addAction(UIAlertAction(title: "\(item.name)(\(count))", style: .default, handler: { [unowned self] (_) in
                     self.action = item.useAction
                     self.target = nil
                     self.updateBtnActionTitle()
@@ -120,13 +121,13 @@ class BattlerView: UIView {
             ac2.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
             ac2.popoverPresentationController?.sourceView = sender
             ac2.popoverPresentationController?.sourceRect = sender.bounds
-            self.alertDelegate?.alert(ac: ac2)
+            self.mapVCDelegate?.alert(ac: ac2)
         }))
         
         ac.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         ac.popoverPresentationController?.sourceView = sender
         ac.popoverPresentationController?.sourceRect = sender.bounds
-        alertDelegate?.alert(ac: ac)
+        mapVCDelegate?.alert(ac: ac)
     }
     
 }

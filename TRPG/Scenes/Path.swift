@@ -60,6 +60,8 @@ class Path: SKScene {
                     self.move3Action()
                 } else if node.name == "move4" {
                     self.move4Action()
+                } else if node.name == "moveShortCut" {
+                    self.moveShortCutAction()
                 }
             }
         }
@@ -107,6 +109,17 @@ class Path: SKScene {
             } else {
                 self.move3.isHidden = false
                 self.moveShortCut.isHidden = false
+            }
+        }
+    }
+    
+    private func moveShortCutAction() {
+        let enemies = [Enemy("snake", type: .snake)]
+        startBattle(enemies: enemies) { [unowned self] in
+            if EventTrigger.array[EventTrigger.fromVillageToTown] == 0 {
+                self.move4.isHidden = false
+            } else {
+                self.move1.isHidden = false
             }
         }
     }

@@ -54,7 +54,10 @@
 		22F19DF925052B3A00F73204 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F19DF825052B3A00F73204 /* ItemView.swift */; };
 		22F19DFB25069CA900F73204 /* NotificationNameExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F19DFA25069CA900F73204 /* NotificationNameExt.swift */; };
 		22F19DFD2507AB4700F73204 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F19DFC2507AB4700F73204 /* Action.swift */; };
-		22F19DFF2507C24F00F73204 /* AlertDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F19DFE2507C24F00F73204 /* AlertDelegate.swift */; };
+		22F19DFF2507C24F00F73204 /* MapVCDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F19DFE2507C24F00F73204 /* MapVCDelegate.swift */; };
+		22F19E012507D90E00F73204 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F19E002507D90E00F73204 /* Status.swift */; };
+		22F19E032507DA2600F73204 /* BasicAbility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F19E022507DA2600F73204 /* BasicAbility.swift */; };
+		22F19E052507E07E00F73204 /* SideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F19E042507E07E00F73204 /* SideEffect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,7 +122,10 @@
 		22F19DF825052B3A00F73204 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		22F19DFA25069CA900F73204 /* NotificationNameExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExt.swift; sourceTree = "<group>"; };
 		22F19DFC2507AB4700F73204 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
-		22F19DFE2507C24F00F73204 /* AlertDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDelegate.swift; sourceTree = "<group>"; };
+		22F19DFE2507C24F00F73204 /* MapVCDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapVCDelegate.swift; sourceTree = "<group>"; };
+		22F19E002507D90E00F73204 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		22F19E022507DA2600F73204 /* BasicAbility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAbility.swift; sourceTree = "<group>"; };
+		22F19E042507E07E00F73204 /* SideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideEffect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,7 +165,7 @@
 				22E1E3D024DF08160064317C /* MapViewController.swift */,
 				22DBF80B24E104E400E91940 /* PartyTableViewController.swift */,
 				22874F9E24E7FAE1002A0CBD /* BattleViewController.swift */,
-				22F19DFE2507C24F00F73204 /* AlertDelegate.swift */,
+				22F19DFE2507C24F00F73204 /* MapVCDelegate.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -202,6 +208,9 @@
 				22561E1A24F5504D00A0751D /* DataManager.swift */,
 				22F19DF625029F5D00F73204 /* ChallengeRating.swift */,
 				22F19DFC2507AB4700F73204 /* Action.swift */,
+				22F19E002507D90E00F73204 /* Status.swift */,
+				22F19E022507DA2600F73204 /* BasicAbility.swift */,
+				22F19E042507E07E00F73204 /* SideEffect.swift */,
 			);
 			path = GameCore;
 			sourceTree = "<group>";
@@ -401,6 +410,7 @@
 				22874F7824E2E5A3002A0CBD /* Weapon.swift in Sources */,
 				22E1E3D124DF08160064317C /* MapViewController.swift in Sources */,
 				22F19DF725029F5D00F73204 /* ChallengeRating.swift in Sources */,
+				22F19E012507D90E00F73204 /* Status.swift in Sources */,
 				22874F7624E2D8CF002A0CBD /* KeyValueView.swift in Sources */,
 				22E1E3CD24DF08160064317C /* AppDelegate.swift in Sources */,
 				22874F9F24E7FAE1002A0CBD /* BattleViewController.swift in Sources */,
@@ -410,14 +420,16 @@
 				22DBF80124E002F000E91940 /* Key.swift in Sources */,
 				22874F7C24E2EFC4002A0CBD /* Armor.swift in Sources */,
 				22F19DFB25069CA900F73204 /* NotificationNameExt.swift in Sources */,
-				22F19DFF2507C24F00F73204 /* AlertDelegate.swift in Sources */,
+				22F19DFF2507C24F00F73204 /* MapVCDelegate.swift in Sources */,
 				22DBF80524E018B100E91940 /* Pc.swift in Sources */,
+				22F19E052507E07E00F73204 /* SideEffect.swift in Sources */,
 				22DBF7FF24E0008000E91940 /* EventTrigger.swift in Sources */,
 				22DBF81724E1777700E91940 /* PcView.swift in Sources */,
 				22874F9D24E7F2D2002A0CBD /* Enemy.swift in Sources */,
 				22F19DF324FFE80100F73204 /* SKSceneExt.swift in Sources */,
 				22874F9024E6EEBA002A0CBD /* Skill.swift in Sources */,
 				22E1E3CF24DF08160064317C /* SceneDelegate.swift in Sources */,
+				22F19E032507DA2600F73204 /* BasicAbility.swift in Sources */,
 				22DBF80E24E10DE100E91940 /* IntExt.swift in Sources */,
 				22D3AE6124FBC38A00353770 /* Path.swift in Sources */,
 				22561E1924F5334000A0751D /* LiuBei.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  AlertDelegate.swift
+//  MapVCDelegate.swift
 //  TRPG
 //
 //  Created by Ma Xueyuan on 2020/09/08.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol AlertDelegate: class {
+protocol MapVCDelegate: class {
     func alert(ac: UIAlertController)
     
     var enemies: [Enemy] { get }

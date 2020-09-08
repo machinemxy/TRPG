@@ -24,6 +24,7 @@ struct PcView: View {
                 }
                 KeyValueView(key: "Exp", value: String(numerator: pc.exp, denominator: pc.requiredExp))
                 KeyValueView(key: "HP", value: String(numerator: pc.hp, denominator: pc.mhp))
+                KeyValueView(key: "Status", value: pc.statusDescription)
                 KeyValueView(key: "Strength", value: "\(pc.str)")
                 KeyValueView(key: "Dexterity", value: "\(pc.dex)")
                 KeyValueView(key: "Constitution", value: "\(pc.con)")

@@ -12,7 +12,7 @@ class Pc: Battler, Codable, ObservableObject {
     static let liuBei = "Liu Bei"
     
     enum CodingKeys: CodingKey {
-        case name, str, dex, con, int, wis, cha, mhp, hp, lv, exp, weaponId, shieldId, armorId, skills
+        case name, str, dex, con, int, wis, cha, mhp, hp, lv, exp, weaponId, shieldId, armorId, skills, statuses
     }
     
     func encode(to encoder: Encoder) throws {
@@ -33,6 +33,7 @@ class Pc: Battler, Codable, ObservableObject {
         try container.encode(shieldId, forKey: .shieldId)
         try container.encode(armorId, forKey: .armorId)
         try container.encode(skills, forKey: .skills)
+        try container.encode(statuses, forKey: .statuses)
     }
     
     init() {}
@@ -55,6 +56,7 @@ class Pc: Battler, Codable, ObservableObject {
         shieldId = try container.decode(Int?.self, forKey: .shieldId)
         armorId = try container.decode(Int?.self, forKey: .armorId)
         skills = try container.decode([SkillType].self, forKey: .skills)
+        statuses = try container.decode([Status].self, forKey: .statuses)
     }
     
     var name = ""
@@ -72,6 +74,7 @@ class Pc: Battler, Codable, ObservableObject {
     @Published var shieldId: Int? = nil
     @Published var armorId: Int? = nil
     @Published var skills = [SkillType]()
+    @Published var statuses = [Status]()
     
     var weapon: Weapon {
         Weapon(id: weaponId)
@@ -164,4 +167,20 @@ class Pc: Battler, Codable, ObservableObject {
     }
     
     var defaultAction: Action { .attack }
+    
+    var goodAtAbilities: [BasicAbility] {
+        if name == Self.liuBei {
+            return [.wis, .cha]
+        } else {
+            return [.str, .con]
+        }
+    }
+    
+    var statusDescription: String {
+        if statuses.isEmpty {
+            return "healthy"
+        } else {
+            return statuses.map({ $0.rawValue }).joined(separator: ",")
+        }
+    }
 }

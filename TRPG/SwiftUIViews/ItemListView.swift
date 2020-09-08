@@ -37,6 +37,12 @@ struct ItemListView: View {
                     self.showCommonAlert = true
                 }), secondaryButton: .cancel())
             }
+            
+            Section(header: Text("Others")) {
+                ForEach(party.uselessItems, id: \.self) { itemId in
+                    ItemView(item: itemId.toItem(), count: self.party.inventories[itemId]!)
+                }
+            }
         }.alert(isPresented: $showCommonAlert) { () -> Alert in
             Alert(title: Text(commonAlertTitle))
         }

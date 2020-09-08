@@ -11,6 +11,7 @@ import Foundation
 struct UselessItem: Item {
     static let grassShoes = 300
     static let yellowTurban = 301
+    static let snakeSkin = 302
     
     var name: String
     var description: String
@@ -20,9 +21,12 @@ struct UselessItem: Item {
         case Self.grassShoes:
             name = "grass shoes"
             description = "made by Liu Bei"
-        case UselessItem.yellowTurban:
+        case Self.yellowTurban:
             name = "yellow turban"
             description = "the symbol of Yellow Turban Army"
+        case Self.snakeSkin:
+            name = "snake skin"
+            description = "the skin of snake"
         default:
             name = "dummy"
             description = ""

@@ -33,4 +33,11 @@ class PcTests: XCTestCase {
         let str = String(data: data!, encoding: .utf8)!
         print(str)
     }
+    
+    func testStatusDescription() {
+        let liubei = LiuBei.create()
+        liubei.statuses.append(.frozen)
+        liubei.statuses.append(.poisoned)
+        print(liubei.statusDescription)
+    }
 }

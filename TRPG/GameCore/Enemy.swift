@@ -11,6 +11,7 @@ import Foundation
 enum EnemyType {
     case rat
     case YTRecruit
+    case snake
 }
 
 class Enemy: Battler {
@@ -31,6 +32,8 @@ class Enemy: Battler {
     var defaultAction: Action
     var challenge: ChallengeRatting
     var dropItems: [Int]
+    var statuses = [Status]()
+    var goodAtAbilities = [BasicAbility]()
     
     init(_ name: String, type: EnemyType) {
         self.name = name
@@ -68,6 +71,22 @@ class Enemy: Battler {
             defaultAction = .attack
             challenge = .c0
             dropItems = [UselessItem.yellowTurban]
+        case .snake:
+            str = 2
+            dex = 16
+            con = 11
+            int = 1
+            wis = 10
+            cha = 3
+            mhp = 2
+            hitBonus = 5
+            damageA = 1
+            damageB = 1
+            damageC = 0
+            ac = 13
+            defaultAction = .bite
+            challenge = .c1_8
+            dropItems = [UselessItem.snakeSkin]
         }
         
         hp = mhp
@@ -75,5 +94,9 @@ class Enemy: Battler {
     
     var exp: Int {
         challenge.toExp()
+    }
+    
+    var proficiency: Int {
+        challenge.toProficiency()
     }
 }

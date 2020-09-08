@@ -14,7 +14,7 @@ enum BattleSituation {
     case lose
 }
 
-class BattleViewController: UIViewController, AlertDelegate {
+class BattleViewController: UIViewController, MapVCDelegate {
     @IBOutlet var sideViews: [SideView]!
     @IBOutlet weak var txtLog: UITextView!
     @IBOutlet weak var btnMain: UIButton!
@@ -43,10 +43,8 @@ class BattleViewController: UIViewController, AlertDelegate {
         sideViews[1].setBattlers(enemies, isPc: false)
         
         // set delegate
-        for i in 0...1 {
-            for j in 0...2 {
-                sideViews[i].battlerViews[j].alertDelegate = self
-            }
+        for i in 0...2 {
+            sideViews[0].battlerViews[i].mapVCDelegate = self
         }
         
         decideMoveOrder()
@@ -87,6 +85,8 @@ class BattleViewController: UIViewController, AlertDelegate {
         if !(allPcsDead || allEnemiesDead) {
             performActionsOfSide(secondMoveSide)
         }
+        
+        poisonProcess()
         
         updateUI()
         
@@ -157,6 +157,16 @@ class BattleViewController: UIViewController, AlertDelegate {
         
         if enemies.first(where: { $0.isAlive}) == nil {
             allEnemiesDead = true
+        }
+    }
+    
+    private func poisonProcess() {
+        for sideView in sideViews {
+            for battlerView in sideView.battlerViews {
+                guard let battler = battlerView.battler, battler.isAlive, battler.statuses.contains(.poisoned) else { continue }
+                battler.reduceHP(by: 1)
+                log.append("\(battler.name) got 1 poison damage.\n")
+            }
         }
     }
     

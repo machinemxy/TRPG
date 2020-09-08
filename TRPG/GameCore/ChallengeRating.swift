@@ -56,4 +56,37 @@ enum ChallengeRatting {
             return 5_900
         }
     }
+    
+    func toProficiency() -> Int {
+        switch self {
+        case .c0:
+            return 2
+        case .c1_8:
+            return 2
+        case .c1_4:
+            return 2
+        case .c1_2:
+            return 2
+        case .c1:
+            return 2
+        case .c2:
+            return 2
+        case .c3:
+            return 2
+        case .c4:
+            return 2
+        case .c5:
+            return 3
+        case .c6:
+            return 3
+        case .c7:
+            return 3
+        case .c8:
+            return 3
+        case .c9:
+            return 4
+        case .c10:
+            return 4
+        }
+    }
 }

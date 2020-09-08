@@ -44,6 +44,10 @@ class Party: Codable, ObservableObject {
         return inventories.keys.filter { $0 >= 400 }
     }
     
+    var uselessItems: [Int] {
+        return inventories.keys.filter { $0 >= 300 && $0 < 400 }
+    }
+    
     func gainExp(_ exp: Int) {
         guard pcs.count > 0 else { return }
         
@@ -71,6 +75,7 @@ class Party: Codable, ObservableObject {
     func rest() {
         for pc in pcs {
             pc.hp = pc.mhp
+            pc.statuses.removeAll()
         }
     }
 }
