@@ -27,8 +27,6 @@ class BattleViewController: UIViewController {
     var isPcMoveFirst: Bool!
     var allPcsDead = false
     var allEnemiesDead = false
-    var stillSomePcsAlive: Bool { !allPcsDead }
-    var stillSomeEnemiesAlive: Bool { !allEnemiesDead }
     var log = ""
     var battleSituation = BattleSituation.inBattle
     
@@ -41,7 +39,7 @@ class BattleViewController: UIViewController {
         btnMain.backgroundColor = .secondarySystemBackground
 
         // set initial ui
-        sideViews[0].setBattlers(Party.instance.pcs, isPc: true, target: enemies[0])
+        sideViews[0].setBattlers(Party.instance.pcs, isPc: true)
         sideViews[1].setBattlers(enemies, isPc: false)
         
         decideMoveOrder()
@@ -68,16 +66,19 @@ class BattleViewController: UIViewController {
     private func performActions() {
         log = ""
         
+        let firstMoveSide: Int
+        let secondMoveSide: Int
         if isPcMoveFirst {
-            performPcActions()
-            if stillSomePcsAlive && stillSomeEnemiesAlive {
-                performEnemyActions()
-            }
+            firstMoveSide = 0
+            secondMoveSide = 1
         } else {
-            performEnemyActions()
-            if stillSomePcsAlive && stillSomeEnemiesAlive {
-                performPcActions()
-            }
+            firstMoveSide = 1
+            secondMoveSide = 0
+        }
+        
+        performActionsOfSide(firstMoveSide)
+        if !(allPcsDead || allEnemiesDead) {
+            performActionsOfSide(secondMoveSide)
         }
         
         updateUI()
@@ -114,76 +115,36 @@ class BattleViewController: UIViewController {
         present(ac, animated: true)
     }
     
-    private func performPcActions() {
+    private func performActionsOfSide(_ sideId: Int) {
+        let opponentSideId = 1 - sideId
+        let opponents = sideViews[opponentSideId].battlers!
         for i in 0...2 {
-            let pcView = sideViews[0].battlerViews[i]
-            guard let battler = pcView.battler, battler.hp > 0 else { continue }
+            let battlerView = sideViews[sideId].battlerViews[i]
+            guard let battler = battlerView.battler, battler.isAlive else { continue }
             
-            if pcView.action == "attack" {
-                if let target = pcView.target, target.hp > 0 {
-                    performAttack(attacker: battler, target: target)
-                } else {
-                    let target = enemies.filter { $0.hp > 0 }.randomElement()
-                    performAttack(attacker: battler, target: target!)
-                }
+            let logLine: String
+            if battlerView.action.requireTarget() && battlerView.target == nil {
+                let tempTarget = opponents.alived.randomElement()
+                logLine = battlerView.action.perform(by: battler, to: tempTarget)
+            } else {
+                logLine = battlerView.action.perform(by: battler, to: battlerView.target)
             }
+            log.append(logLine)
+            log.append("\n")
             
             checkDeadOrAlive()
             if allPcsDead || allEnemiesDead {
                 break
             }
         }
-    }
-    
-    private func performEnemyActions() {
-        for i in 0...2 {
-            let enemyView = sideViews[1].battlerViews[i]
-            guard let battler = enemyView.battler, battler.hp > 0 else { continue }
-            
-            let target = Party.instance.pcs.filter { $0.hp > 0 }.randomElement()
-            performAttack(attacker: battler, target: target!)
-            
-            checkDeadOrAlive()
-            if allPcsDead || allEnemiesDead {
-                break
-            }
-        }
-    }
-    
-    private func performAttack(attacker: Battler, target: Battler) {
-        log.append("\(attacker.name) attacked \(target.name), ")
-        
-        let hitDice = Int.random(in: 1...20)
-        
-        if hitDice == 1 || (hitDice != 20 && attacker.hitBonus + hitDice < target.ac) {
-            log.append("but failed to cause damage.\n")
-            return
-        }
-        
-        var damageAMultiplier = 1
-        if hitDice == 20 {
-            damageAMultiplier = 2
-            log.append("critical hit, ")
-        }
-        
-        let damage = Int.abcCalc(a: damageAMultiplier * attacker.damageA, b: attacker.damageB, c: attacker.damageC)
-        
-        
-        log.append("caused \(damage) damage.")
-        target.hp -= damage
-        if target.hp <= 0 {
-            target.hp = 0
-            log.append("\(target.name) was down.")
-        }
-        log.append("\n")
     }
     
     private func checkDeadOrAlive() {
-        if Party.instance.pcs.first(where: { $0.hp > 0 }) == nil {
+        if Party.instance.pcs.first(where: { $0.isAlive }) == nil {
             allPcsDead = true
         }
         
-        if enemies.first(where: { $0.hp > 0 }) == nil {
+        if enemies.first(where: { $0.isAlive}) == nil {
             allEnemiesDead = true
         }
     }
@@ -194,9 +155,9 @@ class BattleViewController: UIViewController {
         for sideView in sideViews {
             for battlerView in sideView.battlerViews {
                 guard let battler = battlerView.battler else { continue }
-                if battler.hp == 0 {
-                    if battlerView.btnAction.isEnabled == true {
-                        battlerView.btnAction.setTitle("-", for: .normal)
+                if !battler.isAlive {
+                    if !battlerView.btnAction.title(for: .normal)!.isEmpty {
+                        battlerView.btnAction.setTitle("", for: .normal)
                         battlerView.btnAction.isEnabled = false
                     }
                     battlerView.lblName.textColor = .secondaryLabel

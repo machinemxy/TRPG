@@ -28,6 +28,7 @@ class Enemy: Battler {
     var damageB: Int
     var damageC: Int
     var ac: Int
+    var defaultAction: Action
     var challenge: ChallengeRatting
     var dropItems: [Int]
     
@@ -48,6 +49,7 @@ class Enemy: Battler {
             damageB = 1
             damageC = 0
             ac = 10
+            defaultAction = .attack
             challenge = .c0
             dropItems = []
         case .YTRecruit:
@@ -63,6 +65,7 @@ class Enemy: Battler {
             damageB = 4
             damageC = 0
             ac = 10
+            defaultAction = .attack
             challenge = .c0
             dropItems = [UselessItem.yellowTurban]
         }

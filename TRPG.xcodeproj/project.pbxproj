@@ -53,6 +53,7 @@
 		22F19DF725029F5D00F73204 /* ChallengeRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F19DF625029F5D00F73204 /* ChallengeRating.swift */; };
 		22F19DF925052B3A00F73204 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F19DF825052B3A00F73204 /* ItemView.swift */; };
 		22F19DFB25069CA900F73204 /* NotificationNameExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F19DFA25069CA900F73204 /* NotificationNameExt.swift */; };
+		22F19DFD2507AB4700F73204 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F19DFC2507AB4700F73204 /* Action.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -116,6 +117,7 @@
 		22F19DF625029F5D00F73204 /* ChallengeRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeRating.swift; sourceTree = "<group>"; };
 		22F19DF825052B3A00F73204 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		22F19DFA25069CA900F73204 /* NotificationNameExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExt.swift; sourceTree = "<group>"; };
+		22F19DFC2507AB4700F73204 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +198,7 @@
 				22561E1824F5333F00A0751D /* LiuBei.swift */,
 				22561E1A24F5504D00A0751D /* DataManager.swift */,
 				22F19DF625029F5D00F73204 /* ChallengeRating.swift */,
+				22F19DFC2507AB4700F73204 /* Action.swift */,
 			);
 			path = GameCore;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22D3AE5D24FB7F4900353770 /* UsableItem.swift in Sources */,
+				22F19DFD2507AB4700F73204 /* Action.swift in Sources */,
 				22874F9524E7B7DE002A0CBD /* BattlerView.swift in Sources */,
 				22874F7A24E2EC5D002A0CBD /* Shield.swift in Sources */,
 				22561E1F24F7EA0200A0751D /* UselessItem.swift in Sources */,

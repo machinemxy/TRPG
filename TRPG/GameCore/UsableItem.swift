@@ -28,18 +28,12 @@ struct UsableItem: Item {
         }
     }
     
-    func used(by target: Battler) -> String {
+    var useAction: Action {
         switch id {
-        case Self.potionOfHealing:
-            let recover = Int.abcCalc(a: 2, b: 4, c: 2)
-            target.hp += recover
-            if target.hp >= target.mhp {
-                target.hp = target.mhp
-            }
-            
-            return "\(target.name) used \(name), recovered \(recover) HP."
+        case 400:
+            return .drinkPotionOfHealing
         default:
-            return ""
+            return .noAction
         }
     }
 }

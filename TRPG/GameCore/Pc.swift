@@ -162,4 +162,6 @@ class Pc: Battler, Codable, ObservableObject {
             return 4
         }
     }
+    
+    var defaultAction: Action { .attack }
 }

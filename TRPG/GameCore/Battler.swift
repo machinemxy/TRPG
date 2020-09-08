@@ -23,4 +23,33 @@ protocol Battler: class {
     var damageB: Int { get }
     var damageC: Int { get }
     var ac: Int { get }
+    var defaultAction: Action { get }
+}
+
+extension Battler {
+    var isAlive: Bool {
+        hp > 0
+    }
+    
+    func addHP(by value: Int) {
+        if hp + value >= mhp {
+            hp = mhp
+        } else {
+            hp += value
+        }
+    }
+    
+    func reduceHP(by value: Int) {
+        if hp - value <= 0 {
+            hp = 0
+        } else {
+            hp -= value
+        }
+    }
+}
+
+extension Array where Element == Battler {
+    var alived: [Battler] {
+        return self.filter { $0.isAlive }
+    }
 }

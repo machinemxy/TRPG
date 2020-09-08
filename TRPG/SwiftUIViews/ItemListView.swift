@@ -31,7 +31,8 @@ struct ItemListView: View {
             }.alert(isPresented: $showUseItemAlert) {
                 Alert(title: Text("Action"), primaryButton: .default(Text("Use"), action: {
                     let usableItem = self.selectedItemId.toUsableItem()
-                    self.commonAlertTitle = usableItem.used(by: self.pc)
+                    let useAction = usableItem.useAction
+                    self.commonAlertTitle = useAction.perform(by: self.pc, to: nil)
                     self.party.loseItem(self.selectedItemId)
                     NotificationCenter.default.post(name: .HPUpdated, object: nil)
                     self.showCommonAlert = true
