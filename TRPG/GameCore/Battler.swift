@@ -47,9 +47,3 @@ extension Battler {
         }
     }
 }
-
-extension Array where Element == Battler {
-    var alived: [Battler] {
-        return self.filter { $0.isAlive }
-    }
-}

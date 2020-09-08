@@ -54,6 +54,7 @@
 		22F19DF925052B3A00F73204 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F19DF825052B3A00F73204 /* ItemView.swift */; };
 		22F19DFB25069CA900F73204 /* NotificationNameExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F19DFA25069CA900F73204 /* NotificationNameExt.swift */; };
 		22F19DFD2507AB4700F73204 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F19DFC2507AB4700F73204 /* Action.swift */; };
+		22F19DFF2507C24F00F73204 /* AlertDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F19DFE2507C24F00F73204 /* AlertDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,7 @@
 		22F19DF825052B3A00F73204 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
 		22F19DFA25069CA900F73204 /* NotificationNameExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationNameExt.swift; sourceTree = "<group>"; };
 		22F19DFC2507AB4700F73204 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		22F19DFE2507C24F00F73204 /* AlertDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 				22E1E3D024DF08160064317C /* MapViewController.swift */,
 				22DBF80B24E104E400E91940 /* PartyTableViewController.swift */,
 				22874F9E24E7FAE1002A0CBD /* BattleViewController.swift */,
+				22F19DFE2507C24F00F73204 /* AlertDelegate.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				22DBF80124E002F000E91940 /* Key.swift in Sources */,
 				22874F7C24E2EFC4002A0CBD /* Armor.swift in Sources */,
 				22F19DFB25069CA900F73204 /* NotificationNameExt.swift in Sources */,
+				22F19DFF2507C24F00F73204 /* AlertDelegate.swift in Sources */,
 				22DBF80524E018B100E91940 /* Pc.swift in Sources */,
 				22DBF7FF24E0008000E91940 /* EventTrigger.swift in Sources */,
 				22DBF81724E1777700E91940 /* PcView.swift in Sources */,

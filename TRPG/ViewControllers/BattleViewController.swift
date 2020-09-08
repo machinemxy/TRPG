@@ -14,13 +14,13 @@ enum BattleSituation {
     case lose
 }
 
-class BattleViewController: UIViewController {
+class BattleViewController: UIViewController, AlertDelegate {
     @IBOutlet var sideViews: [SideView]!
     @IBOutlet weak var txtLog: UITextView!
     @IBOutlet weak var btnMain: UIButton!
     
     // attributes should be set before load
-    var enemies: [Enemy]!
+    var enemies = [Enemy]()
     var processAfterBattle: (() -> Void)?
     
     
@@ -41,6 +41,13 @@ class BattleViewController: UIViewController {
         // set initial ui
         sideViews[0].setBattlers(Party.instance.pcs, isPc: true)
         sideViews[1].setBattlers(enemies, isPc: false)
+        
+        // set delegate
+        for i in 0...1 {
+            for j in 0...2 {
+                sideViews[i].battlerViews[j].alertDelegate = self
+            }
+        }
         
         decideMoveOrder()
     }
@@ -123,9 +130,13 @@ class BattleViewController: UIViewController {
             guard let battler = battlerView.battler, battler.isAlive else { continue }
             
             let logLine: String
-            if battlerView.action.requireTarget() && battlerView.target == nil {
-                let tempTarget = opponents.alived.randomElement()
-                logLine = battlerView.action.perform(by: battler, to: tempTarget)
+            if battlerView.action.requireTarget() {
+                if let target = battlerView.target, target.isAlive {
+                    logLine = battlerView.action.perform(by: battler, to: target)
+                } else {
+                    let tempTarget = opponents.filter({ $0.isAlive }).randomElement()
+                    logLine = battlerView.action.perform(by: battler, to: tempTarget)
+                }
             } else {
                 logLine = battlerView.action.perform(by: battler, to: battlerView.target)
             }
@@ -155,12 +166,33 @@ class BattleViewController: UIViewController {
         for sideView in sideViews {
             for battlerView in sideView.battlerViews {
                 guard let battler = battlerView.battler else { continue }
-                if !battler.isAlive {
-                    if !battlerView.btnAction.title(for: .normal)!.isEmpty {
-                        battlerView.btnAction.setTitle("", for: .normal)
-                        battlerView.btnAction.isEnabled = false
+                if battler.isAlive {
+                    // if the character is a alived pc
+                    if battlerView.btnAction.isEnabled {
+                        // if pc's action is not attack, or his target is dead, reset his action
+                        var actionOrTargetChanged = false
+                        if battlerView.action != .attack {
+                            battlerView.action = .attack
+                            actionOrTargetChanged = true
+                        }
+                        
+                        if let target = battlerView.target, target.isAlive == false {
+                            battlerView.target = nil
+                            actionOrTargetChanged = true
+                        }
+                        
+                        if actionOrTargetChanged {
+                            battlerView.updateBtnActionTitle()
+                        }
                     }
-                    battlerView.lblName.textColor = .secondaryLabel
+                } else {
+                    // the character is just dead
+                    if battlerView.action != .noAction {
+                        battlerView.action = .noAction
+                        battlerView.updateBtnActionTitle()
+                        battlerView.btnAction.isEnabled = false
+                        battlerView.lblName.textColor = .secondaryLabel
+                    }
                 }
                 
                 battlerView.updateHP()
@@ -183,5 +215,9 @@ class BattleViewController: UIViewController {
             btnMain.layer.borderColor = UIColor.systemRed.cgColor
             btnMain.setTitle("Restart from save point", for: .normal)
         }
+    }
+    
+    func alert(ac: UIAlertController) {
+        present(ac, animated: true)
     }
 }

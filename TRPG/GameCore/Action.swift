@@ -22,6 +22,7 @@ enum Action {
         case .drinkPotionOfHealing:
             let value = Int.abcCalc(a: 2, b: 4, c: 2)
             battler.addHP(by: value)
+            Party.instance.loseItem(UsableItem.potionOfHealing)
             return "\(battler.name) drank potion of healing, recovered \(value) HP."
         }
     }
