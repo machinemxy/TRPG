@@ -21,8 +21,8 @@ class Town: SKScene {
         guard let touch = touches.first else { return }
         let touchPoint = touch.location(in: self)
         for node in nodes(at: touchPoint) {
-            if node.name == "hotel" {
-                hotelDialog()
+            if node.name == "inn" {
+                innDialog()
                 break
             } else if node.name == "exit" {
                 switchScene(fileNamed: "Path")
@@ -34,14 +34,14 @@ class Town: SKScene {
         }
     }
     
-    private func hotelDialog() {
-        let ac = UIAlertController(title: "hotel keeper:", message: "hotel_keeper_1".localized(), preferredStyle: .alert)
+    private func innDialog() {
+        let ac = UIAlertController(title: "inn keeper:", message: "inn_keeper_1".localized(), preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "Standard(1G)", style: .default, handler: { [unowned self] (_) in
             if Party.instance.money >= 1 {
                 Party.instance.money -= 1
                 self.rest()
             } else {
-                let ac2 = UIAlertController(title: "hotel keeper:", message: "hotel_keeper_2".localized(), preferredStyle: .alert)
+                let ac2 = UIAlertController(title: "inn keeper:", message: "inn_keeper_2".localized(), preferredStyle: .alert)
                 ac2.addAction(.ok)
                 self.presentAlert(ac2)
             }
