@@ -62,6 +62,8 @@ class Path: SKScene {
                     self.move4Action()
                 } else if node.name == "moveShortCut" {
                     self.moveShortCutAction()
+                } else if node.name == "castleEntrance" {
+                    self.switchScene(fileNamed: "Town")
                 }
             }
         }

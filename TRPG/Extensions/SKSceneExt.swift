@@ -25,6 +25,13 @@ extension SKScene {
         }
     }
     
+    func rest() {
+        Party.instance.rest()
+        let ac = UIAlertController(title: "Your characters are fully recovered.", message: nil, preferredStyle: .alert)
+        ac.addAction(UIAlertAction.ok)
+        presentAlert(ac)
+    }
+    
     func presentAlert(_ ac: UIAlertController) {
         MapViewController.instance?.present(ac, animated: true)
     }

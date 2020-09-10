@@ -24,7 +24,7 @@ protocol Battler: class {
     var damageC: Int { get }
     var ac: Int { get }
     var defaultAction: Action { get }
-    var statuses: [Status] { get set }
+    var statuses: Set<Status> { get set }
     var goodAtAbilities: [BasicAbility] { get }
     var proficiency: Int { get }
 }

@@ -138,13 +138,6 @@ class Village: SKScene {
         presentAlert(ac)
     }
     
-    private func rest() {
-        Party.instance.rest()
-        let ac = UIAlertController(title: "Your characters are fully recovered.", message: nil, preferredStyle: .alert)
-        ac.addAction(UIAlertAction.ok)
-        presentAlert(ac)
-    }
-    
     private func persuade(target: Int) -> Bool {
         let liubei = Party.instance.pcs[0]
         let bonus = liubei.cha.modifier + liubei.proficiency

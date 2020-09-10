@@ -38,7 +38,7 @@ struct SideEffect {
         if point >= difficulty {
             return true
         } else {
-            roller.statuses.append(statusToAdd)
+            roller.statuses.insert(.poisoned)
             return false
         }
     }

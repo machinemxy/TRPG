@@ -13,7 +13,12 @@ enum Key {
     static let eventTrigger = "eventTrigger"
     static let party = "party"
     
-    // segue
+    // Segue
     static let gameOverSegue = "gameOverSegue"
     static let unwindToMapSegue = "unwindToMapSegue"
+    
+    // Admob
+    #warning("this adKey is for debug")
+    static let adKey = "ca-app-pub-3940256099942544/1712485313" 
+    
 }

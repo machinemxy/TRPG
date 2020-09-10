@@ -32,7 +32,7 @@ class Enemy: Battler {
     var defaultAction: Action
     var challenge: ChallengeRatting
     var dropItems: [Int]
-    var statuses = [Status]()
+    var statuses: Set<Status> = []
     var goodAtAbilities = [BasicAbility]()
     
     init(_ name: String, type: EnemyType) {
@@ -70,7 +70,7 @@ class Enemy: Battler {
             ac = 10
             defaultAction = .attack
             challenge = .c0
-            dropItems = [UselessItem.yellowTurban]
+            dropItems = [UselessItem.yellowTurban, Weapon.club]
         case .snake:
             str = 2
             dex = 16

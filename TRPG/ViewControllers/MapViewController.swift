@@ -8,23 +8,26 @@
 
 import UIKit
 import SpriteKit
+import GoogleMobileAds
 
 class MapViewController: UIViewController {
+    static var instance: MapViewController?
+    
     @IBOutlet weak var btnParty: UIButton!
     @IBOutlet weak var btnData: UIButton!
     
-    static var instance: MapViewController?
+    var rewardedAd: GADRewardedAd?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         Self.instance = self
         
+        createAndLoadRewardedAd()
+        
         btnParty.layer.borderWidth = 1
         btnParty.layer.borderColor = UIColor.link.cgColor
-        btnParty.backgroundColor = .secondarySystemBackground
         btnData.layer.borderWidth = 1
         btnData.layer.borderColor = UIColor.link.cgColor
-        btnData.backgroundColor = .secondarySystemBackground
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
@@ -121,3 +124,37 @@ class MapViewController: UIViewController {
     }
 }
 
+extension MapViewController: GADRewardedAdDelegate {
+    func createAndLoadRewardedAd() {
+        rewardedAd = GADRewardedAd(adUnitID: Key.adKey)
+        rewardedAd?.load(GADRequest()) { error in
+        if let error = error {
+            print("Loading failed: \(error)")
+        } else {
+            print("Loading Succeeded")
+        }
+      }
+    }
+    
+    func rewardedAdDidDismiss(_ rewardedAd: GADRewardedAd) {
+        self.alert(title: "Your characters are fully recovered.", message: nil)
+        createAndLoadRewardedAd()
+    }
+    
+    func watchAdAndRestForFree() -> Bool {
+        if rewardedAd?.isReady == true {
+            rewardedAd?.present(fromRootViewController: self, delegate:self)
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func rewardedAd(_ rewardedAd: GADRewardedAd, userDidEarn reward: GADAdReward) {
+        Party.instance.rest()
+    }
+    
+    func rewardedAd(_ rewardedAd: GADRewardedAd, didFailToPresentWithError error: Error) {
+      print("Rewarded ad failed to present.")
+    }
+}

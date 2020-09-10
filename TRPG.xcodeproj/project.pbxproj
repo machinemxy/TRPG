@@ -58,6 +58,9 @@
 		22F19E012507D90E00F73204 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F19E002507D90E00F73204 /* Status.swift */; };
 		22F19E032507DA2600F73204 /* BasicAbility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F19E022507DA2600F73204 /* BasicAbility.swift */; };
 		22F19E052507E07E00F73204 /* SideEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F19E042507E07E00F73204 /* SideEffect.swift */; };
+		22F19E072508F62A00F73204 /* Town.sks in Resources */ = {isa = PBXBuildFile; fileRef = 22F19E062508F62A00F73204 /* Town.sks */; };
+		22F19E092508F63D00F73204 /* Town.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22F19E082508F63D00F73204 /* Town.swift */; };
+		F93D8E38EE09EB318678932F /* libPods-TRPG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46480D5CA2552FD94CAEAB21 /* libPods-TRPG.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -126,6 +129,11 @@
 		22F19E002507D90E00F73204 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		22F19E022507DA2600F73204 /* BasicAbility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicAbility.swift; sourceTree = "<group>"; };
 		22F19E042507E07E00F73204 /* SideEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideEffect.swift; sourceTree = "<group>"; };
+		22F19E062508F62A00F73204 /* Town.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Town.sks; sourceTree = "<group>"; };
+		22F19E082508F63D00F73204 /* Town.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Town.swift; sourceTree = "<group>"; };
+		46480D5CA2552FD94CAEAB21 /* libPods-TRPG.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TRPG.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5766C20241141B29317EE87C /* Pods-TRPG.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TRPG.debug.xcconfig"; path = "Target Support Files/Pods-TRPG/Pods-TRPG.debug.xcconfig"; sourceTree = "<group>"; };
+		7CEB8BD7CFD0856E530F177C /* Pods-TRPG.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TRPG.release.xcconfig"; path = "Target Support Files/Pods-TRPG/Pods-TRPG.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F93D8E38EE09EB318678932F /* libPods-TRPG.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,9 +172,9 @@
 			isa = PBXGroup;
 			children = (
 				22E1E3D024DF08160064317C /* MapViewController.swift */,
+				22F19DFE2507C24F00F73204 /* MapVCDelegate.swift */,
 				22DBF80B24E104E400E91940 /* PartyTableViewController.swift */,
 				22874F9E24E7FAE1002A0CBD /* BattleViewController.swift */,
-				22F19DFE2507C24F00F73204 /* MapVCDelegate.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -232,6 +241,8 @@
 				22E1E3CB24DF08160064317C /* TRPG */,
 				22E1E3E224DF08170064317C /* TRPGTests */,
 				22E1E3CA24DF08160064317C /* Products */,
+				E66432CE5A6F99E16AF1D073 /* Pods */,
+				BFD7AC0CD05D1C0DCC16EEA7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -283,8 +294,28 @@
 				22E1E3F124DF10F90064317C /* Village.swift */,
 				22D3AE5E24FBC35700353770 /* Path.sks */,
 				22D3AE6024FBC38A00353770 /* Path.swift */,
+				22F19E062508F62A00F73204 /* Town.sks */,
+				22F19E082508F63D00F73204 /* Town.swift */,
 			);
 			path = Scenes;
+			sourceTree = "<group>";
+		};
+		BFD7AC0CD05D1C0DCC16EEA7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				46480D5CA2552FD94CAEAB21 /* libPods-TRPG.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E66432CE5A6F99E16AF1D073 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5766C20241141B29317EE87C /* Pods-TRPG.debug.xcconfig */,
+				7CEB8BD7CFD0856E530F177C /* Pods-TRPG.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -294,6 +325,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22E1E3E824DF08170064317C /* Build configuration list for PBXNativeTarget "TRPG" */;
 			buildPhases = (
+				E49E41281713EA6EED538F3C /* [CP] Check Pods Manifest.lock */,
 				22E1E3C524DF08160064317C /* Sources */,
 				22E1E3C624DF08160064317C /* Frameworks */,
 				22E1E3C724DF08160064317C /* Resources */,
@@ -368,6 +400,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22F19E072508F62A00F73204 /* Town.sks in Resources */,
 				22874F8C24E59396002A0CBD /* Localizable.strings in Resources */,
 				22874F9324E7B338002A0CBD /* BattlerView.xib in Resources */,
 				22874F9724E7B9B1002A0CBD /* SideView.xib in Resources */,
@@ -387,6 +420,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E49E41281713EA6EED538F3C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TRPG-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		22E1E3C524DF08160064317C /* Sources */ = {
@@ -425,6 +483,7 @@
 				22F19E052507E07E00F73204 /* SideEffect.swift in Sources */,
 				22DBF7FF24E0008000E91940 /* EventTrigger.swift in Sources */,
 				22DBF81724E1777700E91940 /* PcView.swift in Sources */,
+				22F19E092508F63D00F73204 /* Town.swift in Sources */,
 				22874F9D24E7F2D2002A0CBD /* Enemy.swift in Sources */,
 				22F19DF324FFE80100F73204 /* SKSceneExt.swift in Sources */,
 				22874F9024E6EEBA002A0CBD /* Skill.swift in Sources */,
@@ -600,6 +659,7 @@
 		};
 		22E1E3E924DF08170064317C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5766C20241141B29317EE87C /* Pods-TRPG.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -618,6 +678,7 @@
 		};
 		22E1E3EA24DF08170064317C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7CEB8BD7CFD0856E530F177C /* Pods-TRPG.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

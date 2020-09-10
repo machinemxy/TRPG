@@ -36,8 +36,8 @@ class PcTests: XCTestCase {
     
     func testStatusDescription() {
         let liubei = LiuBei.create()
-        liubei.statuses.append(.frozen)
-        liubei.statuses.append(.poisoned)
+        liubei.statuses.insert(.frozen)
+        liubei.statuses.insert(.poisoned)
         print(liubei.statusDescription)
     }
 }

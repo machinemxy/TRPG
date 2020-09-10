@@ -56,7 +56,7 @@ class Pc: Battler, Codable, ObservableObject {
         shieldId = try container.decode(Int?.self, forKey: .shieldId)
         armorId = try container.decode(Int?.self, forKey: .armorId)
         skills = try container.decode([SkillType].self, forKey: .skills)
-        statuses = try container.decode([Status].self, forKey: .statuses)
+        statuses = try container.decode(Set<Status>.self, forKey: .statuses)
     }
     
     var name = ""
@@ -74,7 +74,7 @@ class Pc: Battler, Codable, ObservableObject {
     @Published var shieldId: Int? = nil
     @Published var armorId: Int? = nil
     @Published var skills = [SkillType]()
-    @Published var statuses = [Status]()
+    @Published var statuses: Set<Status> = []
     
     var weapon: Weapon {
         Weapon(id: weaponId)
