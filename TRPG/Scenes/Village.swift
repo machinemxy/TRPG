@@ -69,12 +69,12 @@ class Village: SKScene {
     }
     
     private func neighborDialog() {
-        if EventTrigger.array[EventTrigger.neighborJoinYellowTurbans] == 0 {
+        if EventTrigger.getValue(key: .neighborJoinYellowTurbans) == 0 {
             let ac = UIAlertController(title: "neighbor:", message: "neighbor_1".localized(), preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "Let him go", style: .default, handler: { (_) in
                 let ac2 = UIAlertController(title: "neighbor:", message: "neighbor_2".localized(), preferredStyle: .alert)
                 ac2.addAction(UIAlertAction(title: "OK", style: .default, handler: { [unowned self] (_) in
-                    EventTrigger.array[EventTrigger.neighborJoinYellowTurbans] = 1
+                    EventTrigger.setValue(key: .neighborJoinYellowTurbans, value: 1)
                     self.neighbor.isHidden = true
                 }))
                 self.presentAlert(ac2)
@@ -83,14 +83,14 @@ class Village: SKScene {
                 if self.persuade(target: 10) {
                     let ac2 = UIAlertController(title: "neighbor:", message: "neighbor_3".localized(), preferredStyle: .alert)
                     ac2.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
-                        EventTrigger.array[EventTrigger.neighborJoinYellowTurbans] = 2
+                        EventTrigger.setValue(key: .neighborJoinYellowTurbans, value: 2)
                         Party.instance.gainExp(100)
                     }))
                     self.presentAlert(ac2)
                 } else {
                     let ac2 = UIAlertController(title: "neighbor:", message: "neighbor_5".localized(), preferredStyle: .alert)
                     ac2.addAction(UIAlertAction(title: "OK", style: .default, handler: { [unowned self] (_) in
-                        EventTrigger.array[EventTrigger.neighborJoinYellowTurbans] = 1
+                        EventTrigger.setValue(key: .neighborJoinYellowTurbans, value: 1)
                         self.neighbor.isHidden = true
                     }))
                     self.presentAlert(ac2)
@@ -124,14 +124,14 @@ class Village: SKScene {
     
     private func ratBattle() {
         startBattle(enemies: [Enemy("rat", type: .rat)]) { [unowned self] in
-            EventTrigger.array[EventTrigger.killedRat] = 1
+            EventTrigger.setValue(key: .killedRat, value: 1)
             self.setVisible()
         }
     }
     
     private func pickupPotion() {
         Party.instance.gainItems([UsableItem.potionOfHealing])
-        EventTrigger.array[EventTrigger.killedRat]  = 2
+        EventTrigger.setValue(key: .killedRat, value: 2)
         potion.isHidden = true
         let ac = UIAlertController(title: "You picked up a potion.", message: nil, preferredStyle: .alert)
         ac.addAction(UIAlertAction.ok)
@@ -145,19 +145,19 @@ class Village: SKScene {
     }
     
     private func setVisible() {
-        if EventTrigger.array[EventTrigger.neighborJoinYellowTurbans] == 1 {
+        if EventTrigger.getValue(key: .neighborJoinYellowTurbans) == 1 {
             neighbor.isHidden = true
         } else {
             neighbor.isHidden = false
         }
         
-        if EventTrigger.array[EventTrigger.killedRat] > 0 {
+        if EventTrigger.getValue(key: .killedRat) > 0 {
             rat.isHidden = true
         } else {
             rat.isHidden = false
         }
         
-        if EventTrigger.array[EventTrigger.killedRat] != 1 {
+        if EventTrigger.getValue(key: .killedRat) != 1 {
             potion.isHidden = true
         } else {
             potion.isHidden = false

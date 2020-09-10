@@ -9,7 +9,12 @@
 import SpriteKit
 
 class Town: SKScene {
+    var sellShoes: SKNode!
+    
     override func didMove(to view: SKView) {
+        sellShoes = childNode(withName: "sellShoes")
+        
+        setVisible()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -18,6 +23,12 @@ class Town: SKScene {
         for node in nodes(at: touchPoint) {
             if node.name == "hotel" {
                 hotelDialog()
+                break
+            } else if node.name == "exit" {
+                switchScene(fileNamed: "Path")
+                break
+            } else if node.name == "sellShoes" {
+                sellShoesDialog()
                 break
             }
         }
@@ -44,5 +55,27 @@ class Town: SKScene {
         }))
         ac.addAction(.cancel)
         presentAlert(ac)
+    }
+    
+    private func sellShoesDialog() {
+        let shoesCount = Party.instance.inventories[UselessItem.grassShoes] ?? 0
+        let money = 0.1 * Double(shoesCount)
+        let ac = UIAlertController(title: "Sell Result", message: "You sold \(shoesCount) grass shoes and got \(money)G.", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: { [unowned self] (_) in
+            Party.instance.inventories.removeValue(forKey: UselessItem.grassShoes)
+            Party.instance.money += money
+            EventTrigger.setValue(key: .shoesSold, value: 1)
+            self.sellShoes.isHidden = true
+        }))
+        presentAlert(ac)
+        
+    }
+    
+    private func setVisible() {
+        if EventTrigger.getValue(key: .shoesSold) == 0 {
+            sellShoes.isHidden = false
+        } else {
+            sellShoes.isHidden = true
+        }
     }
 }

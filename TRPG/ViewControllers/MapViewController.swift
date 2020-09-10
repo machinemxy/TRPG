@@ -155,6 +155,6 @@ extension MapViewController: GADRewardedAdDelegate {
     }
     
     func rewardedAd(_ rewardedAd: GADRewardedAd, didFailToPresentWithError error: Error) {
-      print("Rewarded ad failed to present.")
+        print("Rewarded ad failed to present.")
     }
 }
