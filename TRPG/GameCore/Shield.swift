@@ -14,6 +14,7 @@ struct Shield: Item {
     var name: String
     var description: String
     var ac: Int
+    var price: Double
     
     init(id: Int?) {
         switch id {
@@ -21,11 +22,13 @@ struct Shield: Item {
             name = "shield"
             description = "armor class + 2"
             ac = 2
+            price = 10
         default:
             // none
             name = "none"
             description = ""
             ac = 0
+            price = 0
         }
     }
 }

@@ -123,23 +123,29 @@ class BattleViewController: UIViewController, MapVCDelegate {
     }
     
     private func performActionsOfSide(_ sideId: Int) {
+        let aliveAllies = sideViews[sideId].battlers.filter { $0.isAlive }
         let opponentSideId = 1 - sideId
-        let opponents = sideViews[opponentSideId].battlers!
+        let aliveEnemies = sideViews[opponentSideId].battlers.filter { $0.isAlive }
         for i in 0...2 {
             let battlerView = sideViews[sideId].battlerViews[i]
             guard let battler = battlerView.battler, battler.isAlive else { continue }
             
             let logLine: String
-            if battlerView.action.requireTarget() {
-                if let target = battlerView.target, target.isAlive {
-                    logLine = battlerView.action.perform(by: battler, to: target)
-                } else {
-                    let tempTarget = opponents.filter({ $0.isAlive }).randomElement()
-                    logLine = battlerView.action.perform(by: battler, to: tempTarget)
-                }
+            if let target = battlerView.target, target.isAlive {
+                // target is set and alive
+                logLine = battlerView.action.perform(by: battler, to: target)
             } else {
-                logLine = battlerView.action.perform(by: battler, to: battlerView.target)
+                // target is nil or dead
+                switch battlerView.action.targetType() {
+                case .no:
+                    logLine = battlerView.action.perform(by: battler, to: nil)
+                case .ally:
+                    logLine = battlerView.action.perform(by: battler, to: aliveAllies.randomElement())
+                case .enemy:
+                    logLine = battlerView.action.perform(by: battler, to: aliveEnemies.randomElement())
+                }
             }
+            
             log.append(logLine)
             log.append("\n")
             
@@ -179,13 +185,16 @@ class BattleViewController: UIViewController, MapVCDelegate {
                 if battler.isAlive {
                     // if the character is a alived pc
                     if battlerView.btnAction.isEnabled {
-                        // if pc's action is not attack, or his target is dead, reset his action
                         var actionOrTargetChanged = false
+                        
+                        // if pc's action is not attack, set to attack randomly
                         if battlerView.action != .attack {
                             battlerView.action = .attack
+                            battlerView.target = nil
                             actionOrTargetChanged = true
                         }
                         
+                        // if pc's target is dead, set to randomly
                         if let target = battlerView.target, target.isAlive == false {
                             battlerView.target = nil
                             actionOrTargetChanged = true

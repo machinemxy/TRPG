@@ -9,22 +9,24 @@
 import Foundation
 
 struct Armor: Item {
-    static let letherArmor = 200
+    static let padded = 200
     
     var name: String
     var description: String
     var ac: Int
     var standard: Int
     var requiredStr: Int
+    var price: Double
     
     init(id: Int?) {
         switch id {
-        case Self.letherArmor:
-            name = "lether armor"
+        case Self.padded:
+            name = "padded armor"
             description = "armor class 11"
             ac = 11
             standard = 0
             requiredStr = 0
+            price = 5
         default:
             // none
             name = "none"
@@ -32,6 +34,7 @@ struct Armor: Item {
             ac = 10
             standard = 0
             requiredStr = 0
+            price = 0
         }
     }
 }

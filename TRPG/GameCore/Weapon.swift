@@ -10,13 +10,14 @@ import Foundation
 
 struct Weapon: Item {
     static let club = 0
+    static let greatClub = 1
     
     var name: String
     var description: String
     var damageA: Int
     var damageB: Int
     var needTwoHand: Bool
-    var isSimple: Bool
+    var price: Double
     
     init(id: Int?) {
         switch id {
@@ -26,7 +27,14 @@ struct Weapon: Item {
             damageA = 1
             damageB = 4
             needTwoHand = false
-            isSimple = true
+            price = 0.1
+        case Self.greatClub:
+            name = "great club"
+            description = "damage 1D8, two hands"
+            damageA = 1
+            damageB = 8
+            needTwoHand = true
+            price = 0.2
         default:
             // bare hand
             name = "bare hand"
@@ -34,7 +42,7 @@ struct Weapon: Item {
             damageA = 1
             damageB = 2
             needTwoHand = false
-            isSimple = true
+            price = 0
         }
     }
 }

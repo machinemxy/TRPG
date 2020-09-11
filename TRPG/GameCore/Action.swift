@@ -8,6 +8,10 @@
 
 import Foundation
 
+enum TargetType {
+    case no, ally, enemy
+}
+
 enum Action {
     case noAction
     case attack
@@ -51,16 +55,16 @@ enum Action {
         }
     }
     
-    func requireTarget() -> Bool {
+    func targetType() -> TargetType {
         switch self {
         case .noAction:
-            return false
+            return .no
         case .attack:
-            return true
+            return .enemy
         case .bite:
-            return true
+            return .enemy
         case .drinkPotionOfHealing:
-            return false
+            return .no
         }
     }
     

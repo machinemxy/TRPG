@@ -14,6 +14,7 @@ struct UsableItem: Item {
     var id: Int
     var name: String
     var description: String
+    var price: Double
     
     init(id: Int) {
         self.id = id
@@ -22,9 +23,11 @@ struct UsableItem: Item {
         case Self.potionOfHealing:
             name = "potion of healing"
             description = "recover 2d4 + 2 HP"
+            price = 50
         default:
             name = "dummy"
             description = ""
+            price = 0
         }
     }
     
