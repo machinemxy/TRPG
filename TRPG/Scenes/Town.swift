@@ -30,6 +30,9 @@ class Town: SKScene {
             } else if node.name == "sellShoes" {
                 sellShoesDialog()
                 break
+            } else if node.name == "groceryStore" {
+                showShop(itemIds: [0, 1])
+                break
             }
         }
     }
@@ -61,14 +64,17 @@ class Town: SKScene {
         let shoesCount = Party.instance.inventories[UselessItem.grassShoes] ?? 0
         let money = 0.1 * Double(shoesCount)
         let ac = UIAlertController(title: "Sell Result", message: "You sold \(shoesCount) grass shoes and got \(money)G.", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "OK", style: .default, handler: { [unowned self] (_) in
-            Party.instance.inventories.removeValue(forKey: UselessItem.grassShoes)
-            Party.instance.money += money
-            EventTrigger.setValue(key: .shoesSold, value: 1)
-            self.sellShoes.isHidden = true
-        }))
+        ac.addAction(UIAlertAction.next { [unowned self] in
+            let ac2 = UIAlertController(title: "Liu Bei:", message: "What a busy day. Time for having a drink in the pub.", preferredStyle: .alert)
+            ac2.addAction(UIAlertAction(title: "OK", style: .default, handler: { [unowned self] (_) in
+                Party.instance.inventories.removeValue(forKey: UselessItem.grassShoes)
+                Party.instance.money += money
+                EventTrigger.setValue(key: .shoesSold, value: 1)
+                self.sellShoes.isHidden = true
+            }))
+            self.presentAlert(ac2)  
+        })
         presentAlert(ac)
-        
     }
     
     private func setVisible() {

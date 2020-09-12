@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -44,6 +44,7 @@
                     <connections>
                         <outlet property="btnData" destination="NXb-LV-zXP" id="ZAO-T3-nSJ"/>
                         <outlet property="btnParty" destination="pti-DD-yQe" id="vbh-zE-x1r"/>
+                        <segue destination="6r2-eQ-mud" kind="show" identifier="shopSegue" id="ric-eO-qKE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -180,7 +181,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CRd-qy-dUO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="H3L-GV-jh4" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1616.8" y="705.66502463054189"/>
+            <point key="canvasLocation" x="3247" y="-21"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Chn-8s-bg2">
@@ -201,6 +202,63 @@
             </objects>
             <point key="canvasLocation" x="798" y="-21"/>
         </scene>
+        <!--Shop-->
+        <scene sceneID="NGo-Sr-NxV">
+            <objects>
+                <viewController id="raK-uq-azo" customClass="ShopViewController" customModule="TRPG" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xst-ev-REq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IeG-7G-Xax">
+                                <rect key="frame" x="8" y="64" width="359" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="afC-VZ-neH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Buy"/>
+                                <connections>
+                                    <action selector="buy:" destination="raK-uq-azo" eventType="touchUpInside" id="l9C-5r-Lyq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jNe-DO-adH">
+                                <rect key="frame" x="8" y="122" width="359" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="G9g-4d-rFi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Sell"/>
+                                <connections>
+                                    <action selector="sell:" destination="raK-uq-azo" eventType="touchUpInside" id="vM1-p7-vui"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="jNe-DO-adH" firstAttribute="leading" secondItem="fXR-eR-3Zy" secondAttribute="leading" constant="8" id="3Ik-Wl-qJO"/>
+                            <constraint firstItem="fXR-eR-3Zy" firstAttribute="trailing" secondItem="jNe-DO-adH" secondAttribute="trailing" constant="8" id="RDj-qM-7c0"/>
+                            <constraint firstItem="IeG-7G-Xax" firstAttribute="top" secondItem="fXR-eR-3Zy" secondAttribute="top" constant="8" id="Vse-Bb-J1L"/>
+                            <constraint firstItem="IeG-7G-Xax" firstAttribute="leading" secondItem="fXR-eR-3Zy" secondAttribute="leading" constant="8" id="ks7-pF-w8q"/>
+                            <constraint firstItem="jNe-DO-adH" firstAttribute="top" secondItem="IeG-7G-Xax" secondAttribute="bottom" constant="8" id="pag-eQ-uoo"/>
+                            <constraint firstItem="fXR-eR-3Zy" firstAttribute="trailing" secondItem="IeG-7G-Xax" secondAttribute="trailing" constant="8" id="vt4-29-OU7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fXR-eR-3Zy"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Shop" id="5Bv-VU-dHg">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="uDn-A6-daD">
+                            <connections>
+                                <segue destination="Amr-VT-lmG" kind="unwind" unwindAction="unwindToMapWithSegue:" id="TRK-07-WCx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AdA-Cr-rGn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Amr-VT-lmG" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1617" y="720"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="KGO-e3-q23">
             <objects>
@@ -217,7 +275,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zqW-yB-qDq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="798" y="706"/>
+            <point key="canvasLocation" x="2428" y="-21"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NMs-08-eop">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6r2-eQ-mud" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="CFY-P7-hOe"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="xsX-dG-bnc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="raK-uq-azo" kind="relationship" relationship="rootViewController" id="vNJ-Ba-XQG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qZM-eV-Mt6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="798" y="720"/>
         </scene>
     </scenes>
 </document>

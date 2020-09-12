@@ -13,16 +13,7 @@ struct ItemView: View {
     var count: Int
     
     var body: some View {
-        HStack {
-            VStack(alignment: .leading) {
-                Text(item.name)
-                Text(item.description).font(.footnote)
-            }
-            
-            Spacer()
-            
-            Text(String(count))
-        }
+        KeyDescriptionValueView(key: item.name, description: item.description, value: String(count))
     }
 }
 

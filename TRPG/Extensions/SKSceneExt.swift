@@ -35,4 +35,8 @@ extension SKScene {
     func presentAlert(_ ac: UIAlertController) {
         MapViewController.instance?.present(ac, animated: true)
     }
+    
+    func showShop(itemIds: [Int]) {
+        MapViewController.instance?.performSegue(withIdentifier: Key.shopSegue, sender: itemIds)
+    }
 }

@@ -62,8 +62,17 @@ class MapViewController: UIViewController {
         return false
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Key.shopSegue {
+            let navVC = segue.destination as! UINavigationController
+            let shopVC = navVC.topViewController as! ShopViewController
+            let itemIds = sender as! [Int]
+            shopVC.itemids = itemIds
+        }
+    }
+    
     @IBAction func unwindToMap(segue: UIStoryboardSegue) {
-        // used by PartyTableView, and when pcs win the battle
+        // used by PartyTableView, ShopView, and when pcs win the battle
     }
     
     @IBAction func gameOver(segue: UIStoryboardSegue) {

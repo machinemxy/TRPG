@@ -16,6 +16,7 @@ enum Key {
     // Segue
     static let gameOverSegue = "gameOverSegue"
     static let unwindToMapSegue = "unwindToMapSegue"
+    static let shopSegue = "shopSegue"
     
     // Admob
     #warning("this adKey is for debug")
