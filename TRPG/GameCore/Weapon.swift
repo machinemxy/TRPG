@@ -17,7 +17,7 @@ struct Weapon: Item {
     var damageA: Int
     var damageB: Int
     var needTwoHand: Bool
-    var price: Double
+    var price: Int
     
     init(id: Int?) {
         switch id {
@@ -27,14 +27,14 @@ struct Weapon: Item {
             damageA = 1
             damageB = 4
             needTwoHand = false
-            price = 0.1
+            price = 10
         case Self.greatClub:
             name = "great club"
             description = "damage 1D8, two hands"
             damageA = 1
             damageB = 8
             needTwoHand = true
-            price = 0.2
+            price = 20
         default:
             // bare hand
             name = "bare hand"

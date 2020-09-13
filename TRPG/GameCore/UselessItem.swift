@@ -15,22 +15,22 @@ struct UselessItem: Item {
     
     var name: String
     var description: String
-    var price: Double
+    var price: Int
     
     init(id: Int) {
         switch id {
         case Self.grassShoes:
             name = "grass shoes"
             description = "made by Liu Bei"
-            price = 0.1
+            price = 10
         case Self.yellowTurban:
             name = "yellow turban"
             description = "the symbol of Yellow Turban Army"
-            price = 0.02
+            price = 2
         case Self.snakeSkin:
             name = "snake skin"
             description = "the skin of snake"
-            price = 1
+            price = 100
         default:
             name = "dummy"
             description = ""

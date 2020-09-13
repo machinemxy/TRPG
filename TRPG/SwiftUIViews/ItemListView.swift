@@ -39,7 +39,7 @@ struct ItemListView: View {
             }
             
             Section(header: Text("Others")) {
-                ForEach(party.uselessItems, id: \.self) { itemId in
+                ForEach(party.otherItems, id: \.self) { itemId in
                     ItemView(item: itemId.toItem(), count: self.party.inventories[itemId]!)
                 }
             }

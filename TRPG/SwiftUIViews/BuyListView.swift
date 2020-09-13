@@ -1,5 +1,5 @@
 //
-//  ShopBuyView.swift
+//  BuyListView.swift
 //  TRPG
 //
 //  Created by Ma Xueyuan on 2020/09/12.
@@ -8,17 +8,17 @@
 
 import SwiftUI
 
-struct ShopBuyView: View {
+struct BuyListView: View {
     @ObservedObject var party: Party
     var itemIds: [Int]
     
     var body: some View {
         List {
-            KeyValueView(key: "Money", value: String(format: "%.2fG", party.money))
+            KeyValueView(key: "Money", value: "\(party.money)cp")
             
             ForEach(itemIds, id: \.self, content: { itemId in
-                NavigationLink(destination: Text("\(itemId)")) {
-                    ShopItemView(item: itemId.toItem())
+                NavigationLink(destination: BuyCheck(itemId: itemId, party: self.party)) {
+                    BuyItem(item: itemId.toItem())
                 }
             })
         }
@@ -26,8 +26,8 @@ struct ShopBuyView: View {
     }
 }
 
-struct ShopBuyView_Previews: PreviewProvider {
+struct BuyListView_Previews: PreviewProvider {
     static var previews: some View {
-        ShopBuyView(party: Party(), itemIds: [0, 1])
+        BuyListView(party: Party(), itemIds: [0, 1])
     }
 }

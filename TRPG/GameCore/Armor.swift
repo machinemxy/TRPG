@@ -16,7 +16,7 @@ struct Armor: Item {
     var ac: Int
     var standard: Int
     var requiredStr: Int
-    var price: Double
+    var price: Int
     
     init(id: Int?) {
         switch id {
@@ -26,7 +26,7 @@ struct Armor: Item {
             ac = 11
             standard = 0
             requiredStr = 0
-            price = 5
+            price = 500
         default:
             // none
             name = "none"

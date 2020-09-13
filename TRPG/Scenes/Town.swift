@@ -39,9 +39,9 @@ class Town: SKScene {
     
     private func innDialog() {
         let ac = UIAlertController(title: "inn keeper:", message: "inn_keeper_1".localized(), preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "Standard(1G)", style: .default, handler: { [unowned self] (_) in
-            if Party.instance.money >= 1 {
-                Party.instance.money -= 1
+        ac.addAction(UIAlertAction(title: "Standard(100cp)", style: .default, handler: { [unowned self] (_) in
+            if Party.instance.money >= 100 {
+                Party.instance.money -= 100
                 self.rest()
             } else {
                 let ac2 = UIAlertController(title: "inn keeper:", message: "inn_keeper_2".localized(), preferredStyle: .alert)
@@ -62,8 +62,8 @@ class Town: SKScene {
     
     private func sellShoesDialog() {
         let shoesCount = Party.instance.inventories[UselessItem.grassShoes] ?? 0
-        let money = 0.1 * Double(shoesCount)
-        let ac = UIAlertController(title: "Sell Result", message: "You sold \(shoesCount) grass shoes and got \(money)G.", preferredStyle: .alert)
+        let money = 10 * shoesCount
+        let ac = UIAlertController(title: "Sell Result", message: "You sold \(shoesCount) grass shoes and got \(money)cp.", preferredStyle: .alert)
         ac.addAction(UIAlertAction.next { [unowned self] in
             let ac2 = UIAlertController(title: "Liu Bei:", message: "What a busy day. Time for having a drink in the pub.", preferredStyle: .alert)
             ac2.addAction(UIAlertAction(title: "OK", style: .default, handler: { [unowned self] (_) in

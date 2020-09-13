@@ -16,7 +16,7 @@ class Party: Codable, ObservableObject {
     }
     
     var pcs = [LiuBei.create()]
-    var money: Double = 0
+    var money: Int = 0
     @Published var inventories = [300: 10]
     var location = "Village"
     
@@ -35,7 +35,7 @@ class Party: Codable, ObservableObject {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
         pcs = try container.decode([Pc].self, forKey: .pcs)
-        money = try container.decode(Double.self, forKey: .money)
+        money = try container.decode(Int.self, forKey: .money)
         inventories = try container.decode([Int: Int].self, forKey: .inventories)
         location = try container.decode(String.self, forKey: .location)
     }
@@ -44,8 +44,8 @@ class Party: Codable, ObservableObject {
         return inventories.keys.filter { $0 >= 400 }
     }
     
-    var uselessItems: [Int] {
-        return inventories.keys.filter { $0 >= 300 && $0 < 400 }
+    var otherItems: [Int] {
+        return inventories.keys.filter { $0 < 400 }
     }
     
     func gainExp(_ exp: Int) {
@@ -62,6 +62,11 @@ class Party: Codable, ObservableObject {
             let quantity = inventories[item] ?? 0
             inventories.updateValue(quantity + 1, forKey: item)
         }
+    }
+    
+    func gainItem(_ item: Int, amount: Int) {
+        let quantity = inventories[item] ?? 0
+        inventories.updateValue(quantity + amount, forKey: item)
     }
     
     func loseItem(_ itemId: Int) {

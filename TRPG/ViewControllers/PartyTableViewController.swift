@@ -15,7 +15,7 @@ class PartyTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        lblMoney.text = String(format: "Money: %.2fG", Party.instance.money)
+        lblMoney.text = "Money: \(Party.instance.money)cp"
         
         NotificationCenter.default.addObserver(self, selector: #selector(reload), name: .HPUpdated, object: nil)
     }
