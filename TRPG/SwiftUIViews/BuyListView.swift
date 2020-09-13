@@ -21,8 +21,7 @@ struct BuyListView: View {
                     BuyItem(item: itemId.toItem())
                 }
             })
-        }
-        .navigationBarTitle(Text("Buy"))
+        }.navigationBarTitle(Text("Buy"))
     }
 }
 

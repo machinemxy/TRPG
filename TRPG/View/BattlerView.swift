@@ -108,7 +108,7 @@ class BattlerView: UIView {
         ac.addAction(UIAlertAction(title: "Item", style: .default, handler: { [unowned self](_) in
             let ac2 = UIAlertController(title: "Select Item", message: nil, preferredStyle: .actionSheet)
             
-            for itemId in Party.instance.usableItems {
+            for itemId in Party.instance.usableItemIds {
                 let item = itemId.toUsableItem()
                 let count = Party.instance.inventories[itemId]!
                 ac2.addAction(UIAlertAction(title: "\(item.name)(\(count))", style: .default, handler: { [unowned self] (_) in

@@ -20,7 +20,7 @@ struct ItemListView: View {
     var body: some View {
         List {
             Section(header: Text("Usable item")) {
-                ForEach(party.usableItems, id: \.self) { itemId in
+                ForEach(party.usableItemIds, id: \.self) { itemId in
                     Button(action: {
                         self.selectedItemId = itemId
                         self.showUseItemAlert = true
@@ -39,7 +39,7 @@ struct ItemListView: View {
             }
             
             Section(header: Text("Others")) {
-                ForEach(party.otherItems, id: \.self) { itemId in
+                ForEach(party.otherItemIds, id: \.self) { itemId in
                     ItemView(item: itemId.toItem(), count: self.party.inventories[itemId]!)
                 }
             }

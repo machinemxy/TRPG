@@ -40,12 +40,16 @@ class Party: Codable, ObservableObject {
         location = try container.decode(String.self, forKey: .location)
     }
     
-    var usableItems: [Int] {
-        return inventories.keys.filter { $0 >= 400 }
+    var itemIds: [Int] {
+        inventories.keys.sorted()
     }
     
-    var otherItems: [Int] {
-        return inventories.keys.filter { $0 < 400 }
+    var usableItemIds: [Int] {
+        inventories.keys.filter { $0 >= 400 }
+    }
+    
+    var otherItemIds: [Int] {
+        inventories.keys.filter { $0 < 400 }
     }
     
     func gainExp(_ exp: Int) {
@@ -72,6 +76,14 @@ class Party: Codable, ObservableObject {
     func loseItem(_ itemId: Int) {
         if let itemCount = inventories[itemId], itemCount > 1 {
             inventories.updateValue(itemCount - 1, forKey: itemId)
+        } else {
+            inventories.removeValue(forKey: itemId)
+        }
+    }
+    
+    func loseItem(_ itemId: Int, amount: Int) {
+        if let itemCount = inventories[itemId], itemCount > amount {
+            inventories.updateValue(itemCount - amount, forKey: itemId)
         } else {
             inventories.removeValue(forKey: itemId)
         }

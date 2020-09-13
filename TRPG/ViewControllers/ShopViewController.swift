@@ -19,11 +19,12 @@ class ShopViewController: UIViewController {
     }
     
     @IBAction func buy(_ sender: Any) {
-        let shopBuyVC = UIHostingController(rootView: BuyListView(party: Party.instance, itemIds: itemids))
-        navigationController?.pushViewController(shopBuyVC, animated: true)
+        let buyVC = UIHostingController(rootView: BuyListView(party: Party.instance, itemIds: itemids))
+        navigationController?.pushViewController(buyVC, animated: true)
     }
     
     @IBAction func sell(_ sender: Any) {
-        
+        let sellVC = UIHostingController(rootView: SellListView(party: Party.instance))
+        navigationController?.pushViewController(sellVC, animated: true)
     }
 }
