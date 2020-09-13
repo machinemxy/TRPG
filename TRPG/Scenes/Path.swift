@@ -28,7 +28,7 @@ class Path: SKScene {
         move4 = childNode(withName: "move4")
         moveShortCut = childNode(withName: "moveShortCut")
         
-        if EventTrigger.getValue(key: .fromVillageToTown) == 0 {
+        if EventTrigger.getValue(key: .VillageTownDirection) == 0 {
             pcLocation.position = villageEntrance.position
         } else {
             pcLocation.position = castleEntrance.position
@@ -51,7 +51,7 @@ class Path: SKScene {
             pcLocation.run(SKAction.move(to: node.position, duration: 0.5)) { [unowned self] in
                 self.isUserInteractionEnabled = true
                 if node.name == "villageEntrance" {
-                    EventTrigger.setValue(key: .fromVillageToTown, value: 0)
+                    EventTrigger.setValue(key: .VillageTownDirection, value: 0)
                     self.switchScene(fileNamed: "Village")
                 } else if node.name == "move1" {
                     self.move1Action()
@@ -64,7 +64,7 @@ class Path: SKScene {
                 } else if node.name == "moveShortCut" {
                     self.moveShortCutAction()
                 } else if node.name == "castleEntrance" {
-                    EventTrigger.setValue(key: .fromVillageToTown, value: 1)
+                    EventTrigger.setValue(key: .VillageTownDirection, value: 1)
                     self.switchScene(fileNamed: "Town")
                 }
             }
@@ -74,7 +74,7 @@ class Path: SKScene {
     private func move1Action() {
         let enemies = getEnemiesOnMainPath()
         startBattle(enemies: enemies) { [unowned self] in
-            if EventTrigger.getValue(key: .fromVillageToTown) == 0 {
+            if EventTrigger.getValue(key: .VillageTownDirection) == 0 {
                 self.move2.isHidden = false
                 self.moveShortCut.isHidden = false
             } else {
@@ -86,7 +86,7 @@ class Path: SKScene {
     private func move2Action() {
         let enemies = getEnemiesOnMainPath()
         startBattle(enemies: enemies) { [unowned self] in
-            if EventTrigger.getValue(key: .fromVillageToTown) == 0 {
+            if EventTrigger.getValue(key: .VillageTownDirection) == 0 {
                 self.move3.isHidden = false
             } else {
                 self.move1.isHidden = false
@@ -97,7 +97,7 @@ class Path: SKScene {
     private func move3Action() {
         let enemies = getEnemiesOnMainPath()
         startBattle(enemies: enemies) { [unowned self] in
-            if EventTrigger.getValue(key: .fromVillageToTown) == 0 {
+            if EventTrigger.getValue(key: .VillageTownDirection) == 0 {
                 self.move4.isHidden = false
             } else {
                 self.move2.isHidden = false
@@ -108,7 +108,7 @@ class Path: SKScene {
     private func move4Action() {
         let enemies = getEnemiesOnMainPath()
         startBattle(enemies: enemies) { [unowned self] in
-            if EventTrigger.getValue(key: .fromVillageToTown) == 0 {
+            if EventTrigger.getValue(key: .VillageTownDirection) == 0 {
                 self.castleEntrance.isHidden = false
             } else {
                 self.move3.isHidden = false
@@ -120,7 +120,7 @@ class Path: SKScene {
     private func moveShortCutAction() {
         let enemies = [Enemy("snake", type: .snake)]
         startBattle(enemies: enemies) { [unowned self] in
-            if EventTrigger.getValue(key: .fromVillageToTown) == 0 {
+            if EventTrigger.getValue(key: .VillageTownDirection) == 0 {
                 self.move4.isHidden = false
             } else {
                 self.move1.isHidden = false
@@ -149,7 +149,7 @@ class Path: SKScene {
         move4.isHidden = true
         moveShortCut.isHidden = true
         
-        if EventTrigger.getValue(key: .fromVillageToTown) == 0 {
+        if EventTrigger.getValue(key: .VillageTownDirection) == 0 {
             villageEntrance.isHidden = false
             move1.isHidden = false
         } else {

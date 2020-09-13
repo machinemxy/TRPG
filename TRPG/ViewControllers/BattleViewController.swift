@@ -174,6 +174,8 @@ class BattleViewController: UIViewController, MapVCDelegate {
                 log.append("\(battler.name) got 1 poison damage.\n")
             }
         }
+        
+        checkDeadOrAlive()
     }
     
     private func updateUI() {

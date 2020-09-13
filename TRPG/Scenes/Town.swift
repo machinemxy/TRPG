@@ -31,7 +31,10 @@ class Town: SKScene {
                 sellShoesDialog()
                 break
             } else if node.name == "groceryStore" {
-                showShop(itemIds: [0, 1])
+                showShop(itemIds: [Weapon.club, Weapon.greatClub, UselessItem.yellowTurban])
+                break
+            } else if node.name == "drugStore" {
+                drugStoreDialog()
                 break
             }
         }
@@ -75,6 +78,25 @@ class Town: SKScene {
             self.presentAlert(ac2)  
         })
         presentAlert(ac)
+    }
+    
+    private func drugStoreDialog() {
+        if EventTrigger.getValue(key: .drugStoreMissionFinished) == 0 && Party.instance.inventories[UselessItem.snakeSkin] ?? 0 >= 5 {
+            let ac = UIAlertController(title: "store keeper:", message: "drugStoreKeeper_1".localized(), preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Yes", style: .default, handler: { [unowned self] (_) in
+                let ac2 = UIAlertController(title: "store keeper:", message: "drugStoreKeeper_2".localized(), preferredStyle: .alert)
+                ac2.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+                    Party.instance.gainItem(UsableItem.antidote, amount: 5)
+                    Party.instance.gainExp(180)
+                    EventTrigger.setValue(key: .drugStoreMissionFinished, value: 1)
+                }))
+                self.presentAlert(ac2)
+            }))
+            ac.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+            presentAlert(ac)
+        } else {
+            showShop(itemIds: [UsableItem.potionOfHealing, UsableItem.antidote])
+        }
     }
     
     private func setVisible() {

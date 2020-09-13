@@ -10,6 +10,7 @@ import Foundation
 
 struct UsableItem: Item {
     static let potionOfHealing = 400
+    static let antidote = 401
     
     var id: Int
     var name: String
@@ -24,6 +25,10 @@ struct UsableItem: Item {
             name = "potion of healing"
             description = "recover 2d4 + 2 HP"
             price = 5000
+        case Self.antidote:
+            name = "antidote"
+            description = "recover from poisoned status"
+            price = 5000
         default:
             name = "dummy"
             description = ""
@@ -33,8 +38,10 @@ struct UsableItem: Item {
     
     var useAction: Action {
         switch id {
-        case 400:
+        case Self.potionOfHealing:
             return .drinkPotionOfHealing
+        case Self.antidote:
+            return .drinkAntidote
         default:
             return .noAction
         }

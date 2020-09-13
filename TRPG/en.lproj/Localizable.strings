@@ -17,3 +17,5 @@
 "villager3_1" = "My friends joined Yellow Turbans. I understand their choice. They don't want to be farmers for thier all lives. If they won some wars, they have chance to become promoted.";
 "inn_keeper_1" = "Welcome, please select your room.";
 "inn_keeper_2" = "You don't have enough money, get out of here!";
+"drugStoreKeeper_1" = "To make new medicines I need 5 snake skins. Can you give me?";
+"drugStoreKeeper_2" = "Thank you. Here is your reward.\n[5 antidotes gained]\n[180 exp gained]";

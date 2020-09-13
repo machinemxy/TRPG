@@ -9,10 +9,11 @@
 import Foundation
 
 enum EventTriggerKey: Int {
-    case neighborJoinYellowTurbans = 0 // 1:joined; 2:not joined
+    case neighborJoinedYellowTurbans = 0 // 1:joined; 2:not joined
     case killedRat = 1 // 1:killed; 2:picked up potion
-    case fromVillageToTown = 2 // 0: from village to town; 2: from town to village
+    case VillageTownDirection = 2 // 0: from village to town; 2: from town to village
     case shoesSold = 3
+    case drugStoreMissionFinished = 4
 }
 
 class EventTrigger {

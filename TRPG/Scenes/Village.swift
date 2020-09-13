@@ -69,12 +69,12 @@ class Village: SKScene {
     }
     
     private func neighborDialog() {
-        if EventTrigger.getValue(key: .neighborJoinYellowTurbans) == 0 {
+        if EventTrigger.getValue(key: .neighborJoinedYellowTurbans) == 0 {
             let ac = UIAlertController(title: "neighbor:", message: "neighbor_1".localized(), preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "Let him go", style: .default, handler: { (_) in
                 let ac2 = UIAlertController(title: "neighbor:", message: "neighbor_2".localized(), preferredStyle: .alert)
                 ac2.addAction(UIAlertAction(title: "OK", style: .default, handler: { [unowned self] (_) in
-                    EventTrigger.setValue(key: .neighborJoinYellowTurbans, value: 1)
+                    EventTrigger.setValue(key: .neighborJoinedYellowTurbans, value: 1)
                     self.neighbor.isHidden = true
                 }))
                 self.presentAlert(ac2)
@@ -83,14 +83,14 @@ class Village: SKScene {
                 if self.persuade(target: 10) {
                     let ac2 = UIAlertController(title: "neighbor:", message: "neighbor_3".localized(), preferredStyle: .alert)
                     ac2.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
-                        EventTrigger.setValue(key: .neighborJoinYellowTurbans, value: 2)
+                        EventTrigger.setValue(key: .neighborJoinedYellowTurbans, value: 2)
                         Party.instance.gainExp(100)
                     }))
                     self.presentAlert(ac2)
                 } else {
                     let ac2 = UIAlertController(title: "neighbor:", message: "neighbor_5".localized(), preferredStyle: .alert)
                     ac2.addAction(UIAlertAction(title: "OK", style: .default, handler: { [unowned self] (_) in
-                        EventTrigger.setValue(key: .neighborJoinYellowTurbans, value: 1)
+                        EventTrigger.setValue(key: .neighborJoinedYellowTurbans, value: 1)
                         self.neighbor.isHidden = true
                     }))
                     self.presentAlert(ac2)
@@ -145,7 +145,7 @@ class Village: SKScene {
     }
     
     private func setVisible() {
-        if EventTrigger.getValue(key: .neighborJoinYellowTurbans) == 1 {
+        if EventTrigger.getValue(key: .neighborJoinedYellowTurbans) == 1 {
             neighbor.isHidden = true
         } else {
             neighbor.isHidden = false

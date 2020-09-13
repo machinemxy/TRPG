@@ -17,6 +17,7 @@ enum Action {
     case attack
     case bite
     case drinkPotionOfHealing
+    case drinkAntidote
     
     func perform(by battler: Battler, to target: Battler?) -> String {
         switch self {
@@ -31,6 +32,10 @@ enum Action {
             battler.addHP(by: value)
             Party.instance.loseItem(UsableItem.potionOfHealing)
             return "\(battler.name) drank potion of healing, recovered \(value) HP."
+        case .drinkAntidote:
+            battler.statuses.remove(.poisoned)
+            Party.instance.loseItem(UsableItem.antidote)
+            return "\(battler.name) drank antidote, recovered from poisoned status."
         }
     }
     
@@ -52,6 +57,8 @@ enum Action {
             }
         case .drinkPotionOfHealing:
             return "drink potion"
+        case .drinkAntidote:
+            return "drink antidote"
         }
     }
     
@@ -64,6 +71,8 @@ enum Action {
         case .bite:
             return .enemy
         case .drinkPotionOfHealing:
+            return .no
+        case .drinkAntidote:
             return .no
         }
     }

@@ -17,7 +17,7 @@ struct ItemView: View {
     }
 }
 
-struct UsefulItemView_Previews: PreviewProvider {
+struct ItemView_Previews: PreviewProvider {
     static var previews: some View {
         ItemView(item: 400.toItem(), count: 5)
     }

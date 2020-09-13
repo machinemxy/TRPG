@@ -16,7 +16,7 @@ class Party: Codable, ObservableObject {
     }
     
     var pcs = [LiuBei.create()]
-    var money: Int = 0
+    @Published var money: Int = 0
     @Published var inventories = [300: 10]
     var location = "Village"
     
@@ -53,10 +53,11 @@ class Party: Codable, ObservableObject {
     }
     
     func gainExp(_ exp: Int) {
-        guard pcs.count > 0 else { return }
+        let alivePcs = pcs.filter { $0.isAlive }
+        guard alivePcs.count > 0 else { fatalError("All Pcs are dead") }
         
-        let expEachPerson = exp / pcs.count
-        for pc in pcs {
+        let expEachPerson = exp / alivePcs.count
+        for pc in alivePcs {
             pc.exp += expEachPerson
         }
     }
