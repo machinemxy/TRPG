@@ -51,6 +51,6 @@ struct ItemListView: View {
 
 struct ItemListView_Previews: PreviewProvider {
     static var previews: some View {
-        ItemListView(pc: LiuBei.create(), party: Party())
+        ItemListView(pc: Paladin.initLiuBei(), party: Party())
     }
 }

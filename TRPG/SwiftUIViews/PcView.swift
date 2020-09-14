@@ -14,6 +14,7 @@ struct PcView: View {
     var body: some View {
         Form {
             Section(header: Text("Basic")) {
+                KeyValueView(key: "Class", value: pc.job.rawValue)
                 HStack {
                     Text("Lv")
                     Spacer()
@@ -25,6 +26,9 @@ struct PcView: View {
                 KeyValueView(key: "Exp", value: String(numerator: pc.exp, denominator: pc.requiredExp))
                 KeyValueView(key: "HP", value: String(numerator: pc.hp, denominator: pc.mhp))
                 KeyValueView(key: "Status", value: pc.statusDescription)
+            }
+            
+            Section(header: Text("Abilities")) {
                 KeyValueView(key: "Strength", value: "\(pc.str)")
                 KeyValueView(key: "Dexterity", value: "\(pc.dex)")
                 KeyValueView(key: "Constitution", value: "\(pc.con)")
@@ -65,7 +69,7 @@ struct PcView: View {
 
 struct PcView_Previews: PreviewProvider {
     static var previews: some View {
-        let pc = LiuBei.create()
+        let pc = Paladin.initLiuBei()
         return PcView(pc: pc)
     }
 }

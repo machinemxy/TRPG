@@ -10,7 +10,7 @@
 		2225ED3724DFD4CF006CC6B1 /* UIAlertActionExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2225ED3624DFD4CF006CC6B1 /* UIAlertActionExt.swift */; };
 		2225ED3924DFDBCD006CC6B1 /* UIViewControllerExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2225ED3824DFDBCD006CC6B1 /* UIViewControllerExt.swift */; };
 		22561E1724F16CE600A0751D /* BattleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22561E1624F16CE600A0751D /* BattleTests.swift */; };
-		22561E1924F5334000A0751D /* LiuBei.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22561E1824F5333F00A0751D /* LiuBei.swift */; };
+		22561E1924F5334000A0751D /* Paladin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22561E1824F5333F00A0751D /* Paladin.swift */; };
 		22561E1B24F5504D00A0751D /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22561E1A24F5504D00A0751D /* DataManager.swift */; };
 		22561E1F24F7EA0200A0751D /* UselessItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22561E1E24F7EA0200A0751D /* UselessItem.swift */; };
 		22874F7624E2D8CF002A0CBD /* KeyValueView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22874F7524E2D8CF002A0CBD /* KeyValueView.swift */; };
@@ -37,6 +37,9 @@
 		22B1B963250E4E7C00564371 /* SellListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B1B962250E4E7C00564371 /* SellListView.swift */; };
 		22B1B965250E522000564371 /* SellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B1B964250E522000564371 /* SellItem.swift */; };
 		22B1B967250E53C500564371 /* SellCheck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B1B966250E53C500564371 /* SellCheck.swift */; };
+		22B1B969250F879500564371 /* Pub.sks in Resources */ = {isa = PBXBuildFile; fileRef = 22B1B968250F879500564371 /* Pub.sks */; };
+		22B1B96B250F8A7B00564371 /* Pub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B1B96A250F8A7B00564371 /* Pub.swift */; };
+		22B1B96D250FB3EA00564371 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B1B96C250FB3EA00564371 /* Job.swift */; };
 		22D3AE5D24FB7F4900353770 /* UsableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D3AE5C24FB7F4900353770 /* UsableItem.swift */; };
 		22D3AE5F24FBC35700353770 /* Path.sks in Resources */ = {isa = PBXBuildFile; fileRef = 22D3AE5E24FBC35700353770 /* Path.sks */; };
 		22D3AE6124FBC38A00353770 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D3AE6024FBC38A00353770 /* Path.swift */; };
@@ -85,7 +88,7 @@
 		2225ED3624DFD4CF006CC6B1 /* UIAlertActionExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAlertActionExt.swift; sourceTree = "<group>"; };
 		2225ED3824DFDBCD006CC6B1 /* UIViewControllerExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExt.swift; sourceTree = "<group>"; };
 		22561E1624F16CE600A0751D /* BattleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleTests.swift; sourceTree = "<group>"; };
-		22561E1824F5333F00A0751D /* LiuBei.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiuBei.swift; sourceTree = "<group>"; };
+		22561E1824F5333F00A0751D /* Paladin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paladin.swift; sourceTree = "<group>"; };
 		22561E1A24F5504D00A0751D /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		22561E1E24F7EA0200A0751D /* UselessItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UselessItem.swift; sourceTree = "<group>"; };
 		22874F7524E2D8CF002A0CBD /* KeyValueView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueView.swift; sourceTree = "<group>"; };
@@ -112,6 +115,9 @@
 		22B1B962250E4E7C00564371 /* SellListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellListView.swift; sourceTree = "<group>"; };
 		22B1B964250E522000564371 /* SellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellItem.swift; sourceTree = "<group>"; };
 		22B1B966250E53C500564371 /* SellCheck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SellCheck.swift; sourceTree = "<group>"; };
+		22B1B968250F879500564371 /* Pub.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Pub.sks; sourceTree = "<group>"; };
+		22B1B96A250F8A7B00564371 /* Pub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pub.swift; sourceTree = "<group>"; };
+		22B1B96C250FB3EA00564371 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
 		22D3AE5C24FB7F4900353770 /* UsableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsableItem.swift; sourceTree = "<group>"; };
 		22D3AE5E24FBC35700353770 /* Path.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Path.sks; sourceTree = "<group>"; };
 		22D3AE6024FBC38A00353770 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
@@ -230,13 +236,14 @@
 				22874F9A24E7EE09002A0CBD /* Battler.swift */,
 				22874F9C24E7F2D2002A0CBD /* Enemy.swift */,
 				22DBF80424E018B100E91940 /* Pc.swift */,
-				22561E1824F5333F00A0751D /* LiuBei.swift */,
+				22561E1824F5333F00A0751D /* Paladin.swift */,
 				22561E1A24F5504D00A0751D /* DataManager.swift */,
 				22F19DF625029F5D00F73204 /* ChallengeRating.swift */,
 				22F19DFC2507AB4700F73204 /* Action.swift */,
 				22F19E002507D90E00F73204 /* Status.swift */,
 				22F19E022507DA2600F73204 /* BasicAbility.swift */,
 				22F19E042507E07E00F73204 /* SideEffect.swift */,
+				22B1B96C250FB3EA00564371 /* Job.swift */,
 			);
 			path = GameCore;
 			sourceTree = "<group>";
@@ -320,6 +327,8 @@
 				22D3AE6024FBC38A00353770 /* Path.swift */,
 				22F19E062508F62A00F73204 /* Town.sks */,
 				22F19E082508F63D00F73204 /* Town.swift */,
+				22B1B968250F879500564371 /* Pub.sks */,
+				22B1B96A250F8A7B00564371 /* Pub.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -424,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				22F19E072508F62A00F73204 /* Town.sks in Resources */,
+				22B1B969250F879500564371 /* Pub.sks in Resources */,
 				22874F8C24E59396002A0CBD /* Localizable.strings in Resources */,
 				22874F9324E7B338002A0CBD /* BattlerView.xib in Resources */,
 				22874F9724E7B9B1002A0CBD /* SideView.xib in Resources */,
@@ -499,11 +509,13 @@
 				22F19E012507D90E00F73204 /* Status.swift in Sources */,
 				22874F7624E2D8CF002A0CBD /* KeyValueView.swift in Sources */,
 				22E1E3CD24DF08160064317C /* AppDelegate.swift in Sources */,
+				22B1B96B250F8A7B00564371 /* Pub.swift in Sources */,
 				22874F9F24E7FAE1002A0CBD /* BattleViewController.swift in Sources */,
 				22874F7E24E3B1AC002A0CBD /* Item.swift in Sources */,
 				22561E1B24F5504D00A0751D /* DataManager.swift in Sources */,
 				22F19DF525011E8100F73204 /* ItemListView.swift in Sources */,
 				22B1B95D250D003000564371 /* KeyDescriptionValueView.swift in Sources */,
+				22B1B96D250FB3EA00564371 /* Job.swift in Sources */,
 				22DBF80124E002F000E91940 /* Key.swift in Sources */,
 				22874F7C24E2EFC4002A0CBD /* Armor.swift in Sources */,
 				22F19DFB25069CA900F73204 /* NotificationNameExt.swift in Sources */,
@@ -522,7 +534,7 @@
 				22F19E032507DA2600F73204 /* BasicAbility.swift in Sources */,
 				22DBF80E24E10DE100E91940 /* IntExt.swift in Sources */,
 				22D3AE6124FBC38A00353770 /* Path.swift in Sources */,
-				22561E1924F5334000A0751D /* LiuBei.swift in Sources */,
+				22561E1924F5334000A0751D /* Paladin.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

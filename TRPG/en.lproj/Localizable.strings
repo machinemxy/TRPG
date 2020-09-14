@@ -19,3 +19,5 @@
 "inn_keeper_2" = "You don't have enough money, get out of here!";
 "drugStoreKeeper_1" = "To make new medicines I need 5 snake skins. Can you give me?";
 "drugStoreKeeper_2" = "Thank you. Here is your reward.\n[5 antidotes gained]\n[180 exp gained]";
+"pubKeeper_1" = "Sorry all tables are occupied. If you don't mind, you can choose one of the tables to join. I think you are welcomed!";
+"licenseBrief" = "The system and data used in this app is under terms of the Open Game License v1.0a Copyright 2000, Wizard of the Coast, Inc.";

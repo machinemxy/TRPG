@@ -16,7 +16,7 @@ struct SideEffect {
     func savingRoll(by roller: Battler) -> Bool {
         var point = Int.random(in: 1...20)
         
-        if roller.goodAtAbilities.contains(abilityToUse) {
+        if roller.job.goodAtAbilities.contains(abilityToUse) {
             point += roller.proficiency
         }
         

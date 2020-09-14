@@ -12,13 +12,14 @@ class Pc: Battler, Codable, ObservableObject {
     static let liuBei = "Liu Bei"
     
     enum CodingKeys: CodingKey {
-        case name, str, dex, con, int, wis, cha, mhp, hp, lv, exp, weaponId, shieldId, armorId, skills, statuses
+        case name, job, str, dex, con, int, wis, cha, mhp, hp, lv, exp, weaponId, shieldId, armorId, skills, statuses
     }
     
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
 
         try container.encode(name, forKey: .name)
+        try container.encode(job, forKey: .job)
         try container.encode(str, forKey: .str)
         try container.encode(dex, forKey: .dex)
         try container.encode(con, forKey: .con)
@@ -60,6 +61,7 @@ class Pc: Battler, Codable, ObservableObject {
     }
     
     var name = ""
+    var job = Job.no
     @Published var str = 1
     @Published var dex = 1
     @Published var con = 1
@@ -157,24 +159,7 @@ class Pc: Battler, Codable, ObservableObject {
         return dex.modifier + shield.ac + armor.ac
     }
     
-    var lifeDice: Int {
-        switch name {
-        case Self.liuBei:
-            return 10
-        default:
-            return 4
-        }
-    }
-    
     var defaultAction: Action { .attack }
-    
-    var goodAtAbilities: [BasicAbility] {
-        if name == Self.liuBei {
-            return [.wis, .cha]
-        } else {
-            return [.str, .con]
-        }
-    }
     
     var statusDescription: String {
         if statuses.isEmpty {

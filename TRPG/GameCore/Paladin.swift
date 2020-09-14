@@ -8,11 +8,12 @@
 
 import UIKit
 
-class LiuBei {
-    static func create() -> Pc {
+class Paladin {
+    static func initLiuBei() -> Pc {
         let pc = Pc()
         
         pc.name = Pc.liuBei
+        pc.job = .paladin
         pc.str = 12
         pc.dex = 12
         pc.con = 10

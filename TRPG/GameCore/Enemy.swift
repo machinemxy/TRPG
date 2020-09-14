@@ -33,7 +33,7 @@ class Enemy: Battler {
     var challenge: ChallengeRatting
     var dropItems: [Int]
     var statuses: Set<Status> = []
-    var goodAtAbilities = [BasicAbility]()
+    var job = Job.no
     
     init(_ name: String, type: EnemyType) {
         self.name = name

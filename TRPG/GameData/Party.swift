@@ -15,7 +15,7 @@ class Party: Codable, ObservableObject {
         case pcs, money, inventories, location
     }
     
-    var pcs = [LiuBei.create()]
+    var pcs = [Paladin.initLiuBei()]
     @Published var money: Int = 0
     @Published var inventories = [300: 10]
     var location = "Village"

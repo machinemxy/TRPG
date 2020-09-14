@@ -31,17 +31,31 @@
                                     <action selector="dataPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sTJ-sz-pqO"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gxw-Tj-11A">
+                                <rect key="frame" x="101" y="737" width="47" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="About"/>
+                                <connections>
+                                    <action selector="aboutPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HPi-fP-gnP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Gxw-Tj-11A" secondAttribute="bottom" constant="8" id="1Bd-ID-Zpi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NXb-LV-zXP" secondAttribute="bottom" constant="8" id="7PW-Xu-8aS"/>
                             <constraint firstItem="pti-DD-yQe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="Bjs-oU-ze9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Gxw-Tj-11A" secondAttribute="trailing" id="MBN-7n-TeW"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pti-DD-yQe" secondAttribute="bottom" constant="8" id="RzS-rv-isk"/>
+                            <constraint firstItem="Gxw-Tj-11A" firstAttribute="leading" secondItem="NXb-LV-zXP" secondAttribute="trailing" constant="8" id="bRq-Dx-Cnm"/>
+                            <constraint firstItem="NXb-LV-zXP" firstAttribute="leading" secondItem="pti-DD-yQe" secondAttribute="trailing" constant="8" id="bVQ-ow-HKe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NXb-LV-zXP" secondAttribute="bottom" constant="8" id="cTU-QS-pzs"/>
                             <constraint firstItem="NXb-LV-zXP" firstAttribute="leading" secondItem="pti-DD-yQe" secondAttribute="trailing" constant="8" id="gRK-QA-hh2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="btnAbout" destination="Gxw-Tj-11A" id="P0q-5l-J2B"/>
                         <outlet property="btnData" destination="NXb-LV-zXP" id="ZAO-T3-nSJ"/>
                         <outlet property="btnParty" destination="pti-DD-yQe" id="vbh-zE-x1r"/>
                         <segue destination="6r2-eQ-mud" kind="show" identifier="shopSegue" id="ric-eO-qKE"/>
@@ -202,7 +216,7 @@
             </objects>
             <point key="canvasLocation" x="798" y="-21"/>
         </scene>
-        <!--Shop-->
+        <!--Trade-->
         <scene sceneID="NGo-Sr-NxV">
             <objects>
                 <viewController id="raK-uq-azo" customClass="ShopViewController" customModule="TRPG" customModuleProvider="target" sceneMemberID="viewController">
@@ -246,7 +260,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fXR-eR-3Zy"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Shop" id="5Bv-VU-dHg">
+                    <navigationItem key="navigationItem" title="Trade" id="5Bv-VU-dHg">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="uDn-A6-daD">
                             <connections>
                                 <segue destination="Amr-VT-lmG" kind="unwind" unwindAction="unwindToMapWithSegue:" id="TRK-07-WCx"/>

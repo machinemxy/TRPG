@@ -36,6 +36,9 @@ class Town: SKScene {
             } else if node.name == "drugStore" {
                 drugStoreDialog()
                 break
+            } else if node.name == "pub" {
+                switchScene(fileNamed: "Pub")
+                break
             }
         }
     }
@@ -86,6 +89,7 @@ class Town: SKScene {
             ac.addAction(UIAlertAction(title: "Yes", style: .default, handler: { [unowned self] (_) in
                 let ac2 = UIAlertController(title: "store keeper:", message: "drugStoreKeeper_2".localized(), preferredStyle: .alert)
                 ac2.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+                    Party.instance.loseItem(UselessItem.snakeSkin, amount: 5)
                     Party.instance.gainItem(UsableItem.antidote, amount: 5)
                     Party.instance.gainExp(180)
                     EventTrigger.setValue(key: .drugStoreMissionFinished, value: 1)
@@ -93,6 +97,9 @@ class Town: SKScene {
                 self.presentAlert(ac2)
             }))
             ac.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+            ac.addAction(UIAlertAction(title: "Trade", style: .default, handler: { [unowned self] (_) in
+                self.showShop(itemIds: [UsableItem.potionOfHealing, UsableItem.antidote])
+            }))
             presentAlert(ac)
         } else {
             showShop(itemIds: [UsableItem.potionOfHealing, UsableItem.antidote])

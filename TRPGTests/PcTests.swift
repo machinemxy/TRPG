@@ -20,14 +20,14 @@ class PcTests: XCTestCase {
     }
 
     func testRequiredExp() throws {
-        let liubei = LiuBei.create()
+        let liubei = Paladin.create()
         XCTAssert(liubei.requiredExp == 300)
         liubei.lv = 20
         XCTAssert(liubei.requiredExp == Int.max)
     }
     
     func testEncode() {
-        let liubei = LiuBei.create()
+        let liubei = Paladin.create()
         let encoder = JSONEncoder()
         let data = try? encoder.encode(liubei)
         let str = String(data: data!, encoding: .utf8)!
@@ -35,7 +35,7 @@ class PcTests: XCTestCase {
     }
     
     func testStatusDescription() {
-        let liubei = LiuBei.create()
+        let liubei = Paladin.create()
         liubei.statuses.insert(.frozen)
         liubei.statuses.insert(.poisoned)
         print(liubei.statusDescription)

@@ -9,12 +9,14 @@
 import UIKit
 import SpriteKit
 import GoogleMobileAds
+import SafariServices
 
 class MapViewController: UIViewController {
     static var instance: MapViewController?
     
     @IBOutlet weak var btnParty: UIButton!
     @IBOutlet weak var btnData: UIButton!
+    @IBOutlet weak var btnAbout: UIButton!
     
     var rewardedAd: GADRewardedAd?
     
@@ -28,6 +30,8 @@ class MapViewController: UIViewController {
         btnParty.layer.borderColor = UIColor.link.cgColor
         btnData.layer.borderWidth = 1
         btnData.layer.borderColor = UIColor.link.cgColor
+        btnAbout.layer.borderWidth = 1
+        btnAbout.layer.borderColor = UIColor.link.cgColor
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
@@ -124,6 +128,20 @@ class MapViewController: UIViewController {
             }))
             ac2.addAction(UIAlertAction.cancel)
             self.present(ac2, animated: true)
+        }))
+        
+        ac.addAction(UIAlertAction.cancel)
+        ac.popoverPresentationController?.sourceView = sender
+        ac.popoverPresentationController?.sourceRect = sender.bounds
+        present(ac, animated: true)
+    }
+    
+    @IBAction func aboutPressed(_ sender: UIButton) {
+        let ac = UIAlertController(title: "About this app", message: "licenseBrief".localized(), preferredStyle: .actionSheet)
+        
+        ac.addAction(UIAlertAction(title: "Show Open Game License", style: .default, handler: { [unowned self] (_) in
+            let safariVC = SFSafariViewController(url: URL(string: "https://media.wizards.com/2016/downloads/SRD-OGL_V1.1.pdf")!)
+            self.present(safariVC, animated: true)
         }))
         
         ac.addAction(UIAlertAction.cancel)
