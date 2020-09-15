@@ -32,10 +32,18 @@ extension Int {
     }
     
     /// Calculate the result of aDb + c
-    static func abcCalc(a: Int, b: Int, c: Int) -> Int {
+    static func abcCalc(a: Int, b: Int, c: Int, hasGreatWeaponFighting: Bool = false) -> Int {
         var result = c
         for _ in 1...a {
-            result += Int.random(in: 1...b)
+            let firstTry = Int.random(in: 1...b)
+            
+            if hasGreatWeaponFighting && (firstTry == 1 || firstTry == 2) {
+                let secondTry = Int.random(in: 1...b)
+                result += secondTry
+            } else {
+                result += firstTry
+            }
+            
         }
         return result
     }

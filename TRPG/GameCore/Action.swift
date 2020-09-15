@@ -97,7 +97,8 @@ enum Action {
         }
         
         // calculate damage
-        let damage = Int.abcCalc(a: damageAMultiplier * battler.damageA, b: battler.damageB, c: battler.damageC)
+        let hasGreatWeaponFighting = battler.skills.contains(.greatWeaponFighting)
+        let damage = Int.abcCalc(a: damageAMultiplier * battler.damageA, b: battler.damageB, c: battler.damageC, hasGreatWeaponFighting: hasGreatWeaponFighting)
         log.append("caused \(damage) damage. ")
         target.reduceHP(by: damage)
         if target.isAlive {

@@ -27,6 +27,7 @@ protocol Battler: class {
     var statuses: Set<Status> { get set }
     var job: Job { get }
     var proficiency: Int { get }
+    var skills: [SkillType] { get }
 }
 
 extension Battler {

@@ -6,13 +6,13 @@
 //  Copyright © 2020 Ma Xueyuan. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class Paladin {
     static func initLiuBei() -> Pc {
         let pc = Pc()
         
-        pc.name = Pc.liuBei
+        pc.name = "Liu Bei"
         pc.job = .paladin
         pc.str = 12
         pc.dex = 12

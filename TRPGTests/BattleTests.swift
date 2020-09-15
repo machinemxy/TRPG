@@ -27,5 +27,15 @@ class BattleTests: XCTestCase {
         let totalSweet = apples.reduce(0) { $0 + $1.sweet }
         XCTAssert(totalSweet == 6)
     }
+    
+    func testGreatWeaponFighting() throws {
+        var map = [Int: Int]()
+        for _ in 1...1000 {
+            let result = Int.abcCalc(a: 1, b: 8, c: 0, hasGreatWeaponFighting: true)
+            let currentValue = map[result] ?? 0
+            map.updateValue(currentValue + 1, forKey: result)
+        }
+        print(map)
+    }
 }
 

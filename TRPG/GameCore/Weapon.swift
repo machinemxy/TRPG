@@ -30,7 +30,7 @@ struct Weapon: Item {
             price = 10
         case Self.greatClub:
             name = "great club"
-            description = "damage 1D8, two hands"
+            description = "damage 1D8, two-handed"
             damageA = 1
             damageB = 8
             needTwoHand = true

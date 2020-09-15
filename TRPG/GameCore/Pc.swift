@@ -9,8 +9,6 @@
 import Foundation
 
 class Pc: Battler, Codable, ObservableObject {
-    static let liuBei = "Liu Bei"
-    
     enum CodingKeys: CodingKey {
         case name, job, str, dex, con, int, wis, cha, mhp, hp, lv, exp, weaponId, shieldId, armorId, skills, statuses
     }
