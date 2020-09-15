@@ -35,7 +35,7 @@ class MapViewController: UIViewController {
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
-            if let scene = SKScene(fileNamed: Party.instance.location) {
+            if let scene = SKScene(fileNamed: "Title") {
                 // Set the scale mode to scale to fit the window
                 scene.scaleMode = .aspectFit
                 
@@ -81,7 +81,7 @@ class MapViewController: UIViewController {
     
     @IBAction func gameOver(segue: UIStoryboardSegue) {
         if let view = self.view as? SKView {
-            if let scene = SKScene(fileNamed: Party.instance.location) {
+            if let scene = SKScene(fileNamed: "Title") {
                 scene.scaleMode = .aspectFit
                 view.presentScene(scene, transition: .flipVertical(withDuration: 0.5))
             }
@@ -120,7 +120,7 @@ class MapViewController: UIViewController {
             ac2.addAction(UIAlertAction(title: "Yes", style: .default, handler: { [unowned self] (_) in
                 DataManager.initData()
                 if let view = self.view as? SKView {
-                    if let scene = SKScene(fileNamed: Party.instance.location) {
+                    if let scene = SKScene(fileNamed: "Title") {
                         scene.scaleMode = .aspectFit
                         view.presentScene(scene, transition: .flipVertical(withDuration: 0.5))
                     }

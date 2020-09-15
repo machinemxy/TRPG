@@ -40,6 +40,8 @@
 		22B1B969250F879500564371 /* Pub.sks in Resources */ = {isa = PBXBuildFile; fileRef = 22B1B968250F879500564371 /* Pub.sks */; };
 		22B1B96B250F8A7B00564371 /* Pub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B1B96A250F8A7B00564371 /* Pub.swift */; };
 		22B1B96D250FB3EA00564371 /* Job.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B1B96C250FB3EA00564371 /* Job.swift */; };
+		22B1B96F2510E37500564371 /* Title.sks in Resources */ = {isa = PBXBuildFile; fileRef = 22B1B96E2510E37500564371 /* Title.sks */; };
+		22B1B9712510E90600564371 /* Title.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B1B9702510E90600564371 /* Title.swift */; };
 		22D3AE5D24FB7F4900353770 /* UsableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D3AE5C24FB7F4900353770 /* UsableItem.swift */; };
 		22D3AE5F24FBC35700353770 /* Path.sks in Resources */ = {isa = PBXBuildFile; fileRef = 22D3AE5E24FBC35700353770 /* Path.sks */; };
 		22D3AE6124FBC38A00353770 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D3AE6024FBC38A00353770 /* Path.swift */; };
@@ -118,6 +120,8 @@
 		22B1B968250F879500564371 /* Pub.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Pub.sks; sourceTree = "<group>"; };
 		22B1B96A250F8A7B00564371 /* Pub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pub.swift; sourceTree = "<group>"; };
 		22B1B96C250FB3EA00564371 /* Job.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Job.swift; sourceTree = "<group>"; };
+		22B1B96E2510E37500564371 /* Title.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Title.sks; sourceTree = "<group>"; };
+		22B1B9702510E90600564371 /* Title.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Title.swift; sourceTree = "<group>"; };
 		22D3AE5C24FB7F4900353770 /* UsableItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsableItem.swift; sourceTree = "<group>"; };
 		22D3AE5E24FBC35700353770 /* Path.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Path.sks; sourceTree = "<group>"; };
 		22D3AE6024FBC38A00353770 /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Path.swift; sourceTree = "<group>"; };
@@ -329,6 +333,8 @@
 				22F19E082508F63D00F73204 /* Town.swift */,
 				22B1B968250F879500564371 /* Pub.sks */,
 				22B1B96A250F8A7B00564371 /* Pub.swift */,
+				22B1B96E2510E37500564371 /* Title.sks */,
+				22B1B9702510E90600564371 /* Title.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -439,6 +445,7 @@
 				22874F9724E7B9B1002A0CBD /* SideView.xib in Resources */,
 				22E1E3D924DF08170064317C /* LaunchScreen.storyboard in Resources */,
 				22D3AE5F24FBC35700353770 /* Path.sks in Resources */,
+				22B1B96F2510E37500564371 /* Title.sks in Resources */,
 				22E1E3D624DF08170064317C /* Assets.xcassets in Resources */,
 				22E1E3F024DF0CE30064317C /* Village.sks in Resources */,
 				22E1E3D424DF08160064317C /* Main.storyboard in Resources */,
@@ -504,6 +511,7 @@
 				2225ED3924DFDBCD006CC6B1 /* UIViewControllerExt.swift in Sources */,
 				22B1B963250E4E7C00564371 /* SellListView.swift in Sources */,
 				22874F7824E2E5A3002A0CBD /* Weapon.swift in Sources */,
+				22B1B9712510E90600564371 /* Title.swift in Sources */,
 				22E1E3D124DF08160064317C /* MapViewController.swift in Sources */,
 				22F19DF725029F5D00F73204 /* ChallengeRating.swift in Sources */,
 				22F19E012507D90E00F73204 /* Status.swift in Sources */,

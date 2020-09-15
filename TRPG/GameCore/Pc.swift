@@ -43,6 +43,7 @@ class Pc: Battler, Codable, ObservableObject {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
         name = try container.decode(String.self, forKey: .name)
+        job = try container.decode(Job.self, forKey: .job)
         str = try container.decode(Int.self, forKey: .str)
         dex = try container.decode(Int.self, forKey: .dex)
         con = try container.decode(Int.self, forKey: .con)
