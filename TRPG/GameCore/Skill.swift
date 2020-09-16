@@ -11,6 +11,7 @@ import Foundation
 enum SkillType: String, Codable {
     case persuasion
     case greatWeaponFighting
+    case unarmoredDefense
 }
 
 struct Skill: Codable {
@@ -21,10 +22,13 @@ struct Skill: Codable {
         switch type {
         case .persuasion:
             name = "Persuasion"
-            description = "Persuade someone to change his mind. Your charisma will affect the success rate."
+            description = "If your charisma modifier + proficiency + 1D20 >= difficulty, the persuation is succeeded."
         case .greatWeaponFighting:
             name = "Great Weapon Fighting"
             description = "When you use two-handed weapon and rolled 1 or 2 on any damage dice, you can reroll it and accept the new result."
+        case .unarmoredDefense:
+            name = "Unarmoored Defense"
+            description = "When you are not wearing armor, your constituion modifier will be added to your armor class."
         }
     }
 }

@@ -18,6 +18,7 @@ enum Action {
     case bite
     case drinkPotionOfHealing
     case drinkAntidote
+    case cure
     
     func perform(by battler: Battler, to target: Battler?) -> String {
         switch self {
@@ -36,6 +37,14 @@ enum Action {
             battler.statuses.remove(.poisoned)
             Party.instance.loseItem(UsableItem.antidote)
             return "\(battler.name) drank antidote, recovered from poisoned status."
+        case .cure:
+            guard let target = target else { fatalError("no target") }
+            
+            // reduce battler's mp
+            let cureC = battler.cha.modifier + battler.proficiency
+            let curePoint = Int.abcCalc(a: 1, b: 8, c: cureC)
+            target.addHP(by: curePoint)
+            return "\(battler.name) cured \(target.name) for \(curePoint) HP."
         }
     }
     
@@ -59,6 +68,12 @@ enum Action {
             return "drink potion"
         case .drinkAntidote:
             return "drink antidote"
+        case .cure:
+            if let target = target {
+                return "cure \(target.name)"
+            } else {
+                return "cure randomly"
+            }
         }
     }
     
@@ -74,6 +89,8 @@ enum Action {
             return .no
         case .drinkAntidote:
             return .no
+        case .cure:
+            return .ally
         }
     }
     
@@ -97,8 +114,14 @@ enum Action {
         }
         
         // calculate damage
-        let hasGreatWeaponFighting = battler.skills.contains(.greatWeaponFighting)
-        let damage = Int.abcCalc(a: damageAMultiplier * battler.damageA, b: battler.damageB, c: battler.damageC, hasGreatWeaponFighting: hasGreatWeaponFighting)
+        let damage: Int
+        if battler.skills.contains(.greatWeaponFighting),
+            let pc = battler as? Pc,
+            pc.weapon.needTwoHand == true {
+            damage = Int.abcCalc(a: damageAMultiplier * battler.damageA, b: battler.damageB, c: battler.damageC, hasGreatWeaponFighting: true)
+        } else {
+            damage = Int.abcCalc(a: damageAMultiplier * battler.damageA, b: battler.damageB, c: battler.damageC)
+        }
         log.append("caused \(damage) damage. ")
         target.reduceHP(by: damage)
         if target.isAlive {

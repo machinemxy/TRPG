@@ -46,4 +46,13 @@ class Pub: SKScene {
             showShop(itemIds: [UselessItem.yellowWine])
         }
     }
+    
+    private func joinTable() {
+        let ac = UIAlertController(title: "Warning", message: "This is a very import decition. You'd better observe the people in this table first. Are you sure to join this table?", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (_) in
+            // join
+        }))
+        ac.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
+        presentAlert(ac)
+    }
 }

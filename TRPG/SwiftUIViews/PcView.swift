@@ -16,7 +16,7 @@ struct PcView: View {
             Section(header: Text("Basic")) {
                 KeyValueView(key: "Class", value: pc.job.rawValue)
                 HStack {
-                    Text("Lv")
+                    Text("Level")
                     Spacer()
                     Text("\(pc.lv)")
                     Button("Level up") {

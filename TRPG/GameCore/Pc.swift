@@ -98,7 +98,9 @@ class Pc: Battler, Codable, ObservableObject {
         case 3:
             return 2_700
         case 4:
-            return 6_500
+            // This game's max level is 4
+            // return 6_500
+            return Int.max
         case 5:
             return 14_000
         case 6:
@@ -155,7 +157,11 @@ class Pc: Battler, Codable, ObservableObject {
     }
     
     var ac: Int {
-        return dex.modifier + shield.ac + armor.ac
+        if skills.contains(.unarmoredDefense) && armorId == nil {
+            return dex.modifier + con.modifier + shield.ac + armor.ac
+        } else {
+            return dex.modifier + shield.ac + armor.ac
+        }
     }
     
     var defaultAction: Action { .attack }
