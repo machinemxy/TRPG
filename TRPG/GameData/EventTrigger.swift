@@ -14,7 +14,7 @@ enum EventTriggerKey: Int {
     case VillageTownDirection = 2 // 0: from village to town; 2: from town to village
     case shoesSold = 3
     case drugStoreMissionFinished = 4
-    case metPartners = 5
+    case metPartners = 5 // 1: partners are Guan Yu and Zhang Fei; 2: parnters are Pan Feng and Wu Anguo
 }
 
 class EventTrigger {
