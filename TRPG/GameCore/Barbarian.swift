@@ -23,6 +23,7 @@ class Barbarian {
         pc.mhp = 16
         pc.weaponId = Weapon.greatClub
         pc.skills.append(.unarmoredDefense)
+        pc.exp = 150
         
         pc.hp = pc.mhp
         
@@ -43,6 +44,7 @@ class Barbarian {
         pc.mhp = 15
         pc.weaponId = Weapon.greatClub
         pc.skills.append(.unarmoredDefense)
+        pc.exp = 150
         
         pc.hp = pc.mhp
         

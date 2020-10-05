@@ -37,6 +37,31 @@ class Pub: SKScene {
             } else if node.name == "pubKeeper" {
                 pubKeeperDialog()
                 break
+            } else if node.name == "guanYu" {
+                let ac = UIAlertController(title: "Observation", message: "observation_guanYu".localized(), preferredStyle: .alert)
+                ac.addAction(.ok)
+                presentAlert(ac)
+                break
+            } else if node.name == "zhangFei" {
+                let ac = UIAlertController(title: "Observation", message: "observation_zhangFei".localized(), preferredStyle: .alert)
+                ac.addAction(.ok)
+                presentAlert(ac)
+                break
+            } else if node.name == "panFeng" {
+                let ac = UIAlertController(title: "Observation", message: "observation_panFeng".localized(), preferredStyle: .alert)
+                ac.addAction(.ok)
+                presentAlert(ac)
+                break
+            } else if node.name == "wuAnguo" {
+                let ac = UIAlertController(title: "Observation", message: "observation_wuAnguo".localized(), preferredStyle: .alert)
+                ac.addAction(.ok)
+                presentAlert(ac)
+                break
+            } else if node.name == "joinGZ" {
+                joinTable(isHardMode: false)
+                break
+            } else if node.name == "joinPW" {
+                joinTable(isHardMode: true)
             }
         }
     }
@@ -54,10 +79,28 @@ class Pub: SKScene {
         }
     }
     
-    private func joinTable() {
-        let ac = UIAlertController(title: "Warning", message: "This is a very import decition. You'd better observe the people in this table first. Are you sure to join this table?", preferredStyle: .alert)
-        ac.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (_) in
-            // join
+    private func joinTable(isHardMode: Bool) {
+        let ac = UIAlertController(title: "Warning", message: "joinTable_1".localized(), preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Yes", style: .default, handler: { [unowned self] (_) in
+            let ac2 = UIAlertController(title: "Info", message: "joinTable_2".localized(), preferredStyle: .alert)
+            ac2.addAction(.next { [unowned self] in
+                let ac3 = UIAlertController(title: "Info", message: "joinTable_3".localized(), preferredStyle: .alert)
+                ac3.addAction(UIAlertAction(title: "OK", style: .default, handler: { [unowned self] (_) in
+                    Party.instance.gainItems([UselessItem.gardenKey])
+                    if isHardMode {
+                        EventTrigger.setValue(key: .metPartners, value: 2)
+                        Party.instance.pcs.append(Fighter.initPanFeng())
+                        Party.instance.pcs.append(Barbarian.initWuAnguo())
+                    } else {
+                        EventTrigger.setValue(key: .metPartners, value: 1)
+                        Party.instance.pcs.append(Fighter.initGuanYu())
+                        Party.instance.pcs.append(Barbarian.initZhangFei())
+                    }
+                    setVisible()
+                }))
+                presentAlert(ac3)
+            })
+            presentAlert(ac2)
         }))
         ac.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
         presentAlert(ac)

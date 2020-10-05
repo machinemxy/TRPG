@@ -21,3 +21,10 @@
 "drugStoreKeeper_2" = "Thank you. Here is your reward.\n[5 antidotes gained]\n[180 exp gained]";
 "pubKeeper_1" = "Sorry all tables are occupied. If you don't mind, you can choose one of the tables to join. I think you are welcomed!";
 "licenseBrief" = "The system and data used in this app is under terms of the Open Game License v1.0a Copyright 2000, Wizard of the Coast, Inc.";
+"observation_guanYu" = "This guy has red face, long beard, looks impressive";
+"observation_zhangFei" = "This guy has black skin and fierce eyes, just like a black panther.";
+"observation_panFeng" = "This guy looks tall and strong, should be a good warrior.";
+"observation_wuAnguo" = "This guy's body is full of muscle, should be a good warrior.";
+"joinTable_1" = "This is a very import decition. You'd better observe the people in this table first. Are you sure to join this table?";
+"joinTable_2" = "You had a good time with the other two. You shared the same ambition and decided to become sworn brothers.";
+"joinTable_3" = "You are going to hold the ceremony in peach garden.\n[garden key obtained]";

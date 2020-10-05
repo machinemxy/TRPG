@@ -13,6 +13,7 @@ struct UselessItem: Item {
     static let yellowTurban = 301
     static let snakeSkin = 302
     static let yellowWine = 303
+    static let gardenKey = 304
     
     var name: String
     var description: String
@@ -36,6 +37,10 @@ struct UselessItem: Item {
             name = "yellow wine"
             description = "most popular wine in the pub"
             price = 4
+        case Self.gardenKey:
+            name = "garden key"
+            description = "key for the gate of peach garden"
+            price = 1
         default:
             name = "dummy"
             description = ""

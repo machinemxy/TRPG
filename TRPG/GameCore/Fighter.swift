@@ -23,6 +23,7 @@ class Fighter {
         pc.mhp = 12
         pc.weaponId = Weapon.greatClub
         pc.skills.append(.greatWeaponFighting)
+        pc.exp = 150
         
         pc.hp = pc.mhp
         
@@ -43,6 +44,7 @@ class Fighter {
         pc.mhp = 12
         pc.weaponId = Weapon.greatClub
         pc.skills.append(.greatWeaponFighting)
+        pc.exp = 150
         
         pc.hp = pc.mhp
         
